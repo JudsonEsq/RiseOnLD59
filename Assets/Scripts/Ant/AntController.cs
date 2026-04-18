@@ -168,6 +168,8 @@ public class AntController : MonoBehaviour
     public void MoveTowardsPheromone()
     {
         Vector3 direction = (targetPosition - transform.position).normalized;
+        // Jude code hoping to rotate ant mesh towards direction of movement
+        transform.rotation = Quaternion.LookRotation(direction);
         transform.position += direction * Time.deltaTime * moveSpeed;
 
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
@@ -214,6 +216,8 @@ public class AntController : MonoBehaviour
         isReturningToNest = true;
         Vector3 direction = (nest.transform.position - transform.position).normalized;
         transform.position += direction * Time.deltaTime * moveSpeed;
+
+        transform.rotation = Quaternion.LookRotation(direction);
 
         if (Vector3.Distance(transform.position, nest.transform.position) < 0.1f)
         {
