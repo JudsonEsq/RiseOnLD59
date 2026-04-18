@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 5827176448242610976}
   - component: {fileID: 2212877049645098574}
   - component: {fileID: 7573334601633599809}
+  - component: {fileID: 400152111537829955}
   m_Layer: 5
   m_Name: PheromoneUI
   m_TagString: Untagged
@@ -498,6 +499,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &400152111537829955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555718632294564265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9a9edf2c7b46447a27693d55dc15e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PheromoneController
+  FoodButton: {fileID: 8174064499940466305}
+  DangerButton: {fileID: 1415584296068699112}
+  AttackButton: {fileID: 8958996118826072725}
+  GiftButton: {fileID: 4431638648822296796}
 --- !u!1 &4121332779836085840
 GameObject:
   m_ObjectHideFlags: 0
