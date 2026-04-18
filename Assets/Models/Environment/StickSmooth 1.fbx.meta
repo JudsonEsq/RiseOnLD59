@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 8f545882f55284e4389e2925f18f658c
+guid: b790203cce3080d4fba2f6d11430fccc
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stick
+    second: {fileID: 2100000, guid: 5aa4cfbbaa2576c4f95286fdcd8c0ac0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
