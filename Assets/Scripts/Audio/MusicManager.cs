@@ -1,13 +1,20 @@
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using System.Runtime.InteropServices;
 
-//How to subscribe to the beat
+
+// How to subscribe to the beat
 // MusicManager.OnMusicalBeat += YourFunctionHere;
 // How to unsubscribe to the beat
 // MusicManager.OnMusicalBeat -= YourFunctionHere;
 
+// How to get BPM
+// float bpm = MusicManager.instance.currentBPM;
 
+// How to get time signature
+// int timeSigUpper = MusicManager.instance.timeSignatureUpper;
+// int timeSigLower = MusicManager.instance.timeSignatureLower;
 
 
 public class MusicManager : MonoBehaviour
@@ -45,10 +52,16 @@ public class MusicManager : MonoBehaviour
     #endregion
 
     #region Music Playback
+    
 
     public static event System.Action OnMusicalBeat;
 
     private volatile bool beatPending = false;
+
+    public float currentBPM = 120f; // Default BPM, can be updated by beat callback
+    public int timeSignatureUpper = 4; // Default time signature upper value, can be updated by beat callback
+    public int timeSignatureLower = 4; // Default time signature lower value, can be updated by beat callback
+
     private EventInstance musicInstance;
     private void HandleMusicRequest(MusicCue cue)
     {
@@ -99,7 +112,15 @@ public class MusicManager : MonoBehaviour
         if (type == FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_BEAT)
         {
             instance.beatPending = true;
+            var beatProperties = (FMOD.Studio.TIMELINE_BEAT_PROPERTIES)Marshal.PtrToStructure(parameters, typeof(FMOD.Studio.TIMELINE_BEAT_PROPERTIES));
+            //Debug.Log($"Beat! BPM: {beatProperties.bpm}, Position: {beatProperties.position}, Bar: {beatProperties.bar}, Beat: {beatProperties.beat}, Tick: {beatProperties.tick}");
+       
+            MusicManager.instance.currentBPM = beatProperties.tempo;
+            MusicManager.instance.timeSignatureUpper = beatProperties.timesignatureupper;
+            MusicManager.instance.timeSignatureLower = beatProperties.timesignaturelower;
+       
         }
+        
         return FMOD.RESULT.OK;
     }
 
@@ -115,4 +136,17 @@ public class MusicManager : MonoBehaviour
     }
 
     #endregion
+
+
+#region Global Audio Control
+    public static void PlayOneShot(EventReference eventRef)
+    {
+        if (eventRef.IsNull) return;
+
+        RuntimeManager.PlayOneShot(eventRef);
+    }
+
+
+#endregion
+
 }

@@ -61,7 +61,7 @@ public class AudioMainMenu : MonoBehaviour
         }
     }
 
-    public void PlayEvent(EventReference eventRef)
+    private void PlayEvent(EventReference eventRef)
         {
             if (eventRef.IsNull)return;
 

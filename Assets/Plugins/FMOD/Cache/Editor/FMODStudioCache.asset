@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: MusicState
   StudioPath: 
   Min: 0
-  Max: 4
-  Default: 1
+  Max: 6
+  Default: 0
   ID:
     data1: 3147782579
     data2: 2475787066
@@ -24,11 +24,40 @@ MonoBehaviour:
   IsGlobal: 0
   Labels:
   - MainMenu
-  - Idle
-  - Layer1
-  - Layer2
-  - Layer3
+  - T1-Layer1
+  - T1-Layer2
+  - T1-Layer3
+  - T2-Layer1
+  - T2-Layer2
+  - T2-Layer3
   Exists: 1
+--- !u!114 &-8145617984587115972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Pheromone/Gift
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Player/Pheromone/Gift
+  Guid:
+    Data1: 293355196
+    Data2: 1149915070
+    Data3: 1547759232
+    Data4: -1667970942
+  Banks:
+  - {fileID: -2066699380713603798}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8000991970314481456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,7 +73,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639121123956720269
+  lastModified: 639121132264436311
   FileSizes:
   - Name: Desktop
     Value: 2074
@@ -77,7 +106,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 573511
---- !u!114 &-6708855926743969024
+--- !u!114 &-7625277873083601232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,14 +116,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/BtnHover
+  m_Name: event:/Menu/BtnSelect
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/UI/BtnHover
+  Path: event:/Menu/BtnSelect
   Guid:
-    Data1: 1633008575
-    Data2: 1253436445
-    Data3: 1464799130
-    Data4: -1762832369
+    Data1: 396848857
+    Data2: 1322224960
+    Data3: -616809038
+    Data4: 965621097
   Banks:
   - {fileID: -196372959261030312}
   IsStream: 0
@@ -104,7 +133,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-3605554700675629519
+--- !u!114 &-5260635134644322196
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,16 +143,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/BtnSelect
+  m_Name: event:/Player/Pheromone/Danger
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/UI/BtnSelect
+  Path: event:/Player/Pheromone/Danger
   Guid:
-    Data1: 396848857
-    Data2: 1322224960
-    Data3: -616809038
-    Data4: 965621097
+    Data1: 1693469791
+    Data2: 1105157619
+    Data3: 1304622992
+    Data4: -1634738009
   Banks:
-  - {fileID: -196372959261030312}
+  - {fileID: -2066699380713603798}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4368516639935029434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/AntSelectionFeedback
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Player/AntSelectionFeedback
+  Guid:
+    Data1: 1146841418
+    Data2: 1239129393
+    Data3: 337236144
+    Data4: -1078816377
+  Banks:
+  - {fileID: -2066699380713603798}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -146,12 +202,12 @@ MonoBehaviour:
   Path: FMOD/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 639121058377537154
+  lastModified: 639121150066624210
   FileSizes:
   - Name: Desktop
-    Value: 506
+    Value: 15808
   Exists: 1
---- !u!114 &-220815408595692091
+--- !u!114 &-1968944796631501345
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,16 +217,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/BtnBack
+  m_Name: event:/Player/Pheromone/Build
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/UI/BtnBack
+  Path: event:/Player/Pheromone/Build
   Guid:
-    Data1: 1685623621
-    Data2: 1185830459
-    Data3: -1570164833
-    Data4: 1326939712
+    Data1: -1464682011
+    Data2: 1104695864
+    Data3: 655197619
+    Data4: -242621624
   Banks:
-  - {fileID: -196372959261030312}
+  - {fileID: -2066699380713603798}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-558793608129601015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/HUD/ResourceCounterIncrement
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Player/HUD/ResourceCounterIncrement
+  Guid:
+    Data1: 47364375
+    Data2: 1074791718
+    Data3: -25917815
+    Data4: 941553647
+  Banks:
+  - {fileID: -2066699380713603798}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -193,10 +276,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 639121058377516693
+  lastModified: 639121132144476103
   FileSizes:
   - Name: Desktop
-    Value: 2506
+    Value: 33280
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -217,26 +300,86 @@ MonoBehaviour:
   - {fileID: 3729449020562875803}
   - {fileID: -2066699380713603798}
   EditorEvents:
-  - {fileID: -220815408595692091}
-  - {fileID: -6708855926743969024}
-  - {fileID: -3605554700675629519}
   - {fileID: -7708833647047573907}
+  - {fileID: -558793608129601015}
+  - {fileID: 3519051641090017256}
+  - {fileID: 1982615169041410682}
+  - {fileID: -4368516639935029434}
+  - {fileID: -5260635134644322196}
+  - {fileID: 2090904453368397941}
+  - {fileID: 1152235631577571435}
+  - {fileID: 2345057416237432818}
+  - {fileID: -8145617984587115972}
+  - {fileID: 2891701862587430590}
+  - {fileID: -1968944796631501345}
+  - {fileID: 5646723361398441160}
+  - {fileID: 5012433114563265738}
+  - {fileID: -7625277873083601232}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8000991970314481456}
   StringsBanks:
   - {fileID: 1825927707079781855}
   cacheVersion: 131859
-  cacheTime: 639121123972507397
+  cacheTime: 639121150066624210
   SerializableEventsDict:
-  - key: event:/UI/BtnBack
-    index: 0
-  - key: event:/UI/BtnHover
-    index: 1
-  - key: event:/UI/BtnSelect
-    index: 2
   - key: event:/Music/MusicSystem
+    index: 0
+  - key: event:/Player/HUD/ResourceCounterIncrement
+    index: 1
+  - key: event:/Player/HUD/Alerts/Achievement
+    index: 2
+  - key: event:/Player/Pheromone/Attack
     index: 3
+  - key: event:/Player/AntSelectionFeedback
+    index: 4
+  - key: event:/Player/Pheromone/Danger
+    index: 5
+  - key: event:/Player/HUD/Alerts/LowFood
+    index: 6
+  - key: event:/Player/Pheromone/Collect
+    index: 7
+  - key: event:/Player/Pheromone/Guide
+    index: 8
+  - key: event:/Player/Pheromone/Gift
+    index: 9
+  - key: event:/Player/HUD/Alerts/Danger
+    index: 10
+  - key: event:/Player/Pheromone/Build
+    index: 11
+  - key: event:/Menu/BtnBack
+    index: 12
+  - key: event:/Menu/BtnHover
+    index: 13
+  - key: event:/Menu/BtnSelect
+    index: 14
+--- !u!114 &1152235631577571435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Pheromone/Collect
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Player/Pheromone/Collect
+  Guid:
+    Data1: -661398380
+    Data2: 1167187554
+    Data3: 1238829196
+    Data4: -106093718
+  Banks:
+  - {fileID: -2066699380713603798}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1825927707079781855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,11 +395,146 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639121123956725315
+  lastModified: 639121132264446653
   FileSizes:
   - Name: Desktop
-    Value: 1436
+    Value: 1976
   Exists: 1
+--- !u!114 &1982615169041410682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Pheromone/Attack
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Player/Pheromone/Attack
+  Guid:
+    Data1: 174447152
+    Data2: 1232651697
+    Data3: -1066922817
+    Data4: -1066664032
+  Banks:
+  - {fileID: -2066699380713603798}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2090904453368397941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/HUD/Alerts/LowFood
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Player/HUD/Alerts/LowFood
+  Guid:
+    Data1: -319755640
+    Data2: 1119038713
+    Data3: -1260670031
+    Data4: 1317691224
+  Banks:
+  - {fileID: -2066699380713603798}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2345057416237432818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Pheromone/Guide
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Player/Pheromone/Guide
+  Guid:
+    Data1: -2096427618
+    Data2: 1316210526
+    Data3: 1563254957
+    Data4: -382454683
+  Banks:
+  - {fileID: -2066699380713603798}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2891701862587430590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/HUD/Alerts/Danger
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Player/HUD/Alerts/Danger
+  Guid:
+    Data1: 1120434654
+    Data2: 1265719941
+    Data3: 337050505
+    Data4: -1291662646
+  Banks:
+  - {fileID: -2066699380713603798}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3519051641090017256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/HUD/Alerts/Achievement
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Player/HUD/Alerts/Achievement
+  Guid:
+    Data1: -2137607641
+    Data2: 1248795490
+    Data3: 1803117973
+    Data4: -1536751916
+  Banks:
+  - {fileID: -2066699380713603798}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3729449020562875803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,8 +550,62 @@ MonoBehaviour:
   Path: FMOD/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639121123972507397
+  lastModified: 639121132144882428
   FileSizes:
   - Name: Desktop
-    Value: 5036192
+    Value: 5036224
   Exists: 1
+--- !u!114 &5012433114563265738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Menu/BtnHover
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Menu/BtnHover
+  Guid:
+    Data1: 1633008575
+    Data2: 1253436445
+    Data3: 1464799130
+    Data4: -1762832369
+  Banks:
+  - {fileID: -196372959261030312}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5646723361398441160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Menu/BtnBack
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Menu/BtnBack
+  Guid:
+    Data1: 1685623621
+    Data2: 1185830459
+    Data3: -1570164833
+    Data4: 1326939712
+  Banks:
+  - {fileID: -196372959261030312}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
