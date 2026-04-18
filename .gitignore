@@ -109,6 +109,7 @@ InitTestScene*.unity*
 
 # Ignore the Cache folder since it is updated locally.
 /[Aa]ssets/Plugins/FMOD/Cache/*
+Assets/Plugins/FMOD/Cache/**/*.asset
 
 # Ignore bank files in the StreamingAssets folder.
 /[Aa]ssets/StreamingAssets/**/*.bank
@@ -126,3 +127,4 @@ AGENTS.md
 Assets/_Recovery.meta
 Assets/_Recovery/
 Packages/com.merry-yellow.code-assist/
+Packages/packages-lock.json
