@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class Pheromone : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public enum PheromoneType
     {
-        
+        None,
+        Food,
+        Danger,
+        Attack,
+        Gift,
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public PheromoneType pheromoneType;
 }

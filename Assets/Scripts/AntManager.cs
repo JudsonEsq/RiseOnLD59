@@ -2,6 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 
 using System.Collections.Generic;
+using TMPro;
 
 public class AntManager : MonoBehaviour
 {
@@ -15,6 +16,17 @@ public class AntManager : MonoBehaviour
     [SerializeField]
     private int AntDeadTimeout = 5;
 
+    [SerializeField]
+    private TMP_Text CostText;
+
+    [SerializeField]
+    private TMP_Text AntsText;
+
+    private void Update()
+    {
+        CostText.text = GetAntFoodCost().ToString();
+        AntsText.text = Ants.Count.ToString();
+    }
 
     public GameObject SpawnAnt(Transform location)
     {
