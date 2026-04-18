@@ -64,10 +64,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntManager
   Ants: []
-  FoodManager: {fileID: 7233319756282461861}
   AntPrefab: {fileID: 1904777153091047314, guid: 5488edaf4346cff4299268ad82d90a1b, type: 3}
   AntDeadTimeout: 5
-  timeBetweenCulls: 10
 --- !u!114 &7913583638983509038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColonyController
   antManager: {fileID: 6489142182609239546}
+  foodManager: {fileID: 7233319756282461861}
   StartAntNum: 3
   AntSpawnPoints:
   - {fileID: 1463692141350356149}
@@ -91,6 +90,7 @@ MonoBehaviour:
   - {fileID: 6917537441154459054}
   - {fileID: 7872027687125622071}
   - {fileID: 2560600594404232713}
+  timeBetweenCulls: 10
 --- !u!1 &620162153430438306
 GameObject:
   m_ObjectHideFlags: 0
