@@ -1,8 +1,5 @@
 using System;
-using UnityEditor.Build;
 using UnityEngine;
-using static UnityEngine.InputSystem.InputAction;
-using UnityEngine.InputSystem;
 
 public class CameraMovement : MonoBehaviour
 {
