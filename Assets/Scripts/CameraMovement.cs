@@ -14,6 +14,9 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     private Transform cameraTransform;
 
+    [SerializeField]
+    private Vector2 maxDistance = new Vector2(100, 100);
+
     void Awake()
     {
         controls = new InputSystem_Actions();
@@ -22,7 +25,12 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         Vector2 dir = controls.Player.Move.ReadValue<Vector2>();
-        cameraTransform.position += new Vector3(dir.x, 0, dir.y) * MoveSpeed * Time.deltaTime;
+        Vector3 newPosition = cameraTransform.position + new Vector3(dir.x, 0, dir.y) * MoveSpeed * Time.deltaTime;
+        if (newPosition.x < maxDistance.x && newPosition.x > -maxDistance.x &&
+            newPosition.z < maxDistance.y && newPosition.z > -maxDistance.y)
+        { 
+            cameraTransform.position = newPosition; 
+        }
     }
 
     private void OnEnable()
