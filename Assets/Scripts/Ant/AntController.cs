@@ -19,6 +19,12 @@ public class AntController : MonoBehaviour
     public float moveSpeed = 2f; // Speed at which the ant moves towards pheromones and the nest
     public bool isReturningToNest = false; // Flag to indicate if the ant is currently returning to the nest
 
+    public bool isAlive = true;
+    public int heldFood = 0;
+
+    [SerializeField]
+    public int foodCost = 1;
+
     void Start()
     {
         FindPheromones();
@@ -189,5 +195,30 @@ public class AntController : MonoBehaviour
             previousPheromones.Clear();
             isReturningToNest = false;
         }
+    }
+
+    public bool IsDead()
+    {
+        return !this.isAlive;
+    }
+
+    public void Kill()
+    {
+        this.isAlive = false;
+    }
+
+    public int FoodCost()
+    {
+        return foodCost;
+    }
+
+    public bool IsCarryingFood()
+    {
+        return heldFood > 0;
+    }
+
+    public void PickupFood(int foodAmount)
+    {
+        heldFood = foodAmount;
     }
 }
