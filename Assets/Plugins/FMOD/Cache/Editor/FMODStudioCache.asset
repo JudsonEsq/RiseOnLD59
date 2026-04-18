@@ -21,7 +21,7 @@ MonoBehaviour:
     data1: 3147782579
     data2: 2475787066
   Type: 2
-  IsGlobal: 0
+  IsGlobal: 1
   Labels:
   - MainMenu
   - T1-Layer1
@@ -73,10 +73,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639121132264436311
+  lastModified: 639121166065149050
   FileSizes:
   - Name: Desktop
-    Value: 2074
+    Value: 3364
   Exists: 1
 --- !u!114 &-7708833647047573907
 MonoBehaviour:
@@ -133,6 +133,61 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-7594249236764343789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/AntQty
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: AntQty
+  StudioPath: parameter:/AntQty
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1705947276
+    data2: 416469794
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-5455682694484421065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusicState
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: MusicState
+  StudioPath: parameter:/MusicState
+  Min: 0
+  Max: 6
+  Default: 0
+  ID:
+    data1: 3147782579
+    data2: 2475787066
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - MainMenu
+  - T1-Layer1
+  - T1-Layer2
+  - T1-Layer3
+  - T2-Layer1
+  - T2-Layer2
+  - T2-Layer3
+  Exists: 1
 --- !u!114 &-5260635134644322196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +257,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 639121150066624210
+  lastModified: 639121166065388918
   FileSizes:
   - Name: Desktop
     Value: 15808
@@ -315,13 +370,15 @@ MonoBehaviour:
   - {fileID: 5646723361398441160}
   - {fileID: 5012433114563265738}
   - {fileID: -7625277873083601232}
-  EditorParameters: []
+  EditorParameters:
+  - {fileID: -7594249236764343789}
+  - {fileID: -5455682694484421065}
   MasterBanks:
   - {fileID: -8000991970314481456}
   StringsBanks:
   - {fileID: 1825927707079781855}
   cacheVersion: 131859
-  cacheTime: 639121150066624210
+  cacheTime: 639121166065727286
   SerializableEventsDict:
   - key: event:/Music/MusicSystem
     index: 0
@@ -395,10 +452,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639121132264446653
+  lastModified: 639121166065164528
   FileSizes:
   - Name: Desktop
-    Value: 1976
+    Value: 2026
   Exists: 1
 --- !u!114 &1982615169041410682
 MonoBehaviour:
@@ -550,10 +607,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639121132144882428
+  lastModified: 639121166065727286
   FileSizes:
   - Name: Desktop
-    Value: 5036224
+    Value: 5036832
   Exists: 1
 --- !u!114 &5012433114563265738
 MonoBehaviour:

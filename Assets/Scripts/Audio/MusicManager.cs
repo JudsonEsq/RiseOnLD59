@@ -138,15 +138,21 @@ public class MusicManager : MonoBehaviour
     #endregion
 
 
-#region Global Audio Control
-    public static void PlayOneShot(EventReference eventRef)
-    {
-        if (eventRef.IsNull) return;
+    #region Global Audio Control
+        public static void PlayOneShot(EventReference eventRef)
+        {
+            if (eventRef.IsNull) return;
 
-        RuntimeManager.PlayOneShot(eventRef);
-    }
+            RuntimeManager.PlayOneShot(eventRef);
+        }
+
+        public static void SetGlobalParameter(string parameterName, float value)
+        {
+            RuntimeManager.StudioSystem.setParameterByName(parameterName, value);
+        }
 
 
-#endregion
+    #endregion
+
 
 }
