@@ -9,7 +9,6 @@ public class FoodManager : MonoBehaviour
     [SerializeField]
     private TMP_Text FoodTracker;
 
-
     [SerializeField]
     private int FoodSpawnTimeSeconds = 10;
 
