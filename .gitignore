@@ -121,3 +121,8 @@ RiseOnLD59.slnx
 .vscode/extensions.json
 .vscode/launch.json
 .vscode/settings.json
+
+AGENTS.md
+Assets/_Recovery.meta
+Assets/_Recovery/
+Packages/com.merry-yellow.code-assist/

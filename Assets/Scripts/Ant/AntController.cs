@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AntController : MonoBehaviour
@@ -100,6 +99,14 @@ public class AntController : MonoBehaviour
         pheromones = Physics.OverlapSphere(transform.position, pheromoneRange, LayerMask.GetMask("Pheromones")).ToList();
         for (int i = 0; i < pheromones.Count(); i++)
         {
+            if (!pheromones[i].TryGetComponent(out Pheromone pheromone))
+            {
+                Debug.Log("Removed non-pheromone collider: " + pheromones[i].name);
+                pheromones.RemoveAt(i);
+                i--;
+                continue;
+            }
+
             if (previousPheromones.Contains(pheromones[i]))
             {
                 pheromones.RemoveAt(i);
@@ -146,9 +153,6 @@ public class AntController : MonoBehaviour
         float distanceSum = distanceToA + distanceToB;
         float distanceThreshold = (distanceSum - distanceToA) / distanceSum;
 
-        Debug.Log(distanceThreshold + " chance to pick " + pheromones[pheromoneAIndex]);
-        Debug.Log((distanceSum - distanceToB)/distanceSum + " chance to pick " + pheromones[pheromoneBIndex]);
-
         if (Random.value < distanceThreshold)
         {
             chosenPheromoneNum = pheromoneAIndex;
@@ -170,13 +174,38 @@ public class AntController : MonoBehaviour
         {
             // Reached the pheromone
             Debug.Log("Reached the pheromone");
+            CheckForFood(chosenPheromone);
             previousPheromones.Add(chosenPheromone);
             chosenPheromone = null;
             isMovingTowardsPheromone = false;
-
-            ReturnToNest();
-            //FindPheromones();
             timeSinceLastSearch = 0f;
+            if (IsCarryingFood())
+            {
+                ReturnToNest();
+            }
+        }
+    }
+
+    public void CheckForFood(Collider pheromone)
+    {
+        if (pheromone.TryGetComponent(out FoodSource foodSource))
+        {
+            if (foodSource.currentFood > 0)
+            {
+                int foodToPickup = Mathf.Min(foodSource.foodValue, foodSource.currentFood);
+
+                if (foodSource.isDepletable)
+                {
+                    foodSource.currentFood -= foodToPickup;
+                }
+
+                PickupFood(foodToPickup);
+                Debug.Log("Picked up " + foodToPickup + " food from the source");
+            }
+            else
+            {
+                Debug.Log("No food left at the source");
+            }
         }
     }
 
@@ -194,6 +223,8 @@ public class AntController : MonoBehaviour
             timeSinceLastSearch = 0f;
             previousPheromones.Clear();
             isReturningToNest = false;
+            // Food += heldFood;
+            heldFood = 0;
         }
     }
 

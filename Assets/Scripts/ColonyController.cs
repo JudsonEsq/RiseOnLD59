@@ -2,6 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class ColonyController : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class ColonyController : MonoBehaviour
 
     private float timeSinceLastCull = 0;
 
+    [SerializeField]
+    private Button SpawnButton;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +33,8 @@ public class ColonyController : MonoBehaviour
         {
             SpawnAnt();
         }
+
+        SpawnButton.onClick.AddListener(() => SpawnAnt());
     }
 
     void Update()
