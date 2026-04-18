@@ -73,7 +73,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639121166065149050
+  lastModified: 639121234842474601
   FileSizes:
   - Name: Desktop
     Value: 3364
@@ -242,6 +242,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3152517851747892089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/BgAmbience
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ambience/BgAmbience
+  Guid:
+    Data1: 449429677
+    Data2: 1210324260
+    Data3: -416747332
+    Data4: -1929676111
+  Banks:
+  - {fileID: 2419615705078212873}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 160000
 --- !u!114 &-2066699380713603798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,10 +284,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 639121166065388918
+  lastModified: 639121194331085910
   FileSizes:
   - Name: Desktop
-    Value: 15808
+    Value: 81056
   Exists: 1
 --- !u!114 &-1968944796631501345
 MonoBehaviour:
@@ -354,6 +381,7 @@ MonoBehaviour:
   - {fileID: -196372959261030312}
   - {fileID: 3729449020562875803}
   - {fileID: -2066699380713603798}
+  - {fileID: 2419615705078212873}
   EditorEvents:
   - {fileID: -7708833647047573907}
   - {fileID: -558793608129601015}
@@ -370,6 +398,8 @@ MonoBehaviour:
   - {fileID: 5646723361398441160}
   - {fileID: 5012433114563265738}
   - {fileID: -7625277873083601232}
+  - {fileID: -3152517851747892089}
+  - {fileID: 2945045033312851737}
   EditorParameters:
   - {fileID: -7594249236764343789}
   - {fileID: -5455682694484421065}
@@ -378,7 +408,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 1825927707079781855}
   cacheVersion: 131859
-  cacheTime: 639121166065727286
+  cacheTime: 639121254039448706
   SerializableEventsDict:
   - key: event:/Music/MusicSystem
     index: 0
@@ -410,6 +440,10 @@ MonoBehaviour:
     index: 13
   - key: event:/Menu/BtnSelect
     index: 14
+  - key: event:/Ambience/BgAmbience
+    index: 15
+  - key: event:/Ambience/WindGust
+    index: 16
 --- !u!114 &1152235631577571435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,10 +486,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639121166065164528
+  lastModified: 639121234842484855
   FileSizes:
   - Name: Desktop
-    Value: 2026
+    Value: 2166
   Exists: 1
 --- !u!114 &1982615169041410682
 MonoBehaviour:
@@ -538,6 +572,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2419615705078212873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 639121254039448706
+  FileSizes:
+  - Name: Desktop
+    Value: 3372160
+  Exists: 1
 --- !u!114 &2891701862587430590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,6 +619,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2945045033312851737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/WindGust
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ambience/WindGust
+  Guid:
+    Data1: 1328915381
+    Data2: 1301154934
+    Data3: -393520223
+    Data4: 1007421117
+  Banks:
+  - {fileID: 2419615705078212873}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 55024
 --- !u!114 &3519051641090017256
 MonoBehaviour:
   m_ObjectHideFlags: 0
