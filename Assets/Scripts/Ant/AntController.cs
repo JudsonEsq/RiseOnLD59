@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AntController : MonoBehaviour
 {
     public List<Collider> pheromones; // List to store detected pheromones
     private List<Collider> previousPheromones = new List<Collider>(); // List to store previously detected pheromones to avoid re-targeting
-    private Collider strongestPheromone; // Variable to store the strongest pheromone detected
-    public float pheromoneRange = 10f; // Range within which the ant can detect pheromones
+    private Collider chosenPheromone; // Variable to store the chosen pheromone detected
+    public float pheromoneRange = 20f; // Range within which the ant can detect pheromones
     public bool isMovingTowardsPheromone; // Flag to indicate if the ant is currently moving towards a pheromone
     private Vector3 targetPosition; // Variable to store the target position for movement
     public float searchTimer = 1f; // Time in seconds between pheromones searches
@@ -16,6 +17,7 @@ public class AntController : MonoBehaviour
     private float timeSinceLastFind = 0f; // Time in seconds since the last pheromone was found
     public GameObject nest; // Reference to the nest GameObject for returning after searching for pheromones
     public float moveSpeed = 2f; // Speed at which the ant moves towards pheromones and the nest
+    public bool isReturningToNest = false; // Flag to indicate if the ant is currently returning to the nest
 
     void Start()
     {
@@ -25,6 +27,12 @@ public class AntController : MonoBehaviour
 
     void Update()
     {
+        if (isReturningToNest)
+        {
+            ReturnToNest();
+            return;
+        }
+
         // Incremement search timers
         timeSinceLastSearch += Time.deltaTime;
         timeSinceLastFind += Time.deltaTime;
@@ -60,19 +68,24 @@ public class AntController : MonoBehaviour
             return;
         }
 
-        // Move towards the strongest pheromone
+        // If not currently moving towards a pheromone, pick one to move towards
         if (!isMovingTowardsPheromone)
         {
-            strongestPheromone = pheromones[PickStrongestPheromone()];
-            isMovingTowardsPheromone = true;
-            targetPosition = new Vector3 (strongestPheromone.transform.position.x, transform.position.y, strongestPheromone.transform.position.z);
+            int chosenPheromoneNum = PickPheromone();
+            if (chosenPheromoneNum != -1)
+            {
+                chosenPheromone = pheromones[chosenPheromoneNum];
+                targetPosition = new Vector3 (chosenPheromone.transform.position.x, transform.position.y, chosenPheromone.transform.position.z);
+                isMovingTowardsPheromone = true;
+                Debug.Log("Chosen pheromone at position: " + targetPosition);
+            }
+        }
+        
+        if (isMovingTowardsPheromone)
+        {
             MoveTowardsPheromone();
         }
         
-        else if (isMovingTowardsPheromone)
-        {
-            MoveTowardsPheromone();
-        }
     }
 
     // Method to find pheromones within range and store them in the pheromones list
@@ -88,34 +101,58 @@ public class AntController : MonoBehaviour
             }
         }
 
-        Debug.Log(pheromones.Count() + " pheromones found");
         return pheromones.Count() > 0 ? true : false;
     }
 
-    // Method to pick the strongest pheromone based on proximity and type
-    public int PickStrongestPheromone()
+    // Method to pick the chosen pheromone based on proximity and type
+    public int PickPheromone()
     {
-        int strongestPheromoneNum = -1;
-        float tempDistance;
-        float minDistance = 0;
+        if (pheromones == null || pheromones.Count() == 0)
+        {
+            return -1; // No pheromones found
+        }
+
+        // Set up variables to track the two closest pheromones and their distances
+        int chosenPheromoneNum;
+        float distanceToA = float.MaxValue;
+        int pheromoneAIndex = -1;
+        float distanceToB = float.MaxValue;
+        int pheromoneBIndex = -1;
 
         for (int i = 0; i < pheromones.Count(); i++)
         {
-            tempDistance = (pheromones[i].transform.position - transform.position).magnitude;
+            float tempDistance = (pheromones[i].transform.position - transform.position).magnitude;
 
-            if (minDistance == 0)
+            if (tempDistance < distanceToA)
             {
-                minDistance = tempDistance;
-                strongestPheromoneNum = i;
+                distanceToB = distanceToA;
+                pheromoneBIndex = pheromoneAIndex;
+                distanceToA = tempDistance;
+                pheromoneAIndex = i;
             }
-            else if (tempDistance < minDistance)
+            else if (tempDistance < distanceToB)
             {
-                minDistance = tempDistance;
-                strongestPheromoneNum = i;
+                distanceToB = tempDistance;
+                pheromoneBIndex = i;
             }
         }
 
-        return strongestPheromoneNum;
+        float distanceSum = distanceToA + distanceToB;
+        float distanceThreshold = (distanceSum - distanceToA) / distanceSum;
+
+        Debug.Log(distanceThreshold + " chance to pick " + pheromones[pheromoneAIndex]);
+        Debug.Log((distanceSum - distanceToB)/distanceSum + " chance to pick " + pheromones[pheromoneBIndex]);
+
+        if (Random.value < distanceThreshold)
+        {
+            chosenPheromoneNum = pheromoneAIndex;
+        }
+        else
+        {
+            chosenPheromoneNum = pheromoneBIndex;
+        }
+
+        return chosenPheromoneNum;
     }
 
     public void MoveTowardsPheromone()
@@ -127,18 +164,19 @@ public class AntController : MonoBehaviour
         {
             // Reached the pheromone
             Debug.Log("Reached the pheromone");
-            previousPheromones.Add(strongestPheromone);
-            pheromones = null;
-            strongestPheromone = null;
+            previousPheromones.Add(chosenPheromone);
+            chosenPheromone = null;
             isMovingTowardsPheromone = false;
 
-            FindPheromones();
+            ReturnToNest();
+            //FindPheromones();
             timeSinceLastSearch = 0f;
         }
     }
 
     public void ReturnToNest()
     {
+        isReturningToNest = true;
         Vector3 direction = (nest.transform.position - transform.position).normalized;
         transform.position += direction * Time.deltaTime * moveSpeed;
 
@@ -149,6 +187,7 @@ public class AntController : MonoBehaviour
             timeSinceLastFind = 0f;
             timeSinceLastSearch = 0f;
             previousPheromones.Clear();
+            isReturningToNest = false;
         }
     }
 }
