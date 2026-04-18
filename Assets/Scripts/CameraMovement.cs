@@ -17,13 +17,12 @@ public class CameraMovement : MonoBehaviour
     void Awake()
     {
         controls = new InputSystem_Actions();
-        controls.Player.Move.performed += ctx => Move(ctx);
     }
 
-    void Move(CallbackContext ctx)
+    void Update()
     {
-        Vector2 direction = ctx.ReadValue<Vector2>();
-        cameraTransform.position += new Vector3(direction.x, 0, direction.y) * MoveSpeed;
+        Vector2 dir = controls.Player.Move.ReadValue<Vector2>();
+        cameraTransform.position += new Vector3(dir.x, 0, dir.y) * MoveSpeed * Time.deltaTime;
     }
 
     private void OnEnable()
