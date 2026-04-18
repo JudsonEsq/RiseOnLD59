@@ -1,0 +1,93 @@
+using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
+
+using UnityEngine.UI;
+
+
+public class AudioMainMenu : MonoBehaviour
+{
+    public EventReference hoverEvent;
+    public EventReference clickEvent;
+    public EventReference backEvent;
+
+    public MusicChannel musicChannel;
+    public MusicCue MusicCue;
+
+    public void PlayHover() => PlayEvent(hoverEvent);
+    public void PlayClick() => PlayEvent(clickEvent);
+    public void PlayBack() => PlayEvent(backEvent);
+
+
+    // Slider Data Structure
+    [System.Serializable]
+    public class VCASlider
+    {
+        public Slider slider;
+        public string vcaName;
+    };
+
+    public VCASlider[] vcaSliders;
+
+    void Start()
+    {
+        Invoke("InitVCASliders", 0.1f); // Delay to ensure sliders are initialized
+        musicChannel.Raise(MusicCue);
+    }
+
+    public void SetRunInBackground(bool runInBackground)
+    {
+        Application.runInBackground = runInBackground;
+        RuntimeManager.PauseAllEvents(!runInBackground);
+    }
+
+    // SLIDERS //////////
+    void InitVCASliders()
+    {
+        foreach(var vcaSlider in vcaSliders)
+        {
+            if(vcaSlider.slider != null && !string.IsNullOrEmpty(vcaSlider.vcaName))
+            {
+                vcaSlider.slider.onValueChanged.AddListener((value) => SetVCAVolume(vcaSlider.vcaName, value));
+            
+                VCA vca;
+                if(TryGetVCA(vcaSlider.vcaName, out vca))
+                {
+                    float currentVolume;
+                    vca.getVolume(out currentVolume);
+                    vcaSlider.slider.value = currentVolume;
+                }
+            }
+        }
+    }
+
+    private void PlayEvent(EventReference eventRef)
+        {
+            if (eventRef.IsNull)return;
+
+            RuntimeManager.PlayOneShot(eventRef);
+        }
+
+    public void SetVCAVolume(string vcaName, float value)
+        {
+            VCA vca;
+            if(TryGetVCA(vcaName, out vca))
+            {
+                vca.setVolume(value);
+            }
+        }
+
+    private bool TryGetVCA(string vcaName, out VCA vca)
+        {
+            vca = RuntimeManager.GetVCA("vca:/" + vcaName);
+            if(vca.isValid())
+            {
+                return true;
+            }
+            Debug.LogWarning("VCA not found: " + vcaName);
+            return false;
+        }
+}
+
+
+
