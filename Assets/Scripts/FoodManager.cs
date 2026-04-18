@@ -27,6 +27,11 @@ public class FoodManager : MonoBehaviour
         }
     }
 
+    public int CurrentFood()
+    {
+        return TotalFood;
+    }
+
     public void AddFood(int food)
     {
         TotalFood += food;
