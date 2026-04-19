@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 56203012598738224}
   - component: {fileID: 4404725512788534955}
   - component: {fileID: 9206729500014691798}
-  - component: {fileID: 6318592230289898308}
+  - component: {fileID: -5827675155919822113}
   m_Layer: 0
   m_Name: Ant
   m_TagString: Untagged
@@ -115,7 +115,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6318592230289898308
+--- !u!114 &-5827675155919822113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,17 +124,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2196064751042987633}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02fb2de6705b5894b813a2ff7be1a931, type: 3}
+  m_Script: {fileID: 11500000, guid: 827dbc1a9b29a8e43a3aaebdb135105a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AntController
-  pheromones: []
-  pheromoneRange: 10
+  m_EditorClassIdentifier: Assembly-CSharp::WorkerAntController
+  pheromonesToTrack: []
+  pheromonesToAvoid: []
+  previousPheromones: []
+  chosenPheromone: {fileID: 0}
+  pheromoneRange: 20
   isMovingTowardsPheromone: 0
   searchTimer: 1
   searchDuration: 5
   nest: {fileID: 0}
   moveSpeed: 2
   isReturningToNest: 0
+  targetPheromones: 
+  avoidPheromones: 
+  maxPheromonesCount: 3
   isAlive: 1
   heldFood: 0
+  antType: 0
   foodCost: 1

@@ -13,4 +13,9 @@ public class Pheromone : MonoBehaviour
     }
 
     public PheromoneType pheromoneType;
+
+    public float GetDistanceToAnt(AntController ant)
+    {
+        return (transform.position - ant.transform.position).sqrMagnitude;
+    }
 }
