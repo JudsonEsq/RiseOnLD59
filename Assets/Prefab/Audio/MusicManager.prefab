@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6487400134592932426}
   - component: {fileID: 2382381573981806267}
+  - component: {fileID: 3146518000201537268}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -48,3 +49,17 @@ MonoBehaviour:
   currentBPM: 120
   timeSignatureUpper: 4
   timeSignatureLower: 4
+--- !u!114 &3146518000201537268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585419271857697901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d64c19e23afc65e45bd90e29ec59af97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicSelectTrack
+  musicCue: {fileID: 0}
+  musicChannel: {fileID: 11400000, guid: e8f8ba1835dfb3d428ee33dda9822e8b, type: 2}

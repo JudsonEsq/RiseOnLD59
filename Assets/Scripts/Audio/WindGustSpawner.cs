@@ -1,5 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
+
 
 [System.Serializable]
 public struct WindGustSpawnRange
@@ -19,7 +20,7 @@ public class WindGustSpawner : MonoBehaviour
     [UnityEngine.Range(0f,1f)]
     public float offScreenSpawnChance = 0.5f;
 
-
+    public EventReference bgAmbienceLp;
     // Update is called once per frame
     void Update()
     {

@@ -12,12 +12,13 @@ public class AudioMainMenu : MonoBehaviour
     public EventReference backEvent;
 
     public MusicChannel musicChannel;
-    public MusicCue MusicCue;
+    public MusicCue musicCue;
 
     public void PlayHover() => PlayEvent(hoverEvent);
     public void PlayClick() => PlayEvent(clickEvent);
     public void PlayBack() => PlayEvent(backEvent);
 
+    private EventInstance misophoniaSnapshot;
 
     // Slider Data Structure
     [System.Serializable]
@@ -32,7 +33,9 @@ public class AudioMainMenu : MonoBehaviour
     void Start()
     {
         Invoke("InitVCASliders", 0.1f); // Delay to ensure sliders are initialized
-        musicChannel.Raise(MusicCue);
+        musicChannel.Raise(musicCue);
+        SetRunInBackground(true); //dev set as we probably wont run into this issue in web build
+        misophoniaSnapshot = RuntimeManager.CreateInstance("snapshot:/MisophoniaFilter");
     }
 
     public void SetRunInBackground(bool runInBackground)
@@ -87,6 +90,19 @@ public class AudioMainMenu : MonoBehaviour
             Debug.LogWarning("VCA not found: " + vcaName);
             return false;
         }
+
+    public void MisophoniaToggle(bool bEnableMisophonia)
+    {
+        if(bEnableMisophonia)
+            misophoniaSnapshot.start();
+        else
+        misophoniaSnapshot.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    void OnDestroy()
+    {
+        misophoniaSnapshot.release();
+    }
 }
 
 
