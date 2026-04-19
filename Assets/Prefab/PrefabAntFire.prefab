@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1904777153091047314}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.0687, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -52,7 +52,6 @@ MonoBehaviour:
   previousPheromones: []
   chosenPheromone: {fileID: 0}
   pheromoneRange: 10
-  isMovingTowardsPheromone: 0
   searchTimer: 1
   searchDuration: 5
   nest: {fileID: 0}
@@ -60,6 +59,7 @@ MonoBehaviour:
   isReturningToNest: 0
   targetPheromones: 
   avoidPheromones: 
+  hazardDistance: 2
   maxPheromonesCount: 3
   isAlive: 1
   heldFood: 0
