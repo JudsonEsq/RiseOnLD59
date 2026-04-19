@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Stick
-    second: {fileID: 2100000, guid: ca6d851a6782cbf49ba3de84ab5ffabe, type: 2}
+    second: {fileID: 2100000, guid: 5aa4cfbbaa2576c4f95286fdcd8c0ac0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
