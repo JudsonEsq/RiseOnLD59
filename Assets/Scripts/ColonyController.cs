@@ -87,6 +87,10 @@ public class ColonyController : MonoBehaviour
     {
         int spawnIdx = Random.Range(0, AntSpawnPoints.Count);
         Transform antPoint = AntSpawnPoints[spawnIdx].transform;
+        if (antManager == null)
+        {
+            Debug.LogError("Cannot Spawn ants without manager");
+        }
         antManager.SpawnAnt(antPoint, type);
     }
 }
