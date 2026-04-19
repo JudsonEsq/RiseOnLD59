@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
@@ -24,6 +25,25 @@ public class AntManager : MonoBehaviour
 
     private void Update()
     {
+        // remove any ants that are dead
+        List<GameObject> deadAnts = new List<GameObject>();   
+        foreach (GameObject ant in Ants)
+        {
+            AntController antCtrl = ant.GetComponent<AntController>();
+            if (antCtrl.IsDead())
+            {
+                IEnumerator coroutine = RemoveAnt(ant);
+                StartCoroutine(coroutine);
+                deadAnts.Add(ant);
+            }
+        }
+
+        foreach (GameObject ant in deadAnts)
+        {
+            ant.transform.rotation *= Quaternion.Euler(180, 0, 0);
+            Ants.Remove(ant);
+        }
+
         CostText.text = GetAntFoodCost().ToString();
         AntsText.text = Ants.Count.ToString();
     }
@@ -43,7 +63,10 @@ public class AntManager : MonoBehaviour
         foreach (GameObject ant in Ants)
         {
             AntController antCtrl = ant.GetComponent<AntController>();
-            totalFood += antCtrl.FoodCost();
+            if (!antCtrl.IsDead()) 
+            { 
+                totalFood += antCtrl.FoodCost();
+            }
         }
         return totalFood;
     }
@@ -52,32 +75,18 @@ public class AntManager : MonoBehaviour
     {
         while (debitFood > 0)
         {
+            Debug.Log("Not Enough Food, culling ants: " + debitFood);
             int antIdx = Random.Range(0, Ants.Count);
             AntController ant = Ants[antIdx].GetComponent<AntController>();
             debitFood -= ant.FoodCost();
             ant.Kill();
         }
 
-        // remove any ants that were made dead
-        List<GameObject> deadAnts = new List<GameObject>();   
-        foreach (GameObject ant in Ants)
-        {
-            AntController antCtrl = ant.GetComponent<AntController>();
-            if (antCtrl.IsDead())
-            {
-                Invoke("DestroyAnt", AntDeadTimeout);
-                deadAnts.Add(ant);
-            }
-        }
-
-        foreach (GameObject ant in deadAnts)
-        {
-            Ants.Remove(ant);
-        }
     }
 
-    void RemoveAnt(GameObject ant)
+    IEnumerator RemoveAnt(GameObject ant)
     {
+        yield return new WaitForSeconds(AntDeadTimeout);
         Destroy(ant);
     }
 }

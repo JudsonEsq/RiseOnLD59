@@ -32,6 +32,8 @@ public class AntController : MonoBehaviour
 
     void Update()
     {
+        if (IsDead()) return;
+
         if (isReturningToNest)
         {
             ReturnToNest();
@@ -239,6 +241,7 @@ public class AntController : MonoBehaviour
 
     public void Kill()
     {
+        Debug.Log("Killing Ant");
         this.isAlive = false;
     }
 

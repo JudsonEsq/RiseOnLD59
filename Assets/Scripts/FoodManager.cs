@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FoodManager : MonoBehaviour
 {
-    private int TotalFood;
+    private int TotalFood = 10;
     private float timeSinceFoodSpawn = 0;
 
     [SerializeField]
