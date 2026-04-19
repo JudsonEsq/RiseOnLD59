@@ -1,13 +1,14 @@
 using UnityEngine;
 
-public class SoldierAntController : AntController
+public class CarpenterAntController : AntController
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        antType = AntType.Soldier;
-        targetPheromones.Add(Pheromone.PheromoneType.Danger);
+        antType = AntType.Carpenter;
+        targetPheromones.Add(Pheromone.PheromoneType.Hazard);
         targetPheromones.Add(Pheromone.PheromoneType.Food);
+        avoidPheromones.Add(Pheromone.PheromoneType.Danger);
     }
 
     // Update is called once per frame
