@@ -3448,8 +3448,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1157357016}
+  - component: {fileID: 1157357018}
   - component: {fileID: 1157357015}
-  - component: {fileID: 1157357014}
   - component: {fileID: 1157357017}
   m_Layer: 0
   m_Name: Main Camera
@@ -3458,14 +3458,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1157357014
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157357013}
-  m_Enabled: 1
 --- !u!20 &1157357015
 Camera:
   m_ObjectHideFlags: 0
@@ -3576,6 +3568,20 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &1157357018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157357013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1001 &1165360773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6594,13 +6600,83 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c83a2fbee69d5ab4abc10b669e6fa216, type: 2}
     - target: {fileID: 919132149155446097, guid: f02bdb0f4c3c35440b8b7213f7a1d123, type: 3}
       propertyPath: m_Name
-      value: AntHillUVUnwrapped
+      value: AntHill
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f02bdb0f4c3c35440b8b7213f7a1d123, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2033301276}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f02bdb0f4c3c35440b8b7213f7a1d123, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2033301275}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f02bdb0f4c3c35440b8b7213f7a1d123, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2033301274}
   m_SourcePrefab: {fileID: 100100000, guid: f02bdb0f4c3c35440b8b7213f7a1d123, type: 3}
+--- !u!1 &2033301273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f02bdb0f4c3c35440b8b7213f7a1d123, type: 3}
+  m_PrefabInstance: {fileID: 2033301272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2033301274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033301273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fef10064360dc34cb57dde0de3808e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColonyController
+  antManager: {fileID: 0}
+  foodManager: {fileID: 0}
+  StartAntNum: 0
+  AntSpawnPoints: []
+  timeBetweenCulls: 10
+  SpawnWorkerButton: {fileID: 0}
+  SpawnSoldierButton: {fileID: 0}
+  SpawnFireButton: {fileID: 0}
+  SpawnCarpenterButton: {fileID: 0}
+--- !u!114 &2033301275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033301273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dda12081e9c4624e86601d1cc755dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AntManager
+  Ants: []
+  WorkerPrefab: {fileID: 0}
+  SoldierPrefab: {fileID: 0}
+  FirePrefab: {fileID: 0}
+  CarpenterPrefab: {fileID: 0}
+  AntDeadTimeout: 5
+  CostText: {fileID: 0}
+  AntsText: {fileID: 0}
+--- !u!114 &2033301276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033301273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e025877276d79c7428e876a9e06a14b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodManager
+  FoodTracker: {fileID: 0}
+  FoodSpawnTimeSeconds: 10
+  FoodSpawnAmount: 10
 --- !u!1001 &2033950075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7464,12 +7540,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1157357016}
+  - {fileID: 2033301272}
   - {fileID: 2145208702}
   - {fileID: 83787455}
   - {fileID: 1581117249}
   - {fileID: 892216186}
   - {fileID: 1414790758}
-  - {fileID: 2033301272}
   - {fileID: 553607160}
   - {fileID: 1244843650}
   - {fileID: 970096091}

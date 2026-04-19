@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AntController : MonoBehaviour
@@ -22,6 +21,7 @@ public class AntController : MonoBehaviour
     public bool isReturningToNest = false; // Flag to indicate if the ant is currently returning to the nest
     public List<Pheromone.PheromoneType> targetPheromones = new();
     public List<Pheromone.PheromoneType> avoidPheromones = new();
+    public int maxPheromonesCount = 3; // Maximum number of pheromones to consider when picking a target
 
     public bool isAlive = true;
     public int heldFood = 0;
@@ -48,7 +48,7 @@ public class AntController : MonoBehaviour
         FindPheromones();
         isMovingTowardsPheromone = false;
 		
-		anim = GetComponentInChildren<Animator>();
+		// anim = GetComponentInChildren<Animator>();
     }
 
     public void Operate()
@@ -57,14 +57,14 @@ public class AntController : MonoBehaviour
 
         if (isReturningToNest)
         {
-			anim.SetBool("isMoving", true);
+			//anim.SetBool("isMoving", true);
             ReturnToNest();
             return;
         }
 
         if (isMovingTowardsPheromone)
         {
-			anim.SetBool("isMoving", true);
+			// anim.SetBool("isMoving", true);
             MoveTowardsPheromone();
             return;
         }
@@ -84,7 +84,7 @@ public class AntController : MonoBehaviour
             if (pheromonesToTrack.Count() > 0)
             {
                 timeSinceLastFind = 0f;
-                Debug.Log("Pheromones found, resetting search timer");
+                // Debug.Log("Pheromones found, resetting search timer");
 
                 PickPheromone();
             }
@@ -167,67 +167,51 @@ public class AntController : MonoBehaviour
         {
             return; // No pheromones found
         }
-        
-        float[] distanceToAnt = new float[pheromonesToTrack.Count()];
-        int[] pheromoneIndex = new int[pheromonesToTrack.Count()]; 
-        float tempDistance;
 
-        for (int i = 0; i < pheromonesToTrack.Count(); i++)
+        if (pheromonesToTrack.Count() == 1)
         {
-            tempDistance = (pheromonesToTrack[i].transform.position - transform.position).magnitude;
-
-            // NEED TO ADD RECURSIVE LOGIC TO ADJUST BASED ON COUNT
-            if (tempDistance < distanceToAnt[0])
-            {
-                distanceToAnt[2] = distanceToAnt[1];
-                pheromoneIndex[2] = pheromoneIndex[1];
-                distanceToAnt[1] = distanceToAnt[0];
-                pheromoneIndex[1] = pheromoneIndex[0];
-                distanceToAnt[0] = tempDistance;
-                pheromoneIndex[0] = i;
-            }
-            else if (tempDistance < distanceToAnt[1])
-            {
-                distanceToAnt[2] = distanceToAnt[1];
-                pheromoneIndex[2] = pheromoneIndex[1];
-                distanceToAnt[1] = tempDistance;
-                pheromoneIndex[1] = i;
-            }
-            else if (tempDistance < distanceToAnt[2])
-            {
-                distanceToAnt[2] = tempDistance;
-                pheromoneIndex[2] = i;
-            }
+            chosenPheromone = pheromonesToTrack[0];
+            return;
         }
+
+        Collider[] pheromonesArray = pheromonesToTrack.ToArray();
+        Array.Sort(pheromonesArray, (a, b) => a.GetComponent<Pheromone>().GetDistanceToAnt(this).CompareTo(b.GetComponent<Pheromone>().GetDistanceToAnt(this)));
+        int pheromonesCount = pheromonesArray.Length > maxPheromonesCount ? maxPheromonesCount : pheromonesArray.Length;
+        Debug.Log("Pheromones Count: " + pheromonesCount);
 
         float distanceSum = 0f;
 
-        for (int i = 0; i < distanceToAnt.Count(); i++)
+        for (int i = 0; i < pheromonesCount; i++)
         {
-            distanceSum += distanceToAnt[i];
+            distanceSum += pheromonesArray[i].GetComponent<Pheromone>().GetDistanceToAnt(this);
         }
 
-        float[] distanceThresholds = new float[distanceToAnt.Count()];
+        float[] distanceThresholds = new float[pheromonesCount];
         float thresholdSum = 0f;
         float safetyFactor;
         float [] distanceToHazards = new float[pheromonesToAvoid.Count()];
 
-        for (int i = 0; i < distanceThresholds.Count(); i++)
+        for (int i = 0; i < pheromonesCount; i++)
         {
             // Temporarily store the distances between the current pheromoneToTrack and all pheromonesToAvoid
             for (int j = 0; j < pheromonesToAvoid.Count(); j++)
             {
-                distanceToHazards[j] = (pheromonesToAvoid[j].transform.position - pheromonesToTrack[pheromoneIndex[i]].transform.position).magnitude;
+                distanceToHazards[j] = (pheromonesToAvoid[j].transform.position - pheromonesArray[i].transform.position).sqrMagnitude;
             }
 
             safetyFactor = CalculateSafetyFactor(Mathf.Min(distanceToHazards));
-            distanceThresholds[i] = (distanceSum - distanceToAnt[distanceThresholds.Count() - 1 - i]) / distanceSum * safetyFactor;
+            distanceThresholds[i] = (distanceSum - pheromonesArray[distanceThresholds.Count() - 1 - i].GetComponent<Pheromone>().GetDistanceToAnt(this)) / distanceSum * safetyFactor;
             thresholdSum += distanceThresholds[i];
         }
 
-        float[] priorityThresholds = new float[distanceThresholds.Count()];
+        foreach (float threshold in distanceThresholds)
+        {
+            Debug.Log("Distance Threshold: " + threshold);
+        }
 
-        for (int i = 0; i < priorityThresholds.Count(); i++)
+        float[] priorityThresholds = new float[distanceThresholds.Length];
+
+        for (int i = 0; i < priorityThresholds.Length; i++)
         {
             priorityThresholds[i] = distanceThresholds[i] / thresholdSum;
 
@@ -237,34 +221,43 @@ public class AntController : MonoBehaviour
             }
         }
 
+        foreach (float threshold in priorityThresholds)
+        {
+            Debug.Log("Priority Threshold: " + threshold);
+        }
+
         float tempValue = UnityEngine.Random.value;
+        Debug.Log("Random Value: " + tempValue);
 
         // NEED TO ADD RECURSIVE LOGIC TO ADJUST BASED ON COUNT
+
         if (tempValue <= priorityThresholds[0])
         {
-            chosenPheromone = pheromonesToTrack[pheromoneIndex[0]];
+            chosenPheromone = pheromonesToTrack[0];
         }
+
         else if (tempValue <= priorityThresholds[1])
         {
-            chosenPheromone = pheromonesToTrack[pheromoneIndex[1]];
+            chosenPheromone = pheromonesToTrack[1];
         }
+
         else
         {
-            chosenPheromone = pheromonesToTrack[pheromoneIndex[2]];
+            chosenPheromone = pheromonesToTrack[2];
         }
     }
 
     private float CalculateSafetyFactor(float distance)
     {
-        if (distance >= 10f)
+        if (distance >= 100f)
         {
             return 1f;
         }
-        else if (distance >= 5f)
+        else if (distance >= 25f)
         {
             return 0.75f;
         }
-        else if (distance >= 3f)
+        else if (distance >= 9f)
         {
             return 0.5f;
         }
@@ -279,11 +272,11 @@ public class AntController : MonoBehaviour
         Vector3 direction = (targetPosition - transform.position).normalized;
         // Jude code hoping to rotate ant mesh towards direction of movement
         transform.rotation = Quaternion.LookRotation(direction);
-        transform.position += direction * Time.deltaTime * moveSpeed;
+        transform.position += moveSpeed * Time.deltaTime * direction;
 
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
         {
-			anim.SetBool("isMoving", false);
+			//anim.SetBool("isMoving", false);
             // Reached the pheromone
             Debug.Log("Reached the pheromone");
             CheckForFood(chosenPheromone);

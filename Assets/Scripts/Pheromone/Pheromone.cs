@@ -4,7 +4,6 @@ public class Pheromone : MonoBehaviour
 {
     public enum PheromoneType
     {
-        None,
         Food,
         Danger,
         Attack,
@@ -13,4 +12,9 @@ public class Pheromone : MonoBehaviour
     }
 
     public PheromoneType pheromoneType;
+
+    public float GetDistanceToAnt(AntController ant)
+    {
+        return (transform.position - ant.transform.position).sqrMagnitude;
+    }
 }
