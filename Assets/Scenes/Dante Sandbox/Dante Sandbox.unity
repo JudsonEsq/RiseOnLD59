@@ -119,6 +119,40 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &264233373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2196064751042987633, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
+  m_PrefabInstance: {fileID: 1985329888}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &264233379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264233373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827dbc1a9b29a8e43a3aaebdb135105a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorkerAntController
+  pheromonesToTrack: []
+  pheromonesToAvoid: []
+  previousPheromones: []
+  chosenPheromone: {fileID: 0}
+  pheromoneRange: 20
+  isMovingTowardsPheromone: 0
+  searchTimer: 1
+  searchDuration: 5
+  nest: {fileID: 595748631}
+  moveSpeed: 2
+  isReturningToNest: 0
+  targetPheromones: 
+  avoidPheromones: 
+  isAlive: 1
+  heldFood: 0
+  antType: 0
+  foodCost: 1
 --- !u!1 &276149383
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0362e3014a7b34b9ca4f7553057c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pheromone
-  pheromoneType: 0
+  pheromoneType: 1
 --- !u!1 &429033861
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8788f2c91303e4ba2f55c18d331924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestGameManager
-  mainNest: {fileID: 0}
+  mainNest: {fileID: 595748631}
+  antPrefab: {fileID: 2196064751042987633, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
 --- !u!4 &429033863
 Transform:
   m_ObjectHideFlags: 0
@@ -732,7 +767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0362e3014a7b34b9ca4f7553057c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pheromone
-  pheromoneType: 0
+  pheromoneType: 2
 --- !u!1 &1094803584
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +932,7 @@ MonoBehaviour:
   foodCapacity: 5
   currentFood: 0
   isDepleted: 0
-  isDepletable: 1
+  isDepletable: 0
 --- !u!135 &1622108634
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1004,6 +1039,71 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pheromone
   pheromoneType: 0
+--- !u!1001 &1985329888
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2196064751042987633, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
+      propertyPath: m_Name
+      value: Ant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318592230289898308, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758280668372648147, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758280668372648147, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758280668372648147, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758280668372648147, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758280668372648147, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758280668372648147, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758280668372648147, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758280668372648147, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758280668372648147, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758280668372648147, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6318592230289898308, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2196064751042987633, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 264233379}
+  m_SourcePrefab: {fileID: 100100000, guid: a1a8782e68bef5c41bf3b2c5ed8f6d77, type: 3}
 --- !u!1 &2099191686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,7 +1229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0362e3014a7b34b9ca4f7553057c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pheromone
-  pheromoneType: 0
+  pheromoneType: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1143,3 +1243,4 @@ SceneRoots:
   - {fileID: 2099191690}
   - {fileID: 595748635}
   - {fileID: 429033863}
+  - {fileID: 1985329888}
