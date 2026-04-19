@@ -2210,8 +2210,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
+      propertyPath: sliderTickEvent.Path
+      value: event:/Menu/SliderUpdate
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
       propertyPath: vcaSliders.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
+      propertyPath: sliderTickEvent.Guid.Data1
+      value: 1528198507
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
+      propertyPath: sliderTickEvent.Guid.Data2
+      value: 1264388238
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
+      propertyPath: sliderTickEvent.Guid.Data3
+      value: -1364609391
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
+      propertyPath: sliderTickEvent.Guid.Data4
+      value: 2131485504
       objectReference: {fileID: 0}
     - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
       propertyPath: vcaSliders.Array.data[0].slider
@@ -6054,6 +6074,7 @@ GameObject:
   - component: {fileID: 1121612328}
   - component: {fileID: 1121612329}
   - component: {fileID: 1121612330}
+  - component: {fileID: 1160265558}
   m_Layer: 5
   m_Name: MusicVolume Slider
   m_TagString: Untagged
@@ -6149,7 +6170,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1121612330
-      m_Calls: []
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121612327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1160265556
 GameObject:
   m_ObjectHideFlags: 0
@@ -6160,7 +6191,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1160265557}
   - component: {fileID: 1160265559}
-  - component: {fileID: 1160265558}
   m_Layer: 5
   m_Name: TranscendAnts
   m_TagString: Untagged
@@ -6216,30 +6246,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  m_GameObject: {fileID: 1160265556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -5806557197286253050, guid: ce28d9810409a9b41917f2e7964fe271, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1160265559
 CanvasRenderer:
   m_ObjectHideFlags: 0
