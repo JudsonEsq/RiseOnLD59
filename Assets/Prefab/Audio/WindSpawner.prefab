@@ -77,5 +77,6 @@ MonoBehaviour:
   - Enemies
   - Master
   - Player
+  - Ants
   CollisionTag: 
   PreloadSamples: 0
