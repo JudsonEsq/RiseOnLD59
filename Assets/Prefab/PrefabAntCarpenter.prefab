@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8629973980622828910}
-  - component: {fileID: 5782633767375473919}
   - component: {fileID: 6795437035035401455}
   - component: {fileID: -3496139673109313516}
+  - component: {fileID: 2260915359721951237}
   m_Layer: 0
   m_Name: PrefabAntCarpenter
   m_TagString: Ant
@@ -35,36 +35,6 @@ Transform:
   - {fileID: 3124338339928729962}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5782633767375473919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1904777153091047314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02fb2de6705b5894b813a2ff7be1a931, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AntController
-  pheromonesToTrack: []
-  pheromonesToAvoid: []
-  previousPheromones: []
-  chosenPheromone: {fileID: 0}
-  pheromoneRange: 10
-  searchTimer: 1
-  searchDuration: 5
-  nest: {fileID: 0}
-  moveSpeed: 2
-  isReturningToNest: 0
-  targetPheromones: 
-  avoidPheromones: 
-  hazardDistance: 2
-  maxPheromonesCount: 3
-  isAlive: 1
-  heldFood: 0
-  antType: 3
-  foodCost: 1
 --- !u!136 &6795437035035401455
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -114,6 +84,35 @@ MonoBehaviour:
       Data3: -1028708220
       Data4: -1666907832
     Path: event:/Ant/FoodPickedUp
+--- !u!114 &2260915359721951237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904777153091047314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737183067b6289345ad0cd35f00f1382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarpenterAntController
+  pheromonesToTrack: []
+  pheromonesToAvoid: []
+  previousPheromones: []
+  pheromoneRange: 20
+  searchTimer: 1
+  searchDuration: 5
+  nest: {fileID: 0}
+  moveSpeed: 2
+  isReturningToNest: 0
+  targetPheromones: 
+  avoidPheromones: 
+  hazardDistance: 2
+  maxPheromonesCount: 3
+  isAlive: 1
+  heldFood: 0
+  antType: 3
+  foodCost: 1
 --- !u!1 &9001214442266789320
 GameObject:
   m_ObjectHideFlags: 0
