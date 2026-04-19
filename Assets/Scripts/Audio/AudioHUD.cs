@@ -3,6 +3,11 @@ using FMODUnity;
 
 public class AudioHUD : MonoBehaviour
 {
+
+    /// <summary>
+    /// Sounds for different HUD alerts
+    /// </summary>
+    #region Alert Events
     public EventReference TutorialDingEvent;
     public EventReference DangerAlertEvent;
     public EventReference LowFoodAlertEvent;
@@ -12,6 +17,27 @@ public class AudioHUD : MonoBehaviour
     public void PlayDangerAlert() => MusicManager.PlayOneShot(DangerAlertEvent);
     public void PlayLowFoodAlert() => MusicManager.PlayOneShot(LowFoodAlertEvent);
     public void PlayAchievementAlert() => MusicManager.PlayOneShot(AchievementAlertEvent);
+    #endregion
+
+    /// <summary>
+    /// Sounds for player interacting with spawnign different ant types
+    /// </summary>
+    #region Player Ant Spawning Events
+    public EventReference ButtonHoverEvent;
+    public EventReference ButtonSelectWorkerEvent;
+    public EventReference ButtonSelectSoldierEvent;
+    public EventReference ButtonSelectFireEvent;
+    public EventReference ButtonSelectCarpenterEvent;
+
+    public void PlayButtonHoverEvent() => MusicManager.PlayOneShot(ButtonHoverEvent);
+    public void PlayButtonSelectWorkerEvent() => MusicManager.PlayOneShot(ButtonSelectWorkerEvent);
+    public void PlayButtonSelectSoldierEvent() => MusicManager.PlayOneShot(ButtonSelectSoldierEvent);
+    public void PlayButtonSelectFireEvent() => MusicManager.PlayOneShot(ButtonSelectFireEvent);
+    public void PlayButtonSelectCarpenterEvent() => MusicManager.PlayOneShot(ButtonSelectCarpenterEvent);
+
+    #endregion
+
+
 
     #region Special 1 Time Stingers
     public EventReference FirstAttackNotify;
