@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d886db016c2da874da55fe5c870147aa
+guid: f02bdb0f4c3c35440b8b7213f7a1d123
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: RockMaterial
-    second: {fileID: 2100000, guid: c2ad52c217e23e348ad2ce4c77a51fb7, type: 2}
+      name: AntHill
+    second: {fileID: 2100000, guid: d8dc8e4309a9cc64597ef7abedc24289, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
