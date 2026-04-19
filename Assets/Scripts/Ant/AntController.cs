@@ -6,15 +6,6 @@ using UnityEngine;
 
 public class AntController : MonoBehaviour
 {
-    public enum AntType
-    {
-        Worker,
-        Carpenter,
-        Soldier
-    }
-
-    public AntType antType;
-
     public List<Collider> pheromones; // List to store detected pheromones
     public List<Collider> pheromonesToTrack; // List to store detected pheromones
     public List<Collider> pheromonesToAvoid; // List to store detected pheromones
