@@ -511,10 +511,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de9a9edf2c7b46447a27693d55dc15e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PheromoneController
+  cam: {fileID: 0}
   FoodButton: {fileID: 8174064499940466305}
   DangerButton: {fileID: 1415584296068699112}
   AttackButton: {fileID: 8958996118826072725}
   GiftButton: {fileID: 4431638648822296796}
+  basePheromone: {fileID: 2134985739541792784, guid: a3af3c0a52db026449be159ba724b9fb, type: 3}
 --- !u!1 &4121332779836085840
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,7 +943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
