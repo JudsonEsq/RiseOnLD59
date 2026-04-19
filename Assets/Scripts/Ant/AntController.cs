@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -35,6 +36,18 @@ public class AntController : MonoBehaviour
     public bool isAlive = true;
     public int heldFood = 0;
 
+    [Serializable]
+    public enum AntType
+    {
+        Worker,
+        Soldier,
+        Fire,
+        Carpenter,
+    }
+
+    [SerializeField]
+    public AntType antType;
+
     [SerializeField]
     public int foodCost = 1;
 
@@ -46,6 +59,8 @@ public class AntController : MonoBehaviour
 
     void Update()
     {
+        if (IsDead()) return;
+
         if (isReturningToNest)
         {
             ReturnToNest();
@@ -214,6 +229,11 @@ public class AntController : MonoBehaviour
 
     public void MoveTowardsPheromone()
     {
+        Vector3 direction = (targetPosition - transform.position).normalized;
+        // Jude code hoping to rotate ant mesh towards direction of movement
+        transform.rotation = Quaternion.LookRotation(direction);
+        transform.position += direction * Time.deltaTime * moveSpeed;
+
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
         {
             // Reached the pheromone
@@ -311,6 +331,7 @@ public class AntController : MonoBehaviour
 
     public void Kill()
     {
+        Debug.Log("Killing Ant");
         this.isAlive = false;
     }
 
