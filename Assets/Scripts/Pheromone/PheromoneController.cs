@@ -9,6 +9,9 @@ public class PheromoneController : MonoBehaviour
     public InputSystem_Actions controls;
 
     [SerializeField]
+    private LayerMask PlacementLayers;
+
+    [SerializeField]
     private Camera cam;
 
     [SerializeField]
@@ -49,7 +52,7 @@ public class PheromoneController : MonoBehaviour
             Vector2 screenPoint = new Vector2(Mouse.current.position.x.ReadValue(), Mouse.current.position.y.ReadValue());
             Ray ray = cam.ScreenPointToRay(screenPoint);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit)) 
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, PlacementLayers)) 
             {
                 selectedPheromone.transform.position = hit.point;
             }
@@ -72,7 +75,7 @@ public class PheromoneController : MonoBehaviour
         Vector2 screenPoint = new Vector2(Mouse.current.position.x.ReadValue(), Mouse.current.position.y.ReadValue());
         Ray ray = cam.ScreenPointToRay(screenPoint);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, PlacementLayers))
         {
             selectedPheromone = Instantiate<GameObject>(basePheromone, hit.point, Quaternion.identity);
         }
