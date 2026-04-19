@@ -42,11 +42,15 @@ public class AntController : MonoBehaviour
     [SerializeField]
     public int foodCost = 1;
 
+    private GameObject FoodModel;
+
     public void Init()
     {
 		// anim = GetComponentInChildren<Animator>();
         isReturningToNest = false;
         targetObject = null;
+
+        FoodModel = this.gameObject.transform.Find("Food").gameObject;
     }
 
     public void Operate()
@@ -193,6 +197,7 @@ public class AntController : MonoBehaviour
             targetObject = null;
             isReturningToNest = false;
             heldFood = 0;
+            FoodModel.SetActive(false);
             return;
         }
 
@@ -370,6 +375,7 @@ public class AntController : MonoBehaviour
     public void PickupFood(int foodAmount)
     {
         heldFood = foodAmount;
+        FoodModel.SetActive(true);
     }
 
     void OnCollisionEnter(Collision collision)

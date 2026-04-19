@@ -3,7 +3,6 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using System;
 
 public class AntManager : MonoBehaviour
 {
@@ -78,7 +77,6 @@ public class AntManager : MonoBehaviour
     private void DisableStarveText()
     {
         StartCoroutine(FadeTextToZeroAlpha(1f, StarveText));
-        //StarveText.gameObject.SetActive(false);
     }
 
     public GameObject SpawnAnt(Transform location, AntController.AntType type)
@@ -122,7 +120,6 @@ public class AntManager : MonoBehaviour
         {
             StarveText.text = CountDeadAnts + " of your Ants starved!";
             StartCoroutine(FadeTextToFullAlpha(1f, StarveText));
-            //StarveText.gameObject.SetActive(true);
 
             Invoke("DisableStarveText", StarveTextTimeout);
         }

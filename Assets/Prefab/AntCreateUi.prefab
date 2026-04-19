@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 6647005056459935301}
   - component: {fileID: 7738537293414648425}
   - component: {fileID: 6682561768730452081}
+  - component: {fileID: 8592715056410216834}
   m_Layer: 5
   m_Name: AntCreateUi
   m_TagString: Untagged
@@ -248,6 +249,39 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8592715056410216834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100102419723964300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6406a034493161408e332cd008d4844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioHUD
+  DangerAlertEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  LowFoodAlertEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  AchievementAlertEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &1241584971036069750
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,7 +797,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8038115469822259641}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1100102419723964300}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2700041063587081317
 GameObject:
   m_ObjectHideFlags: 0
