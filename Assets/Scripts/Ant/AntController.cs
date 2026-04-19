@@ -20,6 +20,8 @@ public class AntController : MonoBehaviour
 
     public bool isAlive = true;
     public int heldFood = 0;
+	
+	private Animator anim;
 
     [SerializeField]
     public int foodCost = 1;
@@ -28,6 +30,7 @@ public class AntController : MonoBehaviour
     {
         FindPheromones();
         isMovingTowardsPheromone = false;
+		anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -36,6 +39,7 @@ public class AntController : MonoBehaviour
 
         if (isReturningToNest)
         {
+			anim.SetBool("isMoving",true);
             ReturnToNest();
             return;
         }
@@ -78,6 +82,7 @@ public class AntController : MonoBehaviour
         // If not currently moving towards a pheromone, pick one to move towards
         if (!isMovingTowardsPheromone)
         {
+			anim.SetBool("isMoving",false);
             int chosenPheromoneNum = PickPheromone();
             if (chosenPheromoneNum != -1)
             {
@@ -173,9 +178,12 @@ public class AntController : MonoBehaviour
         // Jude code hoping to rotate ant mesh towards direction of movement
         transform.rotation = Quaternion.LookRotation(direction);
         transform.position += direction * Time.deltaTime * moveSpeed;
+		
+		anim.SetBool("isMoving",true);
 
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
         {
+			anim.SetBool("isMoving",false);
             // Reached the pheromone
             Debug.Log("Reached the pheromone");
             CheckForFood(chosenPheromone);
@@ -215,6 +223,7 @@ public class AntController : MonoBehaviour
 
     public void ReturnToNest()
     {
+		anim.SetBool("isMoving",true);
         isReturningToNest = true;
         Vector3 direction = (nest.transform.position - transform.position).normalized;
         transform.position += direction * Time.deltaTime * moveSpeed;
@@ -231,6 +240,7 @@ public class AntController : MonoBehaviour
             isReturningToNest = false;
             // Food += heldFood;
             heldFood = 0;
+			anim.SetBool("isMoving",false);
         }
     }
 
