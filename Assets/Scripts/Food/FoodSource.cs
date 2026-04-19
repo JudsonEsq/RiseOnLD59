@@ -15,7 +15,7 @@ public class FoodSource : MonoBehaviour
 
     void Update()
     {
-        if (!TryGetComponent(out Pheromone pheromone))
+        if (GetComponent<Pheromone>().pheromoneType != Pheromone.PheromoneType.Food)
         {
             return;
         }
@@ -27,7 +27,7 @@ public class FoodSource : MonoBehaviour
 
         if (isDepleted)
         {
-            Destroy(GetComponent<Pheromone>());
+            GetComponent<Pheromone>().pheromoneType = Pheromone.PheromoneType.None;
         }
     }
 }
