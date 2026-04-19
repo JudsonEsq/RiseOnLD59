@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -20,6 +21,18 @@ public class AntController : MonoBehaviour
 
     public bool isAlive = true;
     public int heldFood = 0;
+
+    [Serializable]
+    public enum AntType
+    {
+        Worker,
+        Soldier,
+        Fire,
+        Carpenter,
+    }
+
+    [SerializeField]
+    public AntType antType;
 
     [SerializeField]
     public int foodCost = 1;
@@ -155,7 +168,7 @@ public class AntController : MonoBehaviour
         float distanceSum = distanceToA + distanceToB;
         float distanceThreshold = (distanceSum - distanceToA) / distanceSum;
 
-        if (Random.value < distanceThreshold)
+        if (UnityEngine.Random.value < distanceThreshold)
         {
             chosenPheromoneNum = pheromoneAIndex;
         }

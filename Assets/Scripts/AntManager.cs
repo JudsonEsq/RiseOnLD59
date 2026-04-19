@@ -10,9 +10,14 @@ public class AntManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> Ants = new List<GameObject>();
 
-
     [SerializeField]
-    private GameObject AntPrefab;
+    private GameObject WorkerPrefab;
+    [SerializeField]
+    private GameObject SoldierPrefab;
+    [SerializeField]
+    private GameObject FirePrefab;
+    [SerializeField]
+    private GameObject CarpenterPrefab;
 
     [SerializeField]
     private int AntDeadTimeout = 5;
@@ -48,9 +53,28 @@ public class AntManager : MonoBehaviour
         AntsText.text = Ants.Count.ToString();
     }
 
-    public GameObject SpawnAnt(Transform location)
+    private GameObject GetPrefabForType(AntController.AntType type)
     {
-        GameObject newAnt = Instantiate(AntPrefab, location);
+        switch (type)
+        {
+            case AntController.AntType.Worker:
+                return WorkerPrefab;
+            case AntController.AntType.Soldier:
+                return SoldierPrefab;
+            case AntController.AntType.Fire:
+                return FirePrefab;
+            case AntController.AntType.Carpenter:
+                return CarpenterPrefab;
+            default:
+                break;
+        }
+        return WorkerPrefab;
+    }
+
+    public GameObject SpawnAnt(Transform location, AntController.AntType type)
+    {
+        GameObject prefab = GetPrefabForType(type);
+        GameObject newAnt = Instantiate(prefab, location);
         newAnt.GetComponent<AntController>().nest = this.gameObject;
         Ants.Add(newAnt);
 

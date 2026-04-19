@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ae5f81d624ef1c429b3ee4e816ab534, type: 2}
+  - {fileID: 2100000, guid: 60ea1a58294bcd949ac9aed638a07e21, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 932723038290208998}
   - component: {fileID: 7619017178710925832}
   m_Layer: 0
-  m_Name: Hazard
+  m_Name: HazardSpike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fddd6cc6f894af40aa0cca58498db6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hazard
+  type: 0
 --- !u!54 &7619017178710925832
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5782633767375473919}
   - component: {fileID: 6795437035035401455}
   m_Layer: 0
-  m_Name: PrefabAnt
+  m_Name: PrefabAntWorker
   m_TagString: Ant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

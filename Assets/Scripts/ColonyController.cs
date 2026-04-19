@@ -24,17 +24,26 @@ public class ColonyController : MonoBehaviour
     private float timeSinceLastCull = 0;
 
     [SerializeField]
-    private Button SpawnButton;
+    private Button SpawnWorkerButton;
+    [SerializeField]
+    private Button SpawnSoldierButton;
+    [SerializeField]
+    private Button SpawnFireButton;
+    [SerializeField]
+    private Button SpawnCarpenterButton;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         for (int i = 0; i < StartAntNum; i++)
         {
-            SpawnAnt();
+            SpawnAnt(AntController.AntType.Worker);
         }
 
-        SpawnButton.onClick.AddListener(() => SpawnAnt());
+        SpawnWorkerButton.onClick.AddListener(() => SpawnAnt(AntController.AntType.Worker));
+        SpawnSoldierButton.onClick.AddListener(() => SpawnAnt(AntController.AntType.Soldier));
+        SpawnFireButton.onClick.AddListener(() => SpawnAnt(AntController.AntType.Fire));
+        SpawnCarpenterButton.onClick.AddListener(() => SpawnAnt(AntController.AntType.Carpenter));
     }
 
     void Update()
@@ -63,10 +72,10 @@ public class ColonyController : MonoBehaviour
         antManager.CullAnts(debitFood);
     }
 
-    public void SpawnAnt()
+    public void SpawnAnt(AntController.AntType type)
     {
         int spawnIdx = Random.Range(0, AntSpawnPoints.Count);
         Transform antPoint = AntSpawnPoints[spawnIdx].transform;
-        antManager.SpawnAnt(antPoint);
+        antManager.SpawnAnt(antPoint, type);
     }
 }
