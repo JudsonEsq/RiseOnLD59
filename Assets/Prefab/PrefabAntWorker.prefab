@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fb2de6705b5894b813a2ff7be1a931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntController
-  pheromones: []
   pheromonesToTrack: []
   pheromonesToAvoid: []
   previousPheromones: []
@@ -60,6 +59,7 @@ MonoBehaviour:
   isReturningToNest: 0
   targetPheromones: 
   avoidPheromones: 
+  maxPheromonesCount: 3
   isAlive: 1
   heldFood: 0
   antType: 0
@@ -155,7 +155,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: d86d9c47bbdf5024eafb78e01d67aa56, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
