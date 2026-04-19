@@ -49,3 +49,10 @@ MonoBehaviour:
     max: 20
   windGustPrefab: {fileID: 8432527135469419835, guid: 73b833110a8b05f498b5787af88518b3, type: 3}
   offScreenSpawnChance: 0.5
+  bgAmbienceLp:
+    Guid:
+      Data1: 449429677
+      Data2: 1210324260
+      Data3: -416747332
+      Data4: -1929676111
+    Path: event:/Ambience/BgAmbience
