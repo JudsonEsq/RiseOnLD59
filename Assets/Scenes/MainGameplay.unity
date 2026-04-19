@@ -2876,6 +2876,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a92f9bad4c502b34a9be30285dbbf068, type: 3}
   m_PrefabInstance: {fileID: 809708981}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &869854977 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3947307637685190079, guid: 3095e2e30bc674e49890fbb06d3437c5, type: 3}
+  m_PrefabInstance: {fileID: 1582116042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &892216186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5343,7 +5354,7 @@ PrefabInstance:
     - target: {fileID: 400152111537829955, guid: b51bd273fb4045645ac30ece345a33a2, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1157357015}
     - target: {fileID: 400152111537829955, guid: b51bd273fb4045645ac30ece345a33a2, type: 3}
       propertyPath: basePheromone
       value: 
@@ -7578,8 +7589,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fef10064360dc34cb57dde0de3808e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColonyController
-  antManager: {fileID: 2033301275}
-  foodManager: {fileID: 2033301276}
   StartAntNum: 1
   AntSpawnPoints:
   - {fileID: 719538021}
@@ -7608,6 +7617,8 @@ MonoBehaviour:
   AntDeadTimeout: 5
   CostText: {fileID: 13090377}
   AntsText: {fileID: 615153071}
+  StarveText: {fileID: 869854977}
+  StarveTextTimeout: 5
 --- !u!114 &2033301276
 MonoBehaviour:
   m_ObjectHideFlags: 0
