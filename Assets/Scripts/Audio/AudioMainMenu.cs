@@ -11,12 +11,16 @@ public class AudioMainMenu : MonoBehaviour
     public EventReference clickEvent;
     public EventReference backEvent;
 
+    public EventReference sliderTickEvent;
+
     public MusicChannel musicChannel;
     public MusicCue musicCue;
 
     public void PlayHover() => PlayEvent(hoverEvent);
     public void PlayClick() => PlayEvent(clickEvent);
     public void PlayBack() => PlayEvent(backEvent);
+
+    public void PlaySliderTick() => PlayEvent(sliderTickEvent);
 
     private EventInstance misophoniaSnapshot;
 

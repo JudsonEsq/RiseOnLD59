@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6487400134592932426}
   - component: {fileID: 2382381573981806267}
-  - component: {fileID: 3146518000201537268}
+  - component: {fileID: 3320994424872883982}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -50,7 +50,7 @@ MonoBehaviour:
   currentBPM: 120
   timeSignatureUpper: 4
   timeSignatureLower: 4
---- !u!114 &3146518000201537268
+--- !u!114 &3320994424872883982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,8 +59,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 8585419271857697901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d64c19e23afc65e45bd90e29ec59af97, type: 3}
+  m_Script: {fileID: 11500000, guid: 14f8d98c67592b04395643329dab130d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MusicSelectTrack
-  musicCue: {fileID: 11400000, guid: adc68044a779a684c8aa1598f19d85d7, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::AudioMainMenu
+  hoverEvent:
+    Guid:
+      Data1: 1633008575
+      Data2: 1253436445
+      Data3: 1464799130
+      Data4: -1762832369
+    Path: event:/Menu/BtnHover
+  clickEvent:
+    Guid:
+      Data1: 1633008575
+      Data2: 1253436445
+      Data3: 1464799130
+      Data4: -1762832369
+    Path: event:/Menu/BtnHover
+  backEvent:
+    Guid:
+      Data1: 1685623621
+      Data2: 1185830459
+      Data3: -1570164833
+      Data4: 1326939712
+    Path: event:/Menu/BtnBack
   musicChannel: {fileID: 11400000, guid: e8f8ba1835dfb3d428ee33dda9822e8b, type: 2}
+  musicCue: {fileID: 11400000, guid: 77d863c58145b8b4dbfeb52fe62a506b, type: 2}
+  vcaSliders:
+  - slider: {fileID: 0}
+    vcaName: Main
+  - slider: {fileID: 0}
+    vcaName: Music
+  - slider: {fileID: 0}
+    vcaName: SFX
