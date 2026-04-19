@@ -64,8 +64,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AntManager
   Ants: []
-  AntPrefab: {fileID: 1904777153091047314, guid: 5488edaf4346cff4299268ad82d90a1b, type: 3}
+  WorkerPrefab: {fileID: 1904777153091047314, guid: 5488edaf4346cff4299268ad82d90a1b, type: 3}
+  SoldierPrefab: {fileID: 1904777153091047314, guid: aff3bcc08a131674e9e489f6c40fa9e5, type: 3}
+  FirePrefab: {fileID: 1904777153091047314, guid: fb5412e23a2e4354cb7d965761816c49, type: 3}
+  CarpenterPrefab: {fileID: 1904777153091047314, guid: 512a461cf7721ab49858f90476a5a0fa, type: 3}
   AntDeadTimeout: 5
+  CostText: {fileID: 0}
+  AntsText: {fileID: 0}
+  StarveText: {fileID: 0}
+  StarveTextTimeout: 5
 --- !u!114 &7913583638983509038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,8 +85,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fef10064360dc34cb57dde0de3808e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColonyController
-  antManager: {fileID: 6489142182609239546}
-  foodManager: {fileID: 7233319756282461861}
   StartAntNum: 3
   AntSpawnPoints:
   - {fileID: 1463692141350356149}
@@ -91,6 +96,10 @@ MonoBehaviour:
   - {fileID: 7872027687125622071}
   - {fileID: 2560600594404232713}
   timeBetweenCulls: 10
+  SpawnWorkerButton: {fileID: 0}
+  SpawnSoldierButton: {fileID: 0}
+  SpawnFireButton: {fileID: 0}
+  SpawnCarpenterButton: {fileID: 0}
 --- !u!1 &620162153430438306
 GameObject:
   m_ObjectHideFlags: 0
