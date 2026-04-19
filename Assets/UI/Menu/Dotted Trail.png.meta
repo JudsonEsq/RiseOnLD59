@@ -1,0 +1,2834 @@
+fileFormatVersion: 2
+guid: 614d1c0998cff4b458c9e244e6a7301d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5185836795673243555
+    second: Dotted Trail_0
+  - first:
+      213: -4213617430701922355
+    second: Dotted Trail_1
+  - first:
+      213: 8620330379693202529
+    second: Dotted Trail_2
+  - first:
+      213: -131303321606899120
+    second: Dotted Trail_3
+  - first:
+      213: 7202036561194088416
+    second: Dotted Trail_4
+  - first:
+      213: -1150501461474079603
+    second: Dotted Trail_5
+  - first:
+      213: -8615447368425246732
+    second: Dotted Trail_6
+  - first:
+      213: 5164439928989812716
+    second: Dotted Trail_7
+  - first:
+      213: -8337784971331359246
+    second: Dotted Trail_8
+  - first:
+      213: 3771902257208226576
+    second: Dotted Trail_9
+  - first:
+      213: 4523052749714352932
+    second: Dotted Trail_10
+  - first:
+      213: 6456152717465128858
+    second: Dotted Trail_11
+  - first:
+      213: -3947067256147475985
+    second: Dotted Trail_12
+  - first:
+      213: 2257290189820503722
+    second: Dotted Trail_13
+  - first:
+      213: -2708652180227273400
+    second: Dotted Trail_14
+  - first:
+      213: -5881927496949602032
+    second: Dotted Trail_15
+  - first:
+      213: 7329125671260447497
+    second: Dotted Trail_16
+  - first:
+      213: -7763775092939025868
+    second: Dotted Trail_17
+  - first:
+      213: -1239692141468194675
+    second: Dotted Trail_18
+  - first:
+      213: 6980964521059658016
+    second: Dotted Trail_19
+  - first:
+      213: 6656715063349012909
+    second: Dotted Trail_20
+  - first:
+      213: 1347667475433654694
+    second: Dotted Trail_21
+  - first:
+      213: 5320042159743324111
+    second: Dotted Trail_22
+  - first:
+      213: 2731295786779509883
+    second: Dotted Trail_23
+  - first:
+      213: -6888438355129162385
+    second: Dotted Trail_24
+  - first:
+      213: -4635370249845940817
+    second: Dotted Trail_25
+  - first:
+      213: 1359526360770232563
+    second: Dotted Trail_26
+  - first:
+      213: 6454992662081490166
+    second: Dotted Trail_27
+  - first:
+      213: 1628786463584546112
+    second: Dotted Trail_28
+  - first:
+      213: 6161989176438057673
+    second: Dotted Trail_29
+  - first:
+      213: 1534951004834544153
+    second: Dotted Trail_30
+  - first:
+      213: -7983091956884857632
+    second: Dotted Trail_31
+  - first:
+      213: -6553316354139240540
+    second: Dotted Trail_32
+  - first:
+      213: -7865722017784101170
+    second: Dotted Trail_33
+  - first:
+      213: 1145511304037758699
+    second: Dotted Trail_34
+  - first:
+      213: 1012067142621496092
+    second: Dotted Trail_35
+  - first:
+      213: -8069080752578810675
+    second: Dotted Trail_36
+  - first:
+      213: 1142351682584238579
+    second: Dotted Trail_37
+  - first:
+      213: -1331479466229434783
+    second: Dotted Trail_38
+  - first:
+      213: -4825125100073030871
+    second: Dotted Trail_39
+  - first:
+      213: -8194334501994378106
+    second: Dotted Trail_40
+  - first:
+      213: 8377562426674684127
+    second: Dotted Trail_41
+  - first:
+      213: -2236887537262817521
+    second: Dotted Trail_42
+  - first:
+      213: 9054273546232840860
+    second: Dotted Trail_43
+  - first:
+      213: -6927541043967823826
+    second: Dotted Trail_44
+  - first:
+      213: -8808975211185942947
+    second: Dotted Trail_45
+  - first:
+      213: -1727390031409161894
+    second: Dotted Trail_46
+  - first:
+      213: 1598500976772717319
+    second: Dotted Trail_47
+  - first:
+      213: -4402581897194821676
+    second: Dotted Trail_48
+  - first:
+      213: 9115995941581349440
+    second: Dotted Trail_49
+  - first:
+      213: 5309288315508921883
+    second: Dotted Trail_50
+  - first:
+      213: 3559307379663600698
+    second: Dotted Trail_51
+  - first:
+      213: -6907771193964014897
+    second: Dotted Trail_52
+  - first:
+      213: -5102867912386010509
+    second: Dotted Trail_53
+  - first:
+      213: 3845001968705695730
+    second: Dotted Trail_54
+  - first:
+      213: 5056720579548627976
+    second: Dotted Trail_55
+  - first:
+      213: -615489865869732118
+    second: Dotted Trail_56
+  - first:
+      213: -943137174226036201
+    second: Dotted Trail_57
+  - first:
+      213: 4756440832914995524
+    second: Dotted Trail_58
+  - first:
+      213: 1527615782406062720
+    second: Dotted Trail_59
+  - first:
+      213: -3602054119244287320
+    second: Dotted Trail_60
+  - first:
+      213: 8072548648117752725
+    second: Dotted Trail_61
+  - first:
+      213: -3509913621379877449
+    second: Dotted Trail_62
+  - first:
+      213: -5587477104973960843
+    second: Dotted Trail_63
+  - first:
+      213: 4297814755682378556
+    second: Dotted Trail_64
+  - first:
+      213: 1683820224704975257
+    second: Dotted Trail_65
+  - first:
+      213: 3326136837279354115
+    second: Dotted Trail_66
+  - first:
+      213: 2264905365796687737
+    second: Dotted Trail_67
+  - first:
+      213: 5318600541051327899
+    second: Dotted Trail_68
+  - first:
+      213: -8076619897678540026
+    second: Dotted Trail_69
+  - first:
+      213: 8987255176497149667
+    second: Dotted Trail_70
+  - first:
+      213: 4977909418977405346
+    second: Dotted Trail_71
+  - first:
+      213: -2545139116090149195
+    second: Dotted Trail_72
+  - first:
+      213: 7117620054723730530
+    second: Dotted Trail_73
+  - first:
+      213: 813532773127131355
+    second: Dotted Trail_74
+  - first:
+      213: 8383957869434267819
+    second: Dotted Trail_75
+  - first:
+      213: 2789614120018926010
+    second: Dotted Trail_76
+  - first:
+      213: 3710926314804068201
+    second: Dotted Trail_77
+  - first:
+      213: 7877744499511186211
+    second: Dotted Trail_78
+  - first:
+      213: 4837249935971419942
+    second: Dotted Trail_79
+  - first:
+      213: -8196836180128866425
+    second: Dotted Trail_80
+  - first:
+      213: 7054492726946790179
+    second: Dotted Trail_81
+  - first:
+      213: -3786370452033639767
+    second: Dotted Trail_82
+  - first:
+      213: -7352027288243424683
+    second: Dotted Trail_83
+  - first:
+      213: 2863384189030200088
+    second: Dotted Trail_84
+  - first:
+      213: 75872763119378829
+    second: Dotted Trail_85
+  - first:
+      213: 8581424840833273150
+    second: Dotted Trail_86
+  - first:
+      213: -7085313380884472880
+    second: Dotted Trail_87
+  - first:
+      213: -7342221939447619992
+    second: Dotted Trail_88
+  - first:
+      213: -3362565427868736646
+    second: Dotted Trail_89
+  - first:
+      213: -2742214987047106901
+    second: Dotted Trail_90
+  - first:
+      213: 1533140450389313797
+    second: Dotted Trail_91
+  - first:
+      213: 5993715573634409147
+    second: Dotted Trail_92
+  - first:
+      213: 3082311065130379051
+    second: Dotted Trail_93
+  - first:
+      213: -8818233858940269094
+    second: Dotted Trail_94
+  - first:
+      213: 8470076335132662474
+    second: Dotted Trail_95
+  - first:
+      213: 3825283572275021171
+    second: Dotted Trail_96
+  - first:
+      213: -965234886879375538
+    second: Dotted Trail_97
+  - first:
+      213: 3109501651963833838
+    second: Dotted Trail_98
+  - first:
+      213: -5454271593248272558
+    second: Dotted Trail_99
+  - first:
+      213: 6286418865319746420
+    second: Dotted Trail_100
+  - first:
+      213: 8088730395184530928
+    second: Dotted Trail_101
+  - first:
+      213: 960538704007785870
+    second: Dotted Trail_102
+  - first:
+      213: -6241622559722563139
+    second: Dotted Trail_103
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dotted Trail_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1145
+        height: 1073
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3afe045071bc7f740800000000000000
+      internalID: 5185836795673243555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_1
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 1016
+        width: 8
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc72e9f75493685c0800000000000000
+      internalID: -4213617430701922355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_2
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 988
+        width: 10
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16c1f10dec091a770800000000000000
+      internalID: 8620330379693202529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_3
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 960
+        width: 10
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05abacd13548d2ef0800000000000000
+      internalID: -131303321606899120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_4
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 932
+        width: 11
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e779592816c2f360800000000000000
+      internalID: 7202036561194088416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_5
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 905
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8c054334099800f0800000000000000
+      internalID: -1150501461474079603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_6
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 863
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff60f7d348cf6880800000000000000
+      internalID: -8615447368425246732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_7
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 880
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce70847c0c6cba740800000000000000
+      internalID: 5164439928989812716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_8
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 844
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fd243a7ebc3a4c80800000000000000
+      internalID: -8337784971331359246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_9
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 847
+        width: 22
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 013f3685e1d785430800000000000000
+      internalID: 3771902257208226576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_10
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 850
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42be31ff28c15ce30800000000000000
+      internalID: 4523052749714352932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_11
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 854
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9f8e2cb0bcd89950800000000000000
+      internalID: 6456152717465128858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_12
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 817
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe101c43e333939c0800000000000000
+      internalID: -3947067256147475985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_13
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 836
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa6a93fc771835f10800000000000000
+      internalID: 2257290189820503722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_14
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 791
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d4771713fe86ad0800000000000000
+      internalID: -2708652180227273400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_15
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 764
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01967b5fa123f5ea0800000000000000
+      internalID: -5881927496949602032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_16
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 736
+        width: 8
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 903eca577f846b560800000000000000
+      internalID: 7329125671260447497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_17
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 707
+        width: 11
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 432185defa7814490800000000000000
+      internalID: -7763775092939025868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_18
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 680
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d88e1f4c09abbcee0800000000000000
+      internalID: -1239692141468194675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_19
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 655
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 029ad53ce3e51e060800000000000000
+      internalID: 6980964521059658016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_20
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 634
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da9e8e1d417616c50800000000000000
+      internalID: 6656715063349012909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_21
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 617
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a9029cbd60e3b210800000000000000
+      internalID: 1347667475433654694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_22
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 603
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcf4a91582694d940800000000000000
+      internalID: 5320042159743324111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_23
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 591
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b74838b0c0387e520800000000000000
+      internalID: 2731295786779509883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_24
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 580
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f65a95100d95760a0800000000000000
+      internalID: -6888438355129162385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_25
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 570
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fadd487215bdbafb0800000000000000
+      internalID: -4635370249845940817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_26
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 561
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f04d74a5020ed210800000000000000
+      internalID: 1359526360770232563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_27
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 554
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fcce1b40adb49950800000000000000
+      internalID: 6454992662081490166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_28
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 548
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04debe0b8ac9a9610800000000000000
+      internalID: 1628786463584546112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_29
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 547
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca64632288c38550800000000000000
+      internalID: 6161989176438057673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_30
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 544
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91abace6ecd3d4510800000000000000
+      internalID: 1534951004834544153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_31
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 538
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ec9994592c563190800000000000000
+      internalID: -7983091956884857632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_32
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 529
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a7c5c23f71fd05a0800000000000000
+      internalID: -6553316354139240540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_33
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 516
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec6820ccf7757d290800000000000000
+      internalID: -7865722017784101170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_34
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 499
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be67d5b367ca5ef00800000000000000
+      internalID: 1145511304037758699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_35
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 479
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c138ccc34b59b0e00800000000000000
+      internalID: 1012067142621496092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_36
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 456
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcc299eaecdd40090800000000000000
+      internalID: -8069080752578810675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_37
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 430
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f9d0098dc27adf00800000000000000
+      internalID: 1142351682584238579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_38
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 403
+        width: 10
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 166faadda72a58de0800000000000000
+      internalID: -1331479466229434783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_39
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 375
+        width: 9
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b635d3946b90db0800000000000000
+      internalID: -4825125100073030871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_40
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 348
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68cc5e59f20e74e80800000000000000
+      internalID: -8194334501994378106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_41
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 322
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd0aa9d04a4134470800000000000000
+      internalID: 8377562426674684127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_42
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 299
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0f83fae2aaf4f0e0800000000000000
+      internalID: -2236887537262817521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_43
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 264
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c92cc6691dd37ad70800000000000000
+      internalID: 9054273546232840860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_44
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 279
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e20fb5bcf1e6cdf90800000000000000
+      internalID: -6927541043967823826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_45
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 244
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5e4a06a7bb30c580800000000000000
+      internalID: -8808975211185942947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_46
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 252
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a595e452be31708e0800000000000000
+      internalID: -1727390031409161894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_47
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 231
+        width: 22
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70b17ad4b240f2610800000000000000
+      internalID: 1598500976772717319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_48
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 233
+        width: 22
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d723232713e6e2c0800000000000000
+      internalID: -4402581897194821676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_49
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 235
+        width: 22
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 042ebdf9206828e70800000000000000
+      internalID: 9115995941581349440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_50
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 237
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b169a08d7916ea940800000000000000
+      internalID: 5309288315508921883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_51
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 238
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c764b2433356130800000000000000
+      internalID: 3559307379663600698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_52
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 239
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc25912b2baa220a0800000000000000
+      internalID: -6907771193964014897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_53
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 219
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3722e7a7ba8fe29b0800000000000000
+      internalID: -5102867912386010509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_54
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 224
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ff61693be03c5530800000000000000
+      internalID: 3845001968705695730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_55
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 227
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 804476053941d2640800000000000000
+      internalID: 5056720579548627976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_56
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 204
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae65bfd5a375577f0800000000000000
+      internalID: -615489865869732118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_57
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 213
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71a9acbacbd49e2f0800000000000000
+      internalID: -943137174226036201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_58
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 190
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 449bf01acb5420240800000000000000
+      internalID: 4756440832914995524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 163
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 082089fd57e233510800000000000000
+      internalID: 1527615782406062720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_60
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 154
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a236b0fcdee20ec0800000000000000
+      internalID: -3602054119244287320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_61
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 161
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5935e1ba934770070800000000000000
+      internalID: 8072548648117752725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_62
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 164
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b5f85d58284a4fc0800000000000000
+      internalID: -3509913621379877449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_63
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 162
+        width: 22
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579266f3d2b4572b0800000000000000
+      internalID: -5587477104973960843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_64
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 158
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3361eedfb7e4ab30800000000000000
+      internalID: 4297814755682378556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_65
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 142
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9919827b2912e5710800000000000000
+      internalID: 1683820224704975257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_66
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 146
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d8064b4dfc82e20800000000000000
+      internalID: 3326136837279354115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_67
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 152
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97f00322e6f8e6f10800000000000000
+      internalID: 2264905365796687737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_68
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 144
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b95909f43077fc940800000000000000
+      internalID: 5318600541051327899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_69
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 603d40daef41aef80800000000000000
+      internalID: -8076619897678540026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_70
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 127
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e637ec67f429bc70800000000000000
+      internalID: 8987255176497149667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_71
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 136
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a928321e36151540800000000000000
+      internalID: 4977909418977405346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_72
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 135
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6be796579ddacd0800000000000000
+      internalID: -2545139116090149195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_73
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 124
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c1100aabdd6c260800000000000000
+      internalID: 7117620054723730530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_74
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 116
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd091633fbf3a4b00800000000000000
+      internalID: 813532773127131355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_75
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 106
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba8687b134dc95470800000000000000
+      internalID: 8383957869434267819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_76
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 107
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab9542c1343b6b620800000000000000
+      internalID: 2789614120018926010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_77
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 117
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96fbb8d62dbdf7330800000000000000
+      internalID: 3710926314804068201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_78
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 112
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 323d6ac52ee535d60800000000000000
+      internalID: 7877744499511186211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_79
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 98
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6278b5b103d512340800000000000000
+      internalID: 4837249935971419942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_80
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 90
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78f59514cecfe3e80800000000000000
+      internalID: -8196836180128866425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_81
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 87
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32b7d3442c796e160800000000000000
+      internalID: 7054492726946790179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_82
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 97
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aaef7a822c147bc0800000000000000
+      internalID: -3786370452033639767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_83
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 97
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 552b541522a58f990800000000000000
+      internalID: -7352027288243424683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_84
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 81
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8137d92cfb8ccb720800000000000000
+      internalID: 2863384189030200088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_85
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 82
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d81abd540ed8d0100800000000000000
+      internalID: 75872763119378829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_86
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 76
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3d84982d68571770800000000000000
+      internalID: 8581424840833273150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_87
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 77
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db1f0a0509ebad90800000000000000
+      internalID: -7085313380884472880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_88
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 63
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86e152dfb003b1a90800000000000000
+      internalID: -7342221939447619992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_89
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 70
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a73efd91f84c551d0800000000000000
+      internalID: -3362565427868736646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_90
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 65
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba60e478ff1b1f9d0800000000000000
+      internalID: -2742214987047106901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_91
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 60
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 509cc30ed1fc64510800000000000000
+      internalID: 1533140450389313797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_92
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 59
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb2a433ee84fd2350800000000000000
+      internalID: 5993715573634409147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_93
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 68
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b272a5c359196ca20800000000000000
+      internalID: 3082311065130379051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_94
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 56
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: add0b8bb6075f9580800000000000000
+      internalID: -8818233858940269094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_95
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 52
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aca5608ec81cb8570800000000000000
+      internalID: 8470076335132662474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_96
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 49
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 375079a4423261530800000000000000
+      internalID: 3825283572275021171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_97
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 48
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4f8db20cfbca92f0800000000000000
+      internalID: -965234886879375538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_98
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 48
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eed6bc1174b272b20800000000000000
+      internalID: 3109501651963833838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_99
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 52
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25fcee742e88e44b0800000000000000
+      internalID: -5454271593248272558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_100
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 44
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b92b0b6a8dd3750800000000000000
+      internalID: 6286418865319746420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_101
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 47
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f501e04071f04070800000000000000
+      internalID: 8088730395184530928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_102
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 22
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8de565bcd4845d00800000000000000
+      internalID: 960538704007785870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dotted Trail_103
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 0
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db91ca9f95d4169a0800000000000000
+      internalID: -6241622559722563139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: aeec5f9db79ef3047b22208019a102a9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Dotted Trail_0: 5185836795673243555
+      Dotted Trail_1: -4213617430701922355
+      Dotted Trail_10: 4523052749714352932
+      Dotted Trail_100: 6286418865319746420
+      Dotted Trail_101: 8088730395184530928
+      Dotted Trail_102: 960538704007785870
+      Dotted Trail_103: -6241622559722563139
+      Dotted Trail_11: 6456152717465128858
+      Dotted Trail_12: -3947067256147475985
+      Dotted Trail_13: 2257290189820503722
+      Dotted Trail_14: -2708652180227273400
+      Dotted Trail_15: -5881927496949602032
+      Dotted Trail_16: 7329125671260447497
+      Dotted Trail_17: -7763775092939025868
+      Dotted Trail_18: -1239692141468194675
+      Dotted Trail_19: 6980964521059658016
+      Dotted Trail_2: 8620330379693202529
+      Dotted Trail_20: 6656715063349012909
+      Dotted Trail_21: 1347667475433654694
+      Dotted Trail_22: 5320042159743324111
+      Dotted Trail_23: 2731295786779509883
+      Dotted Trail_24: -6888438355129162385
+      Dotted Trail_25: -4635370249845940817
+      Dotted Trail_26: 1359526360770232563
+      Dotted Trail_27: 6454992662081490166
+      Dotted Trail_28: 1628786463584546112
+      Dotted Trail_29: 6161989176438057673
+      Dotted Trail_3: -131303321606899120
+      Dotted Trail_30: 1534951004834544153
+      Dotted Trail_31: -7983091956884857632
+      Dotted Trail_32: -6553316354139240540
+      Dotted Trail_33: -7865722017784101170
+      Dotted Trail_34: 1145511304037758699
+      Dotted Trail_35: 1012067142621496092
+      Dotted Trail_36: -8069080752578810675
+      Dotted Trail_37: 1142351682584238579
+      Dotted Trail_38: -1331479466229434783
+      Dotted Trail_39: -4825125100073030871
+      Dotted Trail_4: 7202036561194088416
+      Dotted Trail_40: -8194334501994378106
+      Dotted Trail_41: 8377562426674684127
+      Dotted Trail_42: -2236887537262817521
+      Dotted Trail_43: 9054273546232840860
+      Dotted Trail_44: -6927541043967823826
+      Dotted Trail_45: -8808975211185942947
+      Dotted Trail_46: -1727390031409161894
+      Dotted Trail_47: 1598500976772717319
+      Dotted Trail_48: -4402581897194821676
+      Dotted Trail_49: 9115995941581349440
+      Dotted Trail_5: -1150501461474079603
+      Dotted Trail_50: 5309288315508921883
+      Dotted Trail_51: 3559307379663600698
+      Dotted Trail_52: -6907771193964014897
+      Dotted Trail_53: -5102867912386010509
+      Dotted Trail_54: 3845001968705695730
+      Dotted Trail_55: 5056720579548627976
+      Dotted Trail_56: -615489865869732118
+      Dotted Trail_57: -943137174226036201
+      Dotted Trail_58: 4756440832914995524
+      Dotted Trail_59: 1527615782406062720
+      Dotted Trail_6: -8615447368425246732
+      Dotted Trail_60: -3602054119244287320
+      Dotted Trail_61: 8072548648117752725
+      Dotted Trail_62: -3509913621379877449
+      Dotted Trail_63: -5587477104973960843
+      Dotted Trail_64: 4297814755682378556
+      Dotted Trail_65: 1683820224704975257
+      Dotted Trail_66: 3326136837279354115
+      Dotted Trail_67: 2264905365796687737
+      Dotted Trail_68: 5318600541051327899
+      Dotted Trail_69: -8076619897678540026
+      Dotted Trail_7: 5164439928989812716
+      Dotted Trail_70: 8987255176497149667
+      Dotted Trail_71: 4977909418977405346
+      Dotted Trail_72: -2545139116090149195
+      Dotted Trail_73: 7117620054723730530
+      Dotted Trail_74: 813532773127131355
+      Dotted Trail_75: 8383957869434267819
+      Dotted Trail_76: 2789614120018926010
+      Dotted Trail_77: 3710926314804068201
+      Dotted Trail_78: 7877744499511186211
+      Dotted Trail_79: 4837249935971419942
+      Dotted Trail_8: -8337784971331359246
+      Dotted Trail_80: -8196836180128866425
+      Dotted Trail_81: 7054492726946790179
+      Dotted Trail_82: -3786370452033639767
+      Dotted Trail_83: -7352027288243424683
+      Dotted Trail_84: 2863384189030200088
+      Dotted Trail_85: 75872763119378829
+      Dotted Trail_86: 8581424840833273150
+      Dotted Trail_87: -7085313380884472880
+      Dotted Trail_88: -7342221939447619992
+      Dotted Trail_89: -3362565427868736646
+      Dotted Trail_9: 3771902257208226576
+      Dotted Trail_90: -2742214987047106901
+      Dotted Trail_91: 1533140450389313797
+      Dotted Trail_92: 5993715573634409147
+      Dotted Trail_93: 3082311065130379051
+      Dotted Trail_94: -8818233858940269094
+      Dotted Trail_95: 8470076335132662474
+      Dotted Trail_96: 3825283572275021171
+      Dotted Trail_97: -965234886879375538
+      Dotted Trail_98: 3109501651963833838
+      Dotted Trail_99: -5454271593248272558
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

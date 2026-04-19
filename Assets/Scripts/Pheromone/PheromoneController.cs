@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -24,7 +26,7 @@ public class PheromoneController : MonoBehaviour
     [SerializeField]
     private GameObject basePheromone;
 
-    private Pheromone.PheromoneType selectedPheromone = Pheromone.PheromoneType.None;
+    private GameObject selectedPheromone = null;
 
     void Awake()
     {
@@ -42,29 +44,74 @@ public class PheromoneController : MonoBehaviour
 
     void Update()
     {
-        if(Mouse.current.leftButton.IsPressed() && selectedPheromone != Pheromone.PheromoneType.None)
+        if (selectedPheromone != null)
         {
-            PlacePheromone();
+            Vector2 screenPoint = new Vector2(Mouse.current.position.x.ReadValue(), Mouse.current.position.y.ReadValue());
+            Ray ray = cam.ScreenPointToRay(screenPoint);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit)) 
+            {
+                selectedPheromone.transform.position = hit.point;
+            }
+
+            if (Mouse.current.leftButton.IsPressed() && selectedPheromone != null)
+            {
+                PlacePheromone();
+            }
+
         }
     }
 
     public void SelectPheromone(Pheromone.PheromoneType type)
     {
-        selectedPheromone = type;
+        if (selectedPheromone != null)
+        {
+            Destroy(selectedPheromone);
+        }
+
+        Vector2 screenPoint = new Vector2(Mouse.current.position.x.ReadValue(), Mouse.current.position.y.ReadValue());
+        Ray ray = cam.ScreenPointToRay(screenPoint);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            selectedPheromone = Instantiate<GameObject>(basePheromone, hit.point, Quaternion.identity);
+        }
     }
 
     public void PlacePheromone()
     {
         Vector2 screenPoint = new Vector2(Mouse.current.position.x.ReadValue(), Mouse.current.position.y.ReadValue());
-        Ray ray = cam.ScreenPointToRay(screenPoint);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit)) 
+        if (selectedPheromone){
+            if (PointerIsUIHit(screenPoint))
+            {
+                Debug.Log("Destroying previously selected pheromone");
+                Destroy(selectedPheromone);
+            }
+            selectedPheromone = null;
+        } 
+    }
+
+    private bool PointerIsUIHit(Vector2 position)
+    {
+        PointerEventData pointer = new PointerEventData(EventSystem.current);
+        pointer.position = position;
+        List<RaycastResult> raycastResults = new List<RaycastResult>();
+
+        // UI Elements must have `picking mode` set to `position` to be hit
+        EventSystem.current.RaycastAll(pointer, raycastResults);
+
+        if (raycastResults.Count > 0)
         {
-            GameObject GO_Pheromone = Instantiate<GameObject>(basePheromone, hit.point, Quaternion.identity);
-            Pheromone pheromone = GO_Pheromone.GetComponent<Pheromone>();
-            pheromone.pheromoneType = selectedPheromone;
+            foreach (RaycastResult result in raycastResults)
+            {
+                if (result.distance == 0 && result.isValid)
+                {
+                    Debug.Log("Click is UI Hit");
+                    return true;
+                }
+            }
         }
 
-        selectedPheromone = Pheromone.PheromoneType.None;
+        return false;
     }
 }
