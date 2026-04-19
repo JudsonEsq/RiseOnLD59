@@ -26,6 +26,8 @@ public class AntController : MonoBehaviour
 
     public bool isAlive = true;
     public int heldFood = 0;
+	
+	private Animator anim;
 
     [Serializable]
     public enum AntType
@@ -46,6 +48,8 @@ public class AntController : MonoBehaviour
     {
         FindPheromones();
         isMovingTowardsPheromone = false;
+		
+		anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -54,12 +58,14 @@ public class AntController : MonoBehaviour
 
         if (isReturningToNest)
         {
+			anim.SetBool("isMoving", true);
             ReturnToNest();
             return;
         }
 
         if (isMovingTowardsPheromone)
         {
+			anim.SetBool("isMoving", true);
             MoveTowardsPheromone();
             return;
         }
@@ -203,7 +209,7 @@ public class AntController : MonoBehaviour
         }
 
         float[] distanceThresholds = new float[3];
-        float tempValue = Random.value;
+        float tempValue = UnityEngine.Random.value;
 
         for (int i = 0; i < distanceThresholds.Count(); i++)
         {
@@ -227,6 +233,7 @@ public class AntController : MonoBehaviour
 
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
         {
+			anim.SetBool("isMoving", false);
             // Reached the pheromone
             Debug.Log("Reached the pheromone");
             CheckForFood(chosenPheromone);
