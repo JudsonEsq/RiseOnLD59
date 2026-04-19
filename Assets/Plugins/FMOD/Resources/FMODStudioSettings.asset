@@ -261,6 +261,7 @@ MonoBehaviour:
   - Master
   Banks:
   - Ambience
+  - Enemies
   - Music
   - Player
   - UI

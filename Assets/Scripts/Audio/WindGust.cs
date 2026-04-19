@@ -3,7 +3,7 @@ using FMODUnity;
 using FMOD.Studio;
 
 
-    [System.Serializable]
+[System.Serializable]
     public struct WindGustDurationRange
     {
         public float min;
@@ -26,19 +26,21 @@ public class WindGust : MonoBehaviour
 
     private float windSpeed = 5f;
 
-    private Vector2 randomDirection;
+    private Vector3 randomDirection;
     private float duration = 0.5f;
 
     public EventReference windSound;
     private EventInstance windInstance;
+
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        duration = UnityEngine.Random.Range(durationRange.min, durationRange.max);
-        windSpeed = UnityEngine.Random.Range(speedRange.min, speedRange.max);
+        duration = Random.Range(durationRange.min, durationRange.max);
+        windSpeed = Random.Range(speedRange.min, speedRange.max);
         
-        randomDirection = UnityEngine.Random.insideUnitCircle.normalized;
+        Vector2 circle = Random.insideUnitCircle.normalized;
+        randomDirection = new Vector3(circle.x, 0f, circle.y);
 
         //create a sound instance
         windInstance = RuntimeManager.CreateInstance(windSound);
@@ -54,6 +56,13 @@ public class WindGust : MonoBehaviour
     void Update()
     {
         transform.Translate(randomDirection * windSpeed * Time.deltaTime, Space.World);
+    }
+
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.azure;
+        Gizmos.DrawSphere(transform.position, 0.5f);
     }
 
     void OnDestroy()

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7707967406513079882}
   - component: {fileID: 2115628626339924672}
+  - component: {fileID: 3633229157194567611}
   m_Layer: 0
   m_Name: WindSpawner
   m_TagString: Untagged
@@ -56,3 +57,25 @@ MonoBehaviour:
       Data3: -416747332
       Data4: -1929676111
     Path: event:/Ambience/BgAmbience
+  ySpawnHeight: 1
+--- !u!114 &3633229157194567611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7520469696170434402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9468c5f457ace64f8d4df6d642b107f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioBankLoader
+  LoadEvent: 1
+  UnloadEvent: 2
+  Banks:
+  - Ambience
+  - Enemies
+  - Master
+  - Player
+  CollisionTag: 
+  PreloadSamples: 0

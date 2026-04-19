@@ -1,5 +1,6 @@
 using UnityEngine;
 using FMODUnity;
+using FMOD.Studio;
 
 
 [System.Serializable]
@@ -10,7 +11,7 @@ public struct WindGustSpawnRange
     }
 
 public class WindGustSpawner : MonoBehaviour
-{    private Vector2 spawnLocation;
+{    private Vector3 spawnLocation;
 
     private float spawnTimer;
     public WindGustSpawnRange WindGustIntervalRange;
@@ -21,7 +22,20 @@ public class WindGustSpawner : MonoBehaviour
     public float offScreenSpawnChance = 0.5f;
 
     public EventReference bgAmbienceLp;
+
+    public float ySpawnHeight = 2f;
     // Update is called once per frame
+
+    private EventInstance bgAmbienceInstance;
+    
+    void Start()
+    {
+        bgAmbienceInstance = RuntimeManager.CreateInstance(bgAmbienceLp);
+        bgAmbienceInstance.start();
+
+    }
+    
+    
     void Update()
     {
         spawnTimer -= Time.deltaTime;
@@ -42,15 +56,15 @@ public class WindGustSpawner : MonoBehaviour
         Instantiate(windGustPrefab, spawnLocation,Quaternion.identity);
     }
 
-    private Vector2 GetRandomScreenPosition(bool isOffScreen)
+    private Vector3 GetRandomScreenPosition(bool isOffScreen)
     {
         float x = 0f;
-        float y = 0f;
+        float z = 0f;
 
         if(!isOffScreen)
         {
             x = Random.Range(0f,1f);
-            y = Random.Range(0f,1f);
+            z = Random.Range(0f,1f);
         }
         else
         {
@@ -59,24 +73,31 @@ public class WindGustSpawner : MonoBehaviour
             {
                 case 0:
                     x = -0.1f;
-                    y = Random.Range(0f,1f);
+                    z = Random.Range(0f,1f);
                     break;
                 case 1:
                     x = 1.1f;
-                    y = Random.Range(0f,1f);
+                    z = Random.Range(0f,1f);
                     break;
                 case 2:
                     x = Random.Range(0f,1f);
-                    y = -0.1f;
+                    z = -0.1f;
                     break;
                 case 3:
                     x = Random.Range(0f,1f);
-                    y = 1.1f;
+                    z = 1.1f;
                     break;
                 default:
                     break;
             }
         }
-        return Camera.main.ViewportToWorldPoint(new Vector3(x, y, 0f));
+        return Camera.main.ViewportToWorldPoint(new Vector3(x, ySpawnHeight, z));
     }
+
+    void OnDestroy()
+    {
+        bgAmbienceInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        bgAmbienceInstance.release();
+    }
+
 }
