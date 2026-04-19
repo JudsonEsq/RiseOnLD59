@@ -9,6 +9,7 @@ public class Pheromone : MonoBehaviour
         Danger,
         Attack,
         Gift,
+        Hazard
     }
 
     public PheromoneType pheromoneType;
