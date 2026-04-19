@@ -42,6 +42,14 @@ public class AntController : MonoBehaviour
     [SerializeField]
     public int foodCost = 1;
 
+
+    /// <summary>
+    /// Event Dispatchers
+    /// </summary>
+    
+    public event Action OnDeath;
+    public event Action OnPickupFood;
+
     public void Init()
     {
 		// anim = GetComponentInChildren<Animator>();
@@ -355,6 +363,7 @@ public class AntController : MonoBehaviour
     {
         Debug.Log("Killing Ant");
         this.isAlive = false;
+        OnDeath?.Invoke();
     }
 
     public int FoodCost()
@@ -370,6 +379,7 @@ public class AntController : MonoBehaviour
     public void PickupFood(int foodAmount)
     {
         heldFood = foodAmount;
+        OnPickupFood?.Invoke();
     }
 
     void OnCollisionEnter(Collision collision)
