@@ -19,6 +19,9 @@ using System.Runtime.InteropServices;
 
 public class MusicManager : MonoBehaviour
 {
+    /// <summary>
+    /// Keep the audio manager alive on first create in main menu
+    /// </summary>
     #region Singleton
     public static MusicManager instance;
     void Awake()
@@ -36,7 +39,9 @@ public class MusicManager : MonoBehaviour
     #endregion
 
 
-
+    /// <summary>
+    /// Used for sending the signal to update music to the audio manager
+    /// </summary>
     #region Channel
     public MusicChannel musicChannel;
 
@@ -51,8 +56,17 @@ public class MusicManager : MonoBehaviour
         }
     #endregion
 
+    /// <summary>
+    /// Music Play back specific Information
+    /// </summary>
     #region Music Playback
     
+    [Tooltip("Set this value and then right-click Music Manager COMPONENT to trigger")]
+    public float TestPhaseValue = 0f;
+
+    [ContextMenu("Test Music Phase")]
+    public void TestMusicPhase() => SetGlobalParameter("MusicState", TestPhaseValue);
+
 
     public static event System.Action OnMusicalBeat;
 
@@ -65,26 +79,32 @@ public class MusicManager : MonoBehaviour
     private EventInstance musicInstance;
     private void HandleMusicRequest(MusicCue cue)
     {
-        //if we dont have the instance yet, lets create one
         if(!musicInstance.isValid())
         {
-            musicInstance = RuntimeManager.CreateInstance(cue.musicEvent);
-            if(!cue.musicStateParameter.Name.Equals(string.Empty))
-            {
-                musicInstance.setParameterByID(cue.musicStateParameter.ID, cue.musicStateParameter.Value);
-            }
-            //start the music
-            musicInstance.start();
-            musicInstance.setCallback(BeatCallback, FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_BEAT);
+            StartCoroutine(StartMusicWhenReady(cue));
         }
         else
         {
-            //set the parameter if we have one
+            Debug.Log("Else HIT");
             if(!cue.musicStateParameter.Name.Equals(string.Empty))
             {
-                musicInstance.setParameterByID(cue.musicStateParameter.ID, cue.musicStateParameter.Value);
+                SetGlobalParameter(cue.musicStateParameter.Name, cue.musicStateParameter.Value);
             }
         }
+    }
+
+    private System.Collections.IEnumerator StartMusicWhenReady(MusicCue cue)
+    {
+        while (!RuntimeManager.HaveAllBanksLoaded)
+            yield return null;
+
+        musicInstance = RuntimeManager.CreateInstance(cue.musicEvent);
+        musicInstance.start();
+        if (!cue.musicStateParameter.Name.Equals(string.Empty))
+            {
+                SetGlobalParameter(cue.musicStateParameter.Name, cue.musicStateParameter.Value);
+            }
+        musicInstance.setCallback(BeatCallback, FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_BEAT);
     }
 
     private void StopMusic()
@@ -138,15 +158,21 @@ public class MusicManager : MonoBehaviour
     #endregion
 
 
-#region Global Audio Control
-    public static void PlayOneShot(EventReference eventRef)
-    {
-        if (eventRef.IsNull) return;
+    #region Global Audio Control
+        public static void PlayOneShot(EventReference eventRef)
+        {
+            if (eventRef.IsNull) return;
 
-        RuntimeManager.PlayOneShot(eventRef);
-    }
+            RuntimeManager.PlayOneShot(eventRef);
+        }
+
+        public static void SetGlobalParameter(string ParameterName, float value)
+        {
+            RuntimeManager.StudioSystem.setParameterByName(ParameterName, value);
+        }
 
 
-#endregion
+    #endregion
+
 
 }

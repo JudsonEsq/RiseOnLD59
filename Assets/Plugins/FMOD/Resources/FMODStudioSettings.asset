@@ -260,6 +260,9 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Ambience
+  - Ants
+  - Enemies
   - Music
   - Player
   - UI

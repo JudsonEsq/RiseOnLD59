@@ -5,6 +5,10 @@ using UnityEngine;
 //Attach to player character and play out different click types
 public class AudioPlayer : MonoBehaviour
 {
+    /// <summary>
+    /// Specifc for player clicks and placements
+    /// </summary>
+
     public EventReference PheromoneGuideEvent;
     public EventReference PheromoneHazardEvent;
     public EventReference PheromoneAttackEvent;
@@ -14,5 +18,4 @@ public class AudioPlayer : MonoBehaviour
     public void PlayPheromoneHazard() => MusicManager.PlayOneShot(PheromoneHazardEvent);
     public void PlayPheromoneAttack() => MusicManager.PlayOneShot(PheromoneAttackEvent);
     public void PlayPheromoneBuild() => MusicManager.PlayOneShot(PheromoneBuildEvent);
-
 }
