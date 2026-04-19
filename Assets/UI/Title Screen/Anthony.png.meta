@@ -5,9 +5,6 @@ TextureImporter:
   - first:
       213: 5753937225701467260
     second: Anthony_0
-  - first:
-      213: 7697472963515961276
-    second: Anthony_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -120,9 +117,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 10
-        width: 5
-        height: 12
+        y: 0
+        width: 473
+        height: 795
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,28 +130,6 @@ TextureImporter:
       bones: []
       spriteID: c7425ddcb671adf40800000000000000
       internalID: 5753937225701467260
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Anthony_1
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 0
-        width: 425
-        height: 771
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cbfca8a90eae2da60800000000000000
-      internalID: 7697472963515961276
       vertices: []
       indices: 
       edges: []
@@ -174,7 +149,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Anthony_0: 5753937225701467260
-      Anthony_1: 7697472963515961276
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
