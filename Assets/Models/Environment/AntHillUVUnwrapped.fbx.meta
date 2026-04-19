@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: AntHill
-    second: {fileID: 2100000, guid: d8dc8e4309a9cc64597ef7abedc24289, type: 2}
+    second: {fileID: 2100000, guid: c83a2fbee69d5ab4abc10b669e6fa216, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
