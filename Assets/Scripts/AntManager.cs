@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using System;
 
 public class AntManager : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class AntManager : MonoBehaviour
     [SerializeField]
     private TMP_Text AntsText;
 
+    [SerializeField]
+    private TMP_Text StarveText;
+    [SerializeField]
+    private int StarveTextTimeout = 5;
+
     private void Update()
     {
         // remove any ants that are dead
@@ -44,7 +50,6 @@ public class AntManager : MonoBehaviour
 
         foreach (GameObject ant in deadAnts)
         {
-            ant.transform.rotation *= Quaternion.Euler(180, 0, 0);
             Ants.Remove(ant);
         }
 
@@ -68,6 +73,12 @@ public class AntManager : MonoBehaviour
                 break;
         }
         return WorkerPrefab;
+    }
+
+    private void DisableStarveText()
+    {
+        StartCoroutine(FadeTextToZeroAlpha(1f, StarveText));
+        //StarveText.gameObject.SetActive(false);
     }
 
     public GameObject SpawnAnt(Transform location, AntController.AntType type)
@@ -96,13 +107,24 @@ public class AntManager : MonoBehaviour
 
     public void CullAnts(int debitFood)
     {
+        int CountDeadAnts = 0;
         while (debitFood > 0)
         {
             Debug.Log("Not Enough Food, culling ants: " + debitFood);
-            int antIdx = Random.Range(0, Ants.Count);
+            int antIdx = UnityEngine.Random.Range(0, Ants.Count);
             AntController ant = Ants[antIdx].GetComponent<AntController>();
             debitFood -= ant.FoodCost();
             ant.Kill();
+            CountDeadAnts++;
+        }
+
+        if (CountDeadAnts > 0)
+        {
+            StarveText.text = CountDeadAnts + " of your Ants starved!";
+            StartCoroutine(FadeTextToFullAlpha(1f, StarveText));
+            //StarveText.gameObject.SetActive(true);
+
+            Invoke("DisableStarveText", StarveTextTimeout);
         }
 
     }
@@ -111,5 +133,25 @@ public class AntManager : MonoBehaviour
     {
         yield return new WaitForSeconds(AntDeadTimeout);
         Destroy(ant);
+    }
+
+    public IEnumerator FadeTextToFullAlpha(float t, TMP_Text i)
+    {
+        i.color = new Color(i.color.r, i.color.g, i.color.b, 0);
+        while (i.color.a < 1.0f)
+        {
+            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
+            yield return null;
+        }
+    }
+
+    public IEnumerator FadeTextToZeroAlpha(float t, TMP_Text i)
+    {
+        i.color = new Color(i.color.r, i.color.g, i.color.b, 1);
+        while (i.color.a > 0.0f)
+        {
+            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
+            yield return null;
+        }
     }
 }

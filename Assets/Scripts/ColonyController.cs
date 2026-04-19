@@ -6,10 +6,7 @@ using UnityEngine.UI;
 
 public class ColonyController : MonoBehaviour
 {
-    [SerializeField]
     private AntManager antManager;
-
-    [SerializeField]
     private FoodManager foodManager;
 
     [SerializeField]
@@ -35,6 +32,20 @@ public class ColonyController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+        foodManager = this.gameObject.GetComponent<FoodManager>();
+        antManager = this.gameObject.GetComponent<AntManager>();
+
+        if (foodManager == null)
+        {
+            Debug.LogError("ColonyController was unable to find a FoodManager. Things will not work!");
+        }
+
+        if (antManager == null)
+        {
+            Debug.LogError("ColonyController was unable to find a AntManager. Things will not work!");
+        }
+
         for (int i = 0; i < StartAntNum; i++)
         {
             SpawnAnt(AntController.AntType.Worker);

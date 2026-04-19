@@ -119,42 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &174609000 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 452951825045259714, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
-  m_PrefabInstance: {fileID: 2280891038075791175}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &174609001 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7233319756282461861, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
   m_PrefabInstance: {fileID: 2280891038075791175}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174609000}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e025877276d79c7428e876a9e06a14b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &174609003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174609000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dda12081e9c4624e86601d1cc755dab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  Ants: []
-  WorkerPrefab: {fileID: 1904777153091047314, guid: 5488edaf4346cff4299268ad82d90a1b, type: 3}
-  SoldierPrefab: {fileID: 1904777153091047314, guid: aff3bcc08a131674e9e489f6c40fa9e5, type: 3}
-  FirePrefab: {fileID: 1904777153091047314, guid: fb5412e23a2e4354cb7d965761816c49, type: 3}
-  CarpenterPrefab: {fileID: 1904777153091047314, guid: 512a461cf7721ab49858f90476a5a0fa, type: 3}
-  AntDeadTimeout: 5
-  CostText: {fileID: 1112062952}
-  AntsText: {fileID: 1042068208}
 --- !u!1 &437578310
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +606,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dd7e45b0174aa84eb57770e74228605, type: 3}
+--- !u!114 &1895820256 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3947307637685190079, guid: 3095e2e30bc674e49890fbb06d3437c5, type: 3}
+  m_PrefabInstance: {fileID: 5603641711733318633}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1967618852
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,63 +770,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!1001 &2093153775
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2134985739541792784, guid: a3af3c0a52db026449be159ba724b9fb, type: 3}
-      propertyPath: m_Name
-      value: PheromonePre
-      objectReference: {fileID: 0}
-    - target: {fileID: 8626147553771940051, guid: a3af3c0a52db026449be159ba724b9fb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 8626147553771940051, guid: a3af3c0a52db026449be159ba724b9fb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 8626147553771940051, guid: a3af3c0a52db026449be159ba724b9fb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 8626147553771940051, guid: a3af3c0a52db026449be159ba724b9fb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8626147553771940051, guid: a3af3c0a52db026449be159ba724b9fb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8626147553771940051, guid: a3af3c0a52db026449be159ba724b9fb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8626147553771940051, guid: a3af3c0a52db026449be159ba724b9fb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8626147553771940051, guid: a3af3c0a52db026449be159ba724b9fb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8626147553771940051, guid: a3af3c0a52db026449be159ba724b9fb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8626147553771940051, guid: a3af3c0a52db026449be159ba724b9fb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a3af3c0a52db026449be159ba724b9fb, type: 3}
 --- !u!1001 &2135931639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -910,6 +839,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Colony
       objectReference: {fileID: 0}
+    - target: {fileID: 6489142182609239546, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
+      propertyPath: AntsText
+      value: 
+      objectReference: {fileID: 1042068208}
+    - target: {fileID: 6489142182609239546, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
+      propertyPath: CostText
+      value: 
+      objectReference: {fileID: 1112062952}
+    - target: {fileID: 6489142182609239546, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
+      propertyPath: StarveText
+      value: 
+      objectReference: {fileID: 1895820256}
     - target: {fileID: 6764605987649059498, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -957,7 +898,7 @@ PrefabInstance:
     - target: {fileID: 7913583638983509038, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
       propertyPath: antManager
       value: 
-      objectReference: {fileID: 174609003}
+      objectReference: {fileID: 0}
     - target: {fileID: 7913583638983509038, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
       propertyPath: SpawnButton
       value: 
@@ -982,14 +923,10 @@ PrefabInstance:
       propertyPath: SpawnCarpenterButton
       value: 
       objectReference: {fileID: 5603641711733318634}
-    m_RemovedComponents:
-    - {fileID: 6489142182609239546, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 452951825045259714, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 174609003}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
 --- !u!1001 &3317313678627238215
 PrefabInstance:
@@ -1007,6 +944,10 @@ PrefabInstance:
       propertyPath: basePheromone
       value: 
       objectReference: {fileID: 2134985739541792784, guid: a3af3c0a52db026449be159ba724b9fb, type: 3}
+    - target: {fileID: 400152111537829955, guid: b51bd273fb4045645ac30ece345a33a2, type: 3}
+      propertyPath: PlacementLayers.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 1415584296068699112, guid: b51bd273fb4045645ac30ece345a33a2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -1224,6 +1165,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3947307637685190079, guid: 3095e2e30bc674e49890fbb06d3437c5, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947307637685190079, guid: 3095e2e30bc674e49890fbb06d3437c5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 255
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987234032165368418, guid: 3095e2e30bc674e49890fbb06d3437c5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1365,7 +1318,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1967618855}
   - {fileID: 1488072032}
-  - {fileID: 2093153775}
   - {fileID: 3317313678627238215}
   - {fileID: 437578313}
   - {fileID: 2280891038075791175}
