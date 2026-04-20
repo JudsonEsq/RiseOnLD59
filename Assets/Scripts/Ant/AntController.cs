@@ -65,7 +65,11 @@ public class AntController : MonoBehaviour
         isReturningToNest = false;
         targetObject = null;
 
-        //FoodModel = this.gameObject.transform.Find("Food").gameObject;
+        Transform transform = this.gameObject.transform.Find("Food");
+        if (transform != null)
+        {
+            FoodModel = this.gameObject.transform.Find("Food").gameObject;
+        }
     }
 
     public void Operate()
