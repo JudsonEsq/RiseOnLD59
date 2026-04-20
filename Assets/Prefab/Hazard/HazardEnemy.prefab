@@ -102,10 +102,10 @@ GameObject:
   - component: {fileID: 7211882881286500542}
   - component: {fileID: 5540454765918679328}
   - component: {fileID: 208870488883185400}
-  - component: {fileID: 932723038290208998}
   - component: {fileID: 7619017178710925832}
   - component: {fileID: 4207215761213540803}
   - component: {fileID: 3606734544739100808}
+  - component: {fileID: 6392145130943325403}
   m_Layer: 0
   m_Name: HazardEnemy
   m_TagString: Untagged
@@ -209,20 +209,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3336363, y: 1.1557269, z: 1.2328894}
   m_Center: {x: 0.20059323, y: 0.077863455, z: 0.012706399}
---- !u!114 &932723038290208998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6489955214528234972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fddd6cc6f894af40aa0cca58498db6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Hazard
-  type: 2
-  numAntInteractionsToClear: 5
 --- !u!54 &7619017178710925832
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -303,6 +289,20 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &6392145130943325403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6489955214528234972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b161f12ab9f394da9da542f0ea938f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HazardEnemy
+  type: 2
+  numAntInteractionsToClear: 5
 --- !u!1001 &1271053234600322587
 PrefabInstance:
   m_ObjectHideFlags: 0
