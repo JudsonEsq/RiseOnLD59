@@ -839,6 +839,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Colony
       objectReference: {fileID: 0}
+    - target: {fileID: 4982709028670992389, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982709028670992389, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982709028670992389, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982709028670992389, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982709028670992389, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 6489142182609239546, guid: 3df52a0f20571174a87deb7d3f8d3afe, type: 3}
       propertyPath: AntsText
       value: 

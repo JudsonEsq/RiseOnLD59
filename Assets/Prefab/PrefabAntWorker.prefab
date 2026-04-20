@@ -400,8 +400,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8629973980622828910}
-  - component: {fileID: 5782633767375473919}
   - component: {fileID: 6795437035035401455}
+  - component: {fileID: 8840753107542298460}
+  - component: {fileID: 6182372282862662935}
   m_Layer: 0
   m_Name: PrefabAntWorker
   m_TagString: Ant
@@ -418,7 +419,7 @@ Transform:
   m_GameObject: {fileID: 1904777153091047314}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.0095, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -427,35 +428,6 @@ Transform:
   - {fileID: 7938442333946693008}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5782633767375473919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1904777153091047314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02fb2de6705b5894b813a2ff7be1a931, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AntController
-  pheromonesToTrack: []
-  pheromonesToAvoid: []
-  previousPheromones: []
-  pheromoneRange: 10
-  searchTimer: 1
-  searchDuration: 5
-  nest: {fileID: 0}
-  moveSpeed: 2
-  isReturningToNest: 0
-  targetPheromones: 
-  avoidPheromones: 
-  hazardDistance: 2
-  maxPheromonesCount: 3
-  isAlive: 1
-  heldFood: 0
-  antType: 0
-  foodCost: 1
 --- !u!136 &6795437035035401455
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -479,6 +451,61 @@ CapsuleCollider:
   m_Height: 0.29922068
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0.023595244}
+--- !u!114 &8840753107542298460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904777153091047314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83a2ef8a8830af1448519473351adc1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioAnt
+  AntDeathEvent:
+    Guid:
+      Data1: -1995832358
+      Data2: 1253772639
+      Data3: -1625708107
+      Data4: -463837390
+    Path: event:/Ant/VO/VO_Death
+  AntPickedUpFood:
+    Guid:
+      Data1: 1151374971
+      Data2: 1260786463
+      Data3: -1028708220
+      Data4: -1666907832
+    Path: event:/Ant/FoodPickedUp
+--- !u!114 &6182372282862662935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904777153091047314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827dbc1a9b29a8e43a3aaebdb135105a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorkerAntController
+  pheromonesToTrack: []
+  pheromonesToAvoid: []
+  previousPheromones: []
+  pheromoneRange: 20
+  searchTimer: 1
+  searchDuration: 5
+  nest: {fileID: 0}
+  moveSpeed: 2
+  isReturningToNest: 0
+  targetPheromones: 
+  avoidPheromones: 
+  hazardDistance: 2
+  maxPheromonesCount: 3
+  isAlive: 1
+  heldFood: 0
+  antType: 0
+  foodCost: 1
 --- !u!1 &2495759645296598623
 GameObject:
   m_ObjectHideFlags: 0
