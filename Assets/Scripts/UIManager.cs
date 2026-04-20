@@ -20,4 +20,24 @@ public class UIManager : MonoBehaviour
    public void OnResumePress() {
       
    } 
-}
+
+   public void OnMisophoniaFilterToggle(bool value)
+   {
+      Debug.Log("Toggle is now: " + value);
+   }
+   
+   public void OnMainVolChanged(float value)
+    {
+        Debug.Log("New MainVol: " + value);
+    }
+
+    public void OnSFXVolChanged(float value)
+    {
+        Debug.Log("New SFXVol: " + value);
+    }
+
+    public void OnMusicVolChanged(float value)
+    {
+        Debug.Log("New MusicVol: " + value);
+    }
+   }

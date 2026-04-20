@@ -167,6 +167,14 @@ public class AntController : MonoBehaviour
                 continue;
             }
 
+            // Filter out Pheromones that are on the cursor
+            if (pheromones[i].GetComponent<Pheromone>().IsOnCursor())
+            {
+                pheromones.RemoveAt(i);
+                i--;
+                continue;
+            }
+
             // Add applicable pheromones to targetPheromones based on PheromoneType
             if (targetPheromones.Contains(pheromones[i].GetComponent<Pheromone>().pheromoneType))
             {
