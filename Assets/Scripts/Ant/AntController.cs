@@ -5,30 +5,12 @@ using UnityEngine;
 
 public class AntController : MonoBehaviour
 {
-    public List<Collider> pheromonesToTrack; // List to store detected pheromones
-    public List<Collider> pheromonesToAvoid; // List to store detected pheromones
-    public List<Collider> previousPheromones = new(); // List to store previously detected pheromones to avoid re-targeting
-    public float pheromoneRange = 20f; // Range within which the ant can detect pheromones
-    private GameObject targetObject; // Variable to store the target object for pathfinding
-    private Vector3 targetPosition; // Variable to store the target position for movement
-    public float searchTimer = 1f; // Time in seconds between pheromones searches
-    public float searchDuration = 5f; // Time in seconds to search for new pheromones before returning to nest
-    private float timeSinceLastFind = 0f; // Time in seconds since the last pheromone was found
-    public GameObject nest; // Reference to the nest GameObject for returning after searching for pheromones
-    public float moveSpeed = 2f; // Speed at which the ant moves towards pheromones and the nest
-    public bool isReturningToNest = false; // Flag to indicate if the ant is currently returning to the nest
-    public List<Pheromone.PheromoneType> targetPheromones = new();
-    public List<Pheromone.PheromoneType> avoidPheromones = new();
-    public float hazardDistance = 2f; // Distance within which the ant considers a pheromone to be a hazard
-    public int maxPheromonesCount = 3; // Maximum number of pheromones to consider when picking a target
-
+    [Header("General Ant Settings")]
     public bool isAlive = true;
-    public int heldFood = 0;
-	
-	private Animator anim;
-
-    [Serializable]
-    public enum AntType
+    [SerializeField] private int heldFood = 0;
+    public AntType antType;
+    [SerializeField] private int foodCost = 1;
+    [Serializable] public enum AntType
     {
         Worker,
         Soldier,
@@ -36,12 +18,31 @@ public class AntController : MonoBehaviour
         Carpenter,
     }
 
-    [SerializeField]
-    public AntType antType;
+    [Header("Pheromone Detection")]
+    public List<Pheromone.PheromoneType> targetPheromones = new();
+    public List<Pheromone.PheromoneType> avoidPheromones = new();
+    public List<Collider> pheromonesToTrack; // List to store detected pheromones
+    public List<Collider> pheromonesToAvoid; // List to store detected pheromones
+    public List<Collider> previousPheromones = new(); // List to store previously detected pheromones to avoid re-targeting
+    public float pheromoneRange = 20f; // Range within which the ant can detect pheromones
+    [SerializeField] private int maxPheromonesCount = 3; // Maximum number of pheromones to consider when picking a target
+    [SerializeField] private float hazardDistance = 2f; // Distance within which the ant considers a pheromone to be a hazard
 
-    [SerializeField]
-    public int foodCost = 1;
+    [Header("Movement and Targeting")]
+    private GameObject targetObject; // Variable to store the target object for pathfinding
+    private Vector3 targetPosition; // Variable to store the target position for movement
+    public float searchDuration = 5f; // Time in seconds to search for new pheromones before returning to nest
+    private float timeSinceLastFind = 0f; // Time in seconds since the last pheromone was found
+    public GameObject nest; // Reference to the nest GameObject for returning after searching for pheromones
+    public float moveSpeed = 2f; // Speed at which the ant moves towards pheromones and the nest
+    public bool isReturningToNest = false; // Flag to indicate if the ant is currently returning to the nest
 
+    [Header("Idle Settings")]
+    public bool waitingForFood = false; // Flag to indicate if the ant is waiting for a food source to become available for harvest
+    [SerializeField] private float idleTimer = 0f; // Timer to track how long the ant has been waiting for a food source
+    [SerializeField] private float idleDuration = 5f; // Time in seconds to wait for a food source to become available for harvest before returning to the nest
+	
+	private Animator anim;
 
     /// <summary>
     /// Event Dispatchers
@@ -53,19 +54,39 @@ public class AntController : MonoBehaviour
 
     public void Init()
     {
-		anim = GetComponent<Animator>();
-		anim.SetBool("isMoving", false);
-		anim.SetBool("isDead", false);
-		
+		anim = TryGetComponent(out Animator animator) ? animator : null;
+
+        if (anim != null)
+		{
+			anim.SetBool("isMoving", false);
+			anim.SetBool("isDead", false);
+		}
+
         isReturningToNest = false;
         targetObject = null;
 
-        FoodModel = this.gameObject.transform.Find("Food").gameObject;
+        //FoodModel = this.gameObject.transform.Find("Food").gameObject;
     }
 
     public void Operate()
     {
         if (IsDead()) return;
+
+        if (waitingForFood)
+        {
+            if (CheckForFood(targetObject))
+            {
+                ReturnToNest();
+            }
+            idleTimer += Time.deltaTime;
+            if (idleTimer >= idleDuration)
+            {
+                waitingForFood = false;
+                idleTimer = 0f;
+                ReturnToNest();
+            }
+            return;
+        }
 
         if (isReturningToNest && targetObject != null)
         {
@@ -99,7 +120,12 @@ public class AntController : MonoBehaviour
                 {
                     ReturnToNest();
                     return;
-                } 
+                }
+
+                if (waitingForFood)
+                {
+                    return;
+                }
 
                 if (targetObject.TryGetComponent(out Pheromone pheromone))
                 {
@@ -142,7 +168,7 @@ public class AntController : MonoBehaviour
     }
 
     // Method to find pheromones within range and store them in the pheromones list
-    public void FindPheromones()
+    private void FindPheromones()
     {
         List <Collider> pheromones = Physics.OverlapSphere(transform.position, pheromoneRange, LayerMask.GetMask("Pheromones")).ToList();
         pheromonesToTrack.Clear();
@@ -161,6 +187,14 @@ public class AntController : MonoBehaviour
 
             // Filter out pheromones that have previously been visited along this path
             if (previousPheromones.Contains(pheromones[i]))
+            {
+                pheromones.RemoveAt(i);
+                i--;
+                continue;
+            }
+
+            // Filter out Pheromones that are on the cursor
+            if (pheromones[i].GetComponent<Pheromone>().IsOnCursor())
             {
                 pheromones.RemoveAt(i);
                 i--;
@@ -199,7 +233,7 @@ public class AntController : MonoBehaviour
     }
 
     // Method to set the ant's target position to the nest and return along the path of previously detected pheromones
-    public void ReturnToNest()
+    private void ReturnToNest()
     {
         if (ReachedTarget() && targetObject == nest)
         {
@@ -207,7 +241,10 @@ public class AntController : MonoBehaviour
             targetObject = null;
             isReturningToNest = false;
             heldFood = 0;
-            FoodModel.SetActive(false);
+            if (FoodModel != null)
+            {
+                FoodModel.SetActive(false);
+            }
             return;
         }
 
@@ -227,7 +264,7 @@ public class AntController : MonoBehaviour
     }
 
     // Method to set the ant's target object and position
-    public void SetTarget(GameObject target)
+    private void SetTarget(GameObject target)
     {
         if (target == null)
         {
@@ -237,21 +274,29 @@ public class AntController : MonoBehaviour
         targetObject = target;
         targetPosition = new Vector3 (target.transform.position.x, transform.position.y, target.transform.position.z);
 
-        // Also sets animation speed to match current music BPM
-        float bpm = MusicManager.instance.currentBPM;
-
         // Animation by default is 24 steps per minute. We want 1 step per 4 beats.
-        anim.speed = (bpm/48);
+        if (anim != null)
+        {
+            // Also sets animation speed to match current music BPM
+            float bpm = MusicManager.instance.currentBPM;
+            anim.speed = (bpm/48);
+        }
     }
 
     // Method to check if the ant has reached its target position
-    public bool ReachedTarget()
+    private bool ReachedTarget()
     {
-		anim.SetBool("isMoving", false);
+        if (anim != null)
+        {
+            anim.SetBool("isMoving", false);
+        }
 
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
         {
-            anim.speed = 1f;
+            if (anim != null)
+            {
+                anim.speed = 1f;
+            }
             return true;
         }
 
@@ -260,9 +305,12 @@ public class AntController : MonoBehaviour
     }
 
     // Method to move the ant towards its target position
-    public void MoveTowardsTarget()
+    private void MoveTowardsTarget()
     {
-		anim.SetBool("isMoving", true);
+		if (anim != null)
+        {
+            anim.SetBool("isMoving", true);
+        }
 		
         Vector3 direction = (targetPosition - transform.position).normalized;
         transform.position += moveSpeed * Time.deltaTime * direction;
@@ -276,7 +324,7 @@ public class AntController : MonoBehaviour
     }
 
     // Method to pick the chosen pheromone based on proximity and type
-    public void PickPheromone()
+    private void PickPheromone()
     {
         // Check is there are pheromonesToTrack
         if (pheromonesToTrack == null || pheromonesToTrack.Count() == 0)
@@ -369,19 +417,14 @@ public class AntController : MonoBehaviour
     }
 
     // Method to check if the target object is a food source and pick up food if it is
-    public bool CheckForFood(GameObject pheromone)
+    private bool CheckForFood(GameObject pheromone)
     {
         if (pheromone.TryGetComponent(out FoodSource foodSource))
         {
-            if (foodSource.currentFood > 0)
+            int foodToPickup = foodSource.RequestHarvest(this);
+
+            if (foodToPickup > 0)
             {
-                int foodToPickup = Mathf.Min(foodSource.foodValue, foodSource.currentFood);
-
-                if (foodSource.isDepletable)
-                {
-                    foodSource.currentFood -= foodToPickup;
-                }
-
                 PickupFood(foodToPickup);
                 return true;
             }
@@ -392,7 +435,10 @@ public class AntController : MonoBehaviour
 
     public void Kill()
     {
-		anim.SetBool("isDead", true);
+        if (anim != null)
+        {
+            anim.SetBool("isDead", true);
+        }
 		
         Debug.Log("Killing Ant");
         this.isAlive = false;
@@ -409,11 +455,14 @@ public class AntController : MonoBehaviour
         return heldFood > 0;
     }
 
-    public void PickupFood(int foodAmount)
+    private void PickupFood(int foodAmount)
     {
         heldFood = foodAmount;
         OnPickupFood?.Invoke();
-        FoodModel.SetActive(true);
+        if (FoodModel != null)
+        {
+            FoodModel.SetActive(true);
+        }
     }
 
     void OnCollisionEnter(Collision collision)

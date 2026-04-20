@@ -7,7 +7,16 @@ using UnityEngine.UI;
 
 public class ObjectiveController : MonoBehaviour
 {
-    private const string OBJECTIVE_DISPLAY_HEADER = "<size=64>Objective(s):</size>";
+    private const string OBJECTIVE_DISPLAY_HEADER = "Objective(s):";
+
+    [SerializeField]
+    int HeaderTextSize = 64;
+
+    [SerializeField]
+    int ObjectiveTextSize = 36;
+
+    [SerializeField]
+    string ObjectiveCompletedColor = "green";
 
     [SerializeField]
     int SecsBeforeRemoveCompletedObjective = 5;
@@ -15,6 +24,8 @@ public class ObjectiveController : MonoBehaviour
     TextMeshProUGUI ObjectiveDisplay;
 
     ObjectiveContainer ObjectiveContainer;
+
+    ImageMouseEventHandler ImageMouseEventHandler;
 
     DateTime completionTime;
     bool objectiveCompleted = false;
@@ -26,7 +37,8 @@ public class ObjectiveController : MonoBehaviour
         ObjectiveContainer = new ObjectiveContainer();
 
         ObjectiveDisplay = GetComponentInChildren<TextMeshProUGUI>();
-        
+        ImageMouseEventHandler = GetComponentInParent<ImageMouseEventHandler>();
+
         foreach (int i in Enumerable.Range(1,2))
         {
             ObjectiveContainer.TryAddObjective(new Objective { Step = i, Name = $"Objective {i}", Description = $"Objective #{i}." });
@@ -37,6 +49,8 @@ public class ObjectiveController : MonoBehaviour
         ObjectiveContainer.TryAddObjective(new Objective { Step = 3, Name = "Objective 3", Description = "Objective #3" });
         ObjectiveContainer.TryAddObjective(new Objective { Step = 4, Name = "Objective 4", Description = "Objective #4" });
 
+        ImageMouseEventHandler.SetOpacity(1.0f);
+
         ShowObjective(true);
 
         completionTime = DateTime.Now + TimeSpan.FromSeconds(10);
@@ -45,7 +59,7 @@ public class ObjectiveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ObjectiveDisplay.text = OBJECTIVE_DISPLAY_HEADER;
+        ObjectiveDisplay.text = $"<size={HeaderTextSize}>{OBJECTIVE_DISPLAY_HEADER}</size>";
 
         foreach (Objective objective in ObjectiveContainer.ObjectiveList)
         {
@@ -61,14 +75,16 @@ public class ObjectiveController : MonoBehaviour
                     continue;
                 }
 
-                line += $"<color=\"green\">- {objective.Description}</color>";
+                line += $"<color=\"{ObjectiveCompletedColor}\">- {objective.Description}</color>";
             }
             else
             {
                 line += $"- {objective.Description}";
             }
 
-            ObjectiveDisplay.text = $"{ObjectiveDisplay.text}{line}";
+            line = $"<size={ObjectiveTextSize}>{line}</size>";
+
+            ObjectiveDisplay.text += $"{line}";
         }
 
         if(DateTime.Now >= completionTime && !ObjectiveContainer.ObjectiveList[0].Complete && !objectiveCompleted)

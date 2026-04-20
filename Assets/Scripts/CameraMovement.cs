@@ -43,8 +43,6 @@ public class CameraMovement : MonoBehaviour
         float xMax = -(1 / slope) * (zPos - lowerBound) + WidthBound;
         xPos = Mathf.Clamp(xPos, xMin, xMax);
 
-        Debug.Log("xMin: " + xMin + " XMax: " + xMax + " Slope: " + slope);
-
         float zMax = TopPoint;
 
         if(xPos > 0)

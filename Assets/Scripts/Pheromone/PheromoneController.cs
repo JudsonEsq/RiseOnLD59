@@ -78,6 +78,7 @@ public class PheromoneController : MonoBehaviour
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, PlacementLayers))
         {
             selectedPheromone = Instantiate<GameObject>(basePheromone, hit.point, Quaternion.identity);
+            selectedPheromone.GetComponent<Pheromone>().onCursor = true;
         }
     }
 
@@ -90,6 +91,7 @@ public class PheromoneController : MonoBehaviour
                 Debug.Log("Destroying previously selected pheromone");
                 Destroy(selectedPheromone);
             }
+            selectedPheromone.GetComponent<Pheromone>().onCursor = false;
             selectedPheromone = null;
         } 
     }
