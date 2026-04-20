@@ -53,7 +53,10 @@ public class AntController : MonoBehaviour
 
     public void Init()
     {
-		// anim = GetComponentInChildren<Animator>();
+		anim = GetComponent<Animator>();
+		anim.SetBool("isMoving", false);
+		anim.SetBool("isDead", false);
+		
         isReturningToNest = false;
         targetObject = null;
 
@@ -238,14 +241,25 @@ public class AntController : MonoBehaviour
     // Method to check if the ant has reached its target position
     public bool ReachedTarget()
     {
+		anim.SetBool("isMoving", false);
+		
         return Vector3.Distance(transform.position, targetPosition) < 0.1f;
     }
 
     // Method to move the ant towards its target position
     public void MoveTowardsTarget()
     {
+		anim.SetBool("isMoving", true);
+		
         Vector3 direction = (targetPosition - transform.position).normalized;
         transform.position += moveSpeed * Time.deltaTime * direction;
+		
+		// Make ants face where they're going?
+		Vector3 facing = transform.forward;
+		if (facing != direction)
+		{
+			transform.forward = direction;
+		}
     }
 
     // Method to pick the chosen pheromone based on proximity and type
@@ -365,6 +379,8 @@ public class AntController : MonoBehaviour
 
     public void Kill()
     {
+		anim.SetBool("isDead", true);
+		
         Debug.Log("Killing Ant");
         this.isAlive = false;
         OnDeath?.Invoke();
