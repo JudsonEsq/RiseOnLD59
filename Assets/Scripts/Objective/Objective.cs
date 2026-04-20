@@ -8,6 +8,8 @@ namespace Assets.Scripts.Objective
         internal string Name { get; set; }
         internal string Description { get; set; }
 
+        internal DateTime TimeCompleted { get; set; }
+
         internal int Step { get; set; }
 
         /// <summary>

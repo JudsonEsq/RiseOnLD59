@@ -13,6 +13,6 @@ public class SoldierAntController : AntController
     // Update is called once per frame
     void Update()
     {
-        
+        Operate();
     }
 }
