@@ -7,7 +7,16 @@ using UnityEngine.UI;
 
 public class ObjectiveController : MonoBehaviour
 {
-    private const string OBJECTIVE_DISPLAY_HEADER = "<size=64>Objective(s):</size>";
+    private const string OBJECTIVE_DISPLAY_HEADER = "Objective(s):";
+
+    [SerializeField]
+    int HeaderTextSize = 64;
+
+    [SerializeField]
+    int ObjectiveTextSize = 36;
+
+    [SerializeField]
+    string ObjectiveCompletedColor = "green";
 
     [SerializeField]
     int SecsBeforeRemoveCompletedObjective = 5;
@@ -50,7 +59,7 @@ public class ObjectiveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ObjectiveDisplay.text = OBJECTIVE_DISPLAY_HEADER;
+        ObjectiveDisplay.text = $"<size={HeaderTextSize}>{OBJECTIVE_DISPLAY_HEADER}</size>";
 
         foreach (Objective objective in ObjectiveContainer.ObjectiveList)
         {
@@ -66,14 +75,16 @@ public class ObjectiveController : MonoBehaviour
                     continue;
                 }
 
-                line += $"<color=\"green\">- {objective.Description}</color>";
+                line += $"<color=\"{ObjectiveCompletedColor}\">- {objective.Description}</color>";
             }
             else
             {
                 line += $"- {objective.Description}";
             }
 
-            ObjectiveDisplay.text = $"{ObjectiveDisplay.text}{line}";
+            line = $"<size={ObjectiveTextSize}>{line}</size>";
+
+            ObjectiveDisplay.text += $"{line}";
         }
 
         if(DateTime.Now >= completionTime && !ObjectiveContainer.ObjectiveList[0].Complete && !objectiveCompleted)
