@@ -236,14 +236,25 @@ public class AntController : MonoBehaviour
 
         targetObject = target;
         targetPosition = new Vector3 (target.transform.position.x, transform.position.y, target.transform.position.z);
+
+        // Also sets animation speed to match current music BPM
+        float bpm = MusicManager.instance.currentBPM;
+        anim.speed = (bpm * 0.4f);
     }
 
     // Method to check if the ant has reached its target position
     public bool ReachedTarget()
     {
 		anim.SetBool("isMoving", false);
-		
-        return Vector3.Distance(transform.position, targetPosition) < 0.1f;
+
+        if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
+        {
+            anim.speed = 1f;
+            return true;
+        }
+
+        return false;
+        
     }
 
     // Method to move the ant towards its target position
