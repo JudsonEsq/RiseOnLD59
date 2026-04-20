@@ -79,6 +79,7 @@ public class PheromoneController : MonoBehaviour
         {
             selectedPheromone = Instantiate<GameObject>(basePheromone, hit.point, Quaternion.identity);
             selectedPheromone.GetComponent<Pheromone>().onCursor = true;
+            selectedPheromone.GetComponent<Pheromone>().pheromoneType = type;
         }
     }
 
