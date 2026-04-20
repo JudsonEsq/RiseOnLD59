@@ -239,7 +239,9 @@ public class AntController : MonoBehaviour
 
         // Also sets animation speed to match current music BPM
         float bpm = MusicManager.instance.currentBPM;
-        anim.speed = (bpm * 0.4f);
+
+        // Animation by default is 24 steps per minute. We want 1 step per 4 beats.
+        anim.speed = (bpm/48);
     }
 
     // Method to check if the ant has reached its target position
