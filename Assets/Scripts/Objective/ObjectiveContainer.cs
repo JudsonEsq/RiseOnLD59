@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -40,9 +41,12 @@ namespace Assets.Scripts.Objective
             Objective obj = Objectives.FirstOrDefault(o => o.Step == step);
             if(obj != null)
             {
-                Debug.Log($"[{nameof(ObjectiveContainer)}] Marked Complete: {obj.Name} (Step {obj.Step}) - {obj.Description}");
+                var timeCompleted = DateTime.Now;
 
                 obj.Complete = true;
+                obj.TimeCompleted = timeCompleted;
+
+                Debug.Log($"[{nameof(ObjectiveContainer)}] Marked Complete at {timeCompleted}: {obj.Name} (Step {obj.Step}) - {obj.Description}");
             }
         }
 
@@ -86,5 +90,31 @@ namespace Assets.Scripts.Objective
 
             return true;
         }
+
+        /// <summary>
+        /// Attempts to remove the objective associated with the specified step number.
+        /// </summary>
+        /// <param name="step">The step number of the objective to remove.</param>
+        /// <returns>true if an objective with the specified step was found and removed; otherwise, false.</returns>
+        public bool TryRemoveObjective(int step)
+        {
+            var objectiveToRemove = Objectives.FirstOrDefault(o => o.Step == step);
+
+            if (objectiveToRemove != null)
+            {
+                Objectives.Remove(objectiveToRemove);
+
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Attempts to remove the specified objective from the collection.
+        /// </summary>
+        /// <param name="objective">The objective to remove from the collection. Cannot be null.</param>
+        /// <returns>true if the objective was successfully removed; otherwise, false.</returns>
+        public bool TryRemoveObjective(Objective objective) => TryRemoveObjective(objective.Step);
     }
 }

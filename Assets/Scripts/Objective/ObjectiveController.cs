@@ -8,11 +8,15 @@ public class ObjectiveController : MonoBehaviour
 {
     private const string OBJECTIVE_DISPLAY_HEADER = "<size=64>Objective(s):</size>";
 
+    [SerializeField]
+    int SecsBeforeRemoveCompletedObjective = 5;
+
     TextMeshProUGUI ObjectiveDisplay;
 
     ObjectiveContainer ObjectiveContainer;
 
     DateTime completionTime;
+    bool objectiveCompleted = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -48,7 +52,15 @@ public class ObjectiveController : MonoBehaviour
 
             if (objective.Complete)
             {
-                line += $"- <s>{objective.Description}</s>";
+                if(DateTime.Now > objective.TimeCompleted + TimeSpan.FromSeconds(SecsBeforeRemoveCompletedObjective))
+                {
+                    // Remove the completed objective from the objective container if it's been long enough since it was completed. This will prevent the display from being cluttered with completed objectives.
+                    ObjectiveContainer.TryRemoveObjective(objective);
+
+                    continue;
+                }
+
+                line += $"<color=\"green\">- {objective.Description}</color>";
             }
             else
             {
@@ -58,9 +70,10 @@ public class ObjectiveController : MonoBehaviour
             ObjectiveDisplay.text = $"{ObjectiveDisplay.text}{line}";
         }
 
-        if(DateTime.Now >= completionTime && !ObjectiveContainer.ObjectiveList[0].Complete)
+        if(DateTime.Now >= completionTime && !ObjectiveContainer.ObjectiveList[0].Complete && !objectiveCompleted)
         {
             ObjectiveContainer.CompleteObjective(ObjectiveContainer.ObjectiveList[0].Step);
+            objectiveCompleted = true;
         }
     }
 
