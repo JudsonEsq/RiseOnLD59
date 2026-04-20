@@ -47,7 +47,23 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene(target);
+        if(loadAfter) SceneManager.LoadScene(target);
+    }
+
+    IEnumerator FadeInCurtain()
+    {
+        Color newCol = curtain.color;
+        while (curtain.color.a < .99)
+        {
+            newCol.a += FadeSpeed * Time.deltaTime;
+            curtain.color = newCol;
+            yield return null;
+        }
+    }
+
+    public void FadeIn()
+    {
+        StartCoroutine(FadeInCurtain());
     }
 
    public void LoadScene(string target)
