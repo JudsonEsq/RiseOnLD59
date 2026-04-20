@@ -3,11 +3,29 @@ using FMODUnity;
 
 public class AudioHUD : MonoBehaviour
 {
+    #region Pheromone Events
+    [Header("Pheromone Events")]
+    public EventReference ButtonFoodSelect;
+    public EventReference ButtonDangerSelect;
+    public EventReference ButtonAttackSelect;
+    public EventReference ButtonGiftSelect;
+    public EventReference ButtonHoverEvent;
+    public EventReference PlaceItemEvent;
 
+    public void PlayButtonFoodSelect() => MusicManager.PlayOneShot(ButtonFoodSelect);
+    public void PlayButtonDangerSelect() => MusicManager.PlayOneShot(ButtonDangerSelect);
+    public void PlayButtonAttackSelect() => MusicManager.PlayOneShot(ButtonAttackSelect);
+    public void PlayButtonGiftSelect() => MusicManager.PlayOneShot(ButtonGiftSelect);
+    public void PlayButtonHoverEvent() => MusicManager.PlayOneShot(ButtonHoverEvent);
+    public void PlayPlaceItemEvent() => MusicManager.PlayOneShot(PlaceItemEvent);
+    #endregion
+    
+    
     /// <summary>
     /// Sounds for different HUD alerts
     /// </summary>
     #region Alert Events
+    [Header("Alert Events")]
     public EventReference TutorialDingEvent;
     public EventReference DangerAlertEvent;
     public EventReference LowFoodAlertEvent;
@@ -18,18 +36,19 @@ public class AudioHUD : MonoBehaviour
     public void PlayLowFoodAlert() => MusicManager.PlayOneShot(LowFoodAlertEvent);
     public void PlayAchievementAlert() => MusicManager.PlayOneShot(AchievementAlertEvent);
     #endregion
-
+    
     /// <summary>
     /// Sounds for player interacting with spawnign different ant types
     /// </summary>
     #region Player Ant Spawning Events
-    public EventReference ButtonHoverEvent;
+    [Header("Player Spawning Ants Events")]
+
     public EventReference ButtonSelectWorkerEvent;
     public EventReference ButtonSelectSoldierEvent;
     public EventReference ButtonSelectFireEvent;
     public EventReference ButtonSelectCarpenterEvent;
 
-    public void PlayButtonHoverEvent() => MusicManager.PlayOneShot(ButtonHoverEvent);
+
     public void PlayButtonSelectWorkerEvent() => MusicManager.PlayOneShot(ButtonSelectWorkerEvent);
     public void PlayButtonSelectSoldierEvent() => MusicManager.PlayOneShot(ButtonSelectSoldierEvent);
     public void PlayButtonSelectFireEvent() => MusicManager.PlayOneShot(ButtonSelectFireEvent);
