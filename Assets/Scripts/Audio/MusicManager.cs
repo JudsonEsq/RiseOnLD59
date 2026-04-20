@@ -71,7 +71,7 @@ public class MusicManager : MonoBehaviour
     public static event System.Action OnMusicalBeat;
 
 
-    private int beatsPassed = 0;
+    private int beatsPassed = -2;
     public bool checkIfLastBeat()
     {
         if(beatsPassed == timeSignatureUpper)
