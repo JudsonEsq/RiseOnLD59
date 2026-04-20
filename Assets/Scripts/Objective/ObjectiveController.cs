@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectiveController : MonoBehaviour
 {
@@ -25,8 +26,8 @@ public class ObjectiveController : MonoBehaviour
         ObjectiveContainer = new ObjectiveContainer();
 
         ObjectiveDisplay = GetComponentInChildren<TextMeshProUGUI>();
-
-        foreach(int i in Enumerable.Range(1,2))
+        
+        foreach (int i in Enumerable.Range(1,2))
         {
             ObjectiveContainer.TryAddObjective(new Objective { Step = i, Name = $"Objective {i}", Description = $"Objective #{i}." });
 
