@@ -112,6 +112,16 @@ public class ObjectiveController : MonoBehaviour
     {
         // Set the current objective to the provided objective
         // This involves updating the UI elements to reflect the new objective's name and description.
+        ObjectiveContainer.TryAddObjective(objective);
+    }
+
+    /// <summary>
+    /// Complete the passed objective if it is in this Controller's Container.
+    /// </summary>
+    /// <param name="objective"></param>
+    void CompleteObjective(Objective objective)
+    {
+        ObjectiveContainer.CompleteObjective(objective);
     }
 
     /// <summary>

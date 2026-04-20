@@ -56,7 +56,14 @@ namespace Assets.Scripts.Objective
         /// <param name="obj">The objective to be marked as complete. Cannot be null.</param>
         public void CompleteObjective(Objective obj)
         {
-            CompleteObjective(obj.Step);
+            if(ContainsObjective(obj))
+            {
+                CompleteObjective(obj.Step);
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("Objective " + obj.Name + " not in current container.");
+            }
         }
 
         /// <summary>
