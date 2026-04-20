@@ -98,15 +98,6 @@ public class ObjectiveController : MonoBehaviour
     }
 
     /// <summary>
-    /// Complete the passed objective if it is in this Controller's Container.
-    /// </summary>
-    /// <param name="objective"></param>
-    void CompleteObjective(Objective objective)
-    {
-        ObjectiveContainer.CompleteObjective(objective);
-    }
-
-    /// <summary>
     /// Toggles the visibility of the objective UI element. This can be called when the player enters or exits an area, or when an objective is completed.
     /// </summary>
     /// <param name="show"></param>
