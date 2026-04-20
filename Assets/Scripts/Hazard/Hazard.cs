@@ -1,7 +1,9 @@
 using UnityEngine;
 
-public class Hazard : MonoBehaviour
+abstract public class Hazard : MonoBehaviour
 {
+    public abstract void DisableHazardSpecific();
+
     public enum HazardType
     {
         Spike,
@@ -15,6 +17,8 @@ public class Hazard : MonoBehaviour
     private int numAntInteractionsToClear = 5;
 
     private int numAntInteractions = 0;
+
+    private bool IsEnabled = true;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -33,13 +37,18 @@ public class Hazard : MonoBehaviour
             if (numAntInteractions >= numAntInteractionsToClear)
             {
                 Debug.Log("Hazard Cleared!");
-                Destroy(this.gameObject);
+                DisableHazard();
             }
         }
     }
 
     private bool doesKillAnt(AntController ant)
     {
+        if (!IsEnabled)
+        {
+            return false;
+        }
+
         if (ant.antType == AntController.AntType.Fire && type == HazardType.Fire)
         {
             return false;
@@ -56,5 +65,11 @@ public class Hazard : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void DisableHazard()
+    {
+        this.IsEnabled = false;
+        DisableHazardSpecific();
     }
 }
