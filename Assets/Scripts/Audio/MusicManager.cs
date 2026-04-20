@@ -79,6 +79,7 @@ public class MusicManager : MonoBehaviour
     private EventInstance musicInstance;
     private void HandleMusicRequest(MusicCue cue)
     {
+        Debug.Log("cue is: " + (cue == null ? "NULL" : cue.name));
         if(!musicInstance.isValid())
         {
             StartCoroutine(StartMusicWhenReady(cue));
@@ -86,7 +87,7 @@ public class MusicManager : MonoBehaviour
         else
         {
             Debug.Log("Else HIT");
-            if(!cue.musicStateParameter.Name.Equals(string.Empty))
+            if(!string.IsNullOrEmpty(cue.musicStateParameter?.Name))
             {
                 SetGlobalParameter(cue.musicStateParameter.Name, cue.musicStateParameter.Value);
             }
@@ -100,7 +101,7 @@ public class MusicManager : MonoBehaviour
 
         musicInstance = RuntimeManager.CreateInstance(cue.musicEvent);
         musicInstance.start();
-        if (!cue.musicStateParameter.Name.Equals(string.Empty))
+        if (!string.IsNullOrEmpty(cue.musicStateParameter?.Name))
             {
                 SetGlobalParameter(cue.musicStateParameter.Name, cue.musicStateParameter.Value);
             }

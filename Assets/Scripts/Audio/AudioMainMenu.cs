@@ -14,7 +14,9 @@ public class AudioMainMenu : MonoBehaviour
     public EventReference sliderTickEvent;
 
     public MusicChannel musicChannel;
-    public MusicCue musicCue;
+    public MusicCue musicMenuCue;
+
+    public MusicCue musicGameplayCue;
 
     public void PlayHover() => PlayEvent(hoverEvent);
     public void PlayClick() => PlayEvent(clickEvent);
@@ -37,7 +39,7 @@ public class AudioMainMenu : MonoBehaviour
     void Start()
     {
         Invoke("InitVCASliders", 0.1f); // Delay to ensure sliders are initialized
-        musicChannel.Raise(musicCue);
+        musicChannel.Raise(musicMenuCue);
         SetRunInBackground(true); //dev set as we probably wont run into this issue in web build
         misophoniaSnapshot = RuntimeManager.CreateInstance("snapshot:/MisophoniaFilter");
     }
@@ -69,31 +71,31 @@ public class AudioMainMenu : MonoBehaviour
     }
 
     private void PlayEvent(EventReference eventRef)
-        {
-            if (eventRef.IsNull)return;
+    {
+        if (eventRef.IsNull)return;
 
-            RuntimeManager.PlayOneShot(eventRef);
-        }
+        RuntimeManager.PlayOneShot(eventRef);
+    }
 
     public void SetVCAVolume(string vcaName, float value)
+    {
+        VCA vca;
+        if(TryGetVCA(vcaName, out vca))
         {
-            VCA vca;
-            if(TryGetVCA(vcaName, out vca))
-            {
-                vca.setVolume(value);
-            }
+            vca.setVolume(value);
         }
+    }
 
     private bool TryGetVCA(string vcaName, out VCA vca)
+    {
+        vca = RuntimeManager.GetVCA("vca:/" + vcaName);
+        if(vca.isValid())
         {
-            vca = RuntimeManager.GetVCA("vca:/" + vcaName);
-            if(vca.isValid())
-            {
-                return true;
-            }
-            Debug.LogWarning("VCA not found: " + vcaName);
-            return false;
+            return true;
         }
+        Debug.LogWarning("VCA not found: " + vcaName);
+        return false;
+    }
 
     public void MisophoniaToggle(bool bEnableMisophonia)
     {
@@ -101,6 +103,13 @@ public class AudioMainMenu : MonoBehaviour
             misophoniaSnapshot.start();
         else
         misophoniaSnapshot.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    //Used to play next scene from main menu
+    public void PlayTransitionFromMenuToGameplay()
+    {
+        Debug.Log("PlayTransition");
+        musicChannel.Raise(musicGameplayCue);
     }
 
     void OnDestroy()
