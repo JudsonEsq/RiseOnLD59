@@ -47,7 +47,6 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
 
-        if(loadAfter) SceneManager.LoadScene(target);
     }
 
     IEnumerator FadeInCurtain()
@@ -59,6 +58,9 @@ public class UIManager : MonoBehaviour
             curtain.color = newCol;
             yield return null;
         }
+
+        Time.timeScale = 0f;
+
     }
 
     public void FadeIn()

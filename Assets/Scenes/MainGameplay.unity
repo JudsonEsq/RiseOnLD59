@@ -9118,15 +9118,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1905950991784118695, guid: b7ba863a21e836e4aaa3ba6aa221c6cb, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -9950,6 +9950,10 @@ PrefabInstance:
       propertyPath: ObjectiveNumber
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7142399539050246986, guid: b335298ad8bc80a46a9049df839e1cf0, type: 3}
+      propertyPath: ObjectiveDescription
+      value: Find an ESPECIALLY coney pinecone
+      objectReference: {fileID: 0}
     - target: {fileID: 7342690640363556530, guid: b335298ad8bc80a46a9049df839e1cf0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.26932
@@ -10234,6 +10238,10 @@ PrefabInstance:
       propertyPath: ObjectiveNumber
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7142399539050246986, guid: 0ee09b9941e9dca49bd84f4bbd7c6a45, type: 3}
+      propertyPath: ObjectiveDescription
+      value: Find a big cylinder for our ship!
+      objectReference: {fileID: 0}
     - target: {fileID: 7342690640363556530, guid: 0ee09b9941e9dca49bd84f4bbd7c6a45, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.1484
@@ -10379,6 +10387,10 @@ PrefabInstance:
     - target: {fileID: 7142399539050246986, guid: 5fe4061b802253e4393295f3f397a380, type: 3}
       propertyPath: ObjectiveNumber
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142399539050246986, guid: 5fe4061b802253e4393295f3f397a380, type: 3}
+      propertyPath: ObjectiveDescription
+      value: Find something that shoots fire!
       objectReference: {fileID: 0}
     - target: {fileID: 7342690640363556530, guid: 5fe4061b802253e4393295f3f397a380, type: 3}
       propertyPath: m_LocalScale.x
@@ -12572,6 +12584,18 @@ PrefabInstance:
       propertyPath: audioHUD
       value: 
       objectReference: {fileID: 1666597186}
+    - target: {fileID: 6779754362307303642, guid: a7491b42d53054349971b985b455f283, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 26adba57707dded418567189e41fe9b9, type: 2}
+    - target: {fileID: 6779754362307303642, guid: a7491b42d53054349971b985b455f283, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3808552093356031598, guid: 26adba57707dded418567189e41fe9b9, type: 2}
+    - target: {fileID: 6779754362307303642, guid: a7491b42d53054349971b985b455f283, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6900666020350385396, guid: a7491b42d53054349971b985b455f283, type: 3}
       propertyPath: m_Name
       value: ObjectivePanel
