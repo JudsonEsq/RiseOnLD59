@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
     IEnumerator FadeInCurtain(string target)
     {
         Color newCol = curtain.color;
-        while (curtain.color.a < 100)
+        while (curtain.color.a < .99)
         {
             newCol.a += FadeSpeed * Time.deltaTime;
             curtain.color = newCol;
@@ -53,6 +53,7 @@ public class UIManager : MonoBehaviour
    public void LoadScene(string target)
    {
         StartCoroutine(FadeInCurtain(target));
+        
    }    
 
    public void OnPausePress() {
