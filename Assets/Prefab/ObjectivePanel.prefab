@@ -132,7 +132,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 36.11017, y: 31.71939, z: 35.959045, w: 33.000214}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -150,6 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19baa72233a7bc647834dd62ddf0519f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  HeaderTextSize: 64
+  ObjectiveTextSize: 36
+  ObjectiveCompletedColor: green
   SecsBeforeRemoveCompletedObjective: 5
 --- !u!1 &6900666020350385396
 GameObject:
@@ -240,3 +243,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2250c489461a684db8ed626c035f9cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  FadeOutTimeSeconds: 10
+  LoadDelayBeforeInitialFadeSeconds: 20
+  MinimumOpacity: 0.2
