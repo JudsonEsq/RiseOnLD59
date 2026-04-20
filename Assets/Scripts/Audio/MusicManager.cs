@@ -70,6 +70,18 @@ public class MusicManager : MonoBehaviour
 
     public static event System.Action OnMusicalBeat;
 
+
+    private int beatsPassed = 0;
+    public bool checkIfLastBeat()
+    {
+        if(beatsPassed == timeSignatureUpper)
+        {
+            return true;
+        }
+        return false;
+    }
+
+
     private volatile bool beatPending = false;
 
     public float currentBPM = 120f; // Default BPM, can be updated by beat callback
@@ -124,6 +136,11 @@ public class MusicManager : MonoBehaviour
         if(beatPending)
         {
             OnMusicalBeat?.Invoke();
+            beatsPassed++;
+            if(beatsPassed > timeSignatureUpper)
+            {
+                beatsPassed = 1;
+            }
             beatPending = false;
         }
     }

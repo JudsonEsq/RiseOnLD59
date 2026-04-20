@@ -41,30 +41,31 @@ public class AntController : MonoBehaviour
     public bool waitingForFood = false; // Flag to indicate if the ant is waiting for a food source to become available for harvest
     [SerializeField] private float idleTimer = 0f; // Timer to track how long the ant has been waiting for a food source
     [SerializeField] private float idleDuration = 5f; // Time in seconds to wait for a food source to become available for harvest before returning to the nest
-	
-	private Animator anim;
 
+    private Animator anim;
+
+    private MusicManager musicMan;
     /// <summary>
     /// Event Dispatchers
     /// </summary>
-    
+
     public event Action OnDeath;
     public event Action OnPickupFood;
     private GameObject FoodModel;
 
     [Header("Music Timing Settings")]
-    public float walkSpeedMultiplier = 1; 
+    public float walkSpeedMultiplier = 1;
     public float idleSpeedMultiplier = 1;
 
     public void Init()
     {
-		anim = TryGetComponent(out Animator animator) ? animator : null;
+        anim = TryGetComponent(out Animator animator) ? animator : null;
 
         if (anim != null)
-		{
-			anim.SetBool("isMoving", false);
-			anim.SetBool("isDead", false);
-		}
+        {
+            anim.SetBool("isMoving", false);
+            anim.SetBool("isDead", false);
+        }
 
         isReturningToNest = false;
         targetObject = null;
@@ -74,15 +75,18 @@ public class AntController : MonoBehaviour
         {
             FoodModel = this.gameObject.transform.Find("Food").gameObject;
         }
+
+        musicMan = MusicManager.instance;
     }
 
     void OnEnable()
     {
-    MusicManager.OnMusicalBeat += SyncAnimationsToMusic;
+        MusicManager.OnMusicalBeat += SyncAnimationsToMusic;
     }
 
     public void Operate()
     {
+
         if (IsDead()) return;
 
         if (waitingForFood)
@@ -317,7 +321,13 @@ public class AntController : MonoBehaviour
         {
             anim.SetBool("isMoving", true);
         }
-		
+
+        if (musicMan.checkIfLastBeat())
+        {
+            return;
+        }
+
+
         Vector3 direction = (targetPosition - transform.position).normalized;
         transform.position += moveSpeed * Time.deltaTime * direction;
 		
