@@ -79,6 +79,12 @@ public class AntManager : MonoBehaviour
         StartCoroutine(FadeTextToZeroAlpha(1f, StarveText));
     }
 
+    public int GetFoodCostForType(AntController.AntType type)
+    {
+        GameObject prefab = GetPrefabForType(type);
+        return prefab.GetComponent<AntController>().FoodCost();
+    }
+
     public GameObject SpawnAnt(Transform location, AntController.AntType type)
     {
         GameObject prefab = GetPrefabForType(type);

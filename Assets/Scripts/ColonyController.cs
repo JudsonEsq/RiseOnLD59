@@ -91,8 +91,11 @@ public class ColonyController : MonoBehaviour
         {
             Debug.LogError("Cannot Spawn ants without manager");
         }
-        GameObject ant = antManager.SpawnAnt(antPoint, type);
-        AntController antctrl = ant.GetComponent<AntController>();
-        foodManager.SpendFood(antctrl.FoodCost());
+        if (antManager.GetFoodCostForType(type) <= foodManager.CurrentFood())
+        {
+            GameObject ant = antManager.SpawnAnt(antPoint, type);
+            AntController antctrl = ant.GetComponent<AntController>();
+            foodManager.SpendFood(antctrl.FoodCost());
+        }
     }
 }
