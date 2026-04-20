@@ -9,15 +9,46 @@ public class AudioHUD : MonoBehaviour
     public EventReference ButtonDangerSelect;
     public EventReference ButtonAttackSelect;
     public EventReference ButtonGiftSelect;
+
+    public EventReference ButtonFoodPlace;
+    public EventReference ButtonDangerPlace;
+    public EventReference ButtonAttackPlace;
+    public EventReference ButtonGiftPlace;
+    
     public EventReference ButtonHoverEvent;
     public EventReference PlaceItemEvent;
 
+    //play when player selects the button the UI
     public void PlayButtonFoodSelect() => MusicManager.PlayOneShot(ButtonFoodSelect);
     public void PlayButtonDangerSelect() => MusicManager.PlayOneShot(ButtonDangerSelect);
     public void PlayButtonAttackSelect() => MusicManager.PlayOneShot(ButtonAttackSelect);
     public void PlayButtonGiftSelect() => MusicManager.PlayOneShot(ButtonGiftSelect);
+
     public void PlayButtonHoverEvent() => MusicManager.PlayOneShot(ButtonHoverEvent);
     public void PlayPlaceItemEvent() => MusicManager.PlayOneShot(PlaceItemEvent);
+
+
+    public void PlayPheromonePlacement(Pheromone.PheromoneType type)
+    {
+        switch(type)
+        {
+            case Pheromone.PheromoneType.Food:
+            MusicManager.PlayOneShot(ButtonFoodPlace);
+            break;
+            case Pheromone.PheromoneType.Attack:
+            MusicManager.PlayOneShot(ButtonAttackPlace);
+            break;
+            case Pheromone.PheromoneType.Danger:
+            MusicManager.PlayOneShot(ButtonDangerPlace);
+            break;
+            case Pheromone.PheromoneType.Gift:
+            MusicManager.PlayOneShot(ButtonGiftPlace);
+            break;
+            default:
+            MusicManager.PlayOneShot(PlaceItemEvent);
+            break;
+        }
+    }
     #endregion
     
     
@@ -45,14 +76,20 @@ public class AudioHUD : MonoBehaviour
 
     public EventReference ButtonSelectWorkerEvent;
     public EventReference ButtonSelectSoldierEvent;
-    public EventReference ButtonSelectFireEvent;
     public EventReference ButtonSelectCarpenterEvent;
 
 
     public void PlayButtonSelectWorkerEvent() => MusicManager.PlayOneShot(ButtonSelectWorkerEvent);
     public void PlayButtonSelectSoldierEvent() => MusicManager.PlayOneShot(ButtonSelectSoldierEvent);
-    public void PlayButtonSelectFireEvent() => MusicManager.PlayOneShot(ButtonSelectFireEvent);
     public void PlayButtonSelectCarpenterEvent() => MusicManager.PlayOneShot(ButtonSelectCarpenterEvent);
+
+    public EventReference ButtonPlaceWorkerEvent;
+    public EventReference ButtonPlaceSoldierEvent;
+    public EventReference ButtonPlaceCarpenterEvent;
+
+    public void PlayButtonPlaceWorkerEvent() => MusicManager.PlayOneShot(ButtonPlaceWorkerEvent);
+    public void PlayButtonPlaceSoldierEvent() => MusicManager.PlayOneShot(ButtonPlaceSoldierEvent);
+    public void PlayButtonPlaceCarpenterEvent() => MusicManager.PlayOneShot(ButtonPlaceCarpenterEvent);
 
     #endregion
 

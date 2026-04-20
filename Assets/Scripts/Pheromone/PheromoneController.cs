@@ -8,6 +8,8 @@ public class PheromoneController : MonoBehaviour
 {
     public InputSystem_Actions controls;
 
+    public AudioHUD audioHUD;
+
     [SerializeField]
     private LayerMask PlacementLayers;
 
@@ -87,6 +89,10 @@ public class PheromoneController : MonoBehaviour
     {
         Vector2 screenPoint = new Vector2(Mouse.current.position.x.ReadValue(), Mouse.current.position.y.ReadValue());
         if (selectedPheromone){
+            
+            Pheromone.PheromoneType type = selectedPheromone.GetComponent<Pheromone>().pheromoneType;
+            audioHUD.PlayPheromonePlacement(type);
+
             if (PointerIsUIHit(screenPoint))
             {
                 Debug.Log("Destroying previously selected pheromone");
