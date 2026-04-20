@@ -6,6 +6,8 @@ public class AudioAnt : MonoBehaviour
     public EventReference AntDeathEvent; //Ant death sound FMOD asset
     public EventReference AntPickedUpFood; //Ant pickup food FMOD asset
 
+    public EventReference AntStarvationEvent;
+
     private AntController antController;
 
     void Awake()
@@ -25,6 +27,11 @@ public class AudioAnt : MonoBehaviour
     void HandlePickupFood()
     {
         MusicManager.PlayOneShot(AntPickedUpFood);
+    }
+
+    void HandleAntStarvation()
+    {
+        MusicManager.PlayOneShot(AntStarvationEvent);
     }
 
 

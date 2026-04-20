@@ -83,13 +83,6 @@ public class AudioHUD : MonoBehaviour
     public void PlayButtonSelectSoldierEvent() => MusicManager.PlayOneShot(ButtonSelectSoldierEvent);
     public void PlayButtonSelectCarpenterEvent() => MusicManager.PlayOneShot(ButtonSelectCarpenterEvent);
 
-    public EventReference ButtonPlaceWorkerEvent;
-    public EventReference ButtonPlaceSoldierEvent;
-    public EventReference ButtonPlaceCarpenterEvent;
-
-    public void PlayButtonPlaceWorkerEvent() => MusicManager.PlayOneShot(ButtonPlaceWorkerEvent);
-    public void PlayButtonPlaceSoldierEvent() => MusicManager.PlayOneShot(ButtonPlaceSoldierEvent);
-    public void PlayButtonPlaceCarpenterEvent() => MusicManager.PlayOneShot(ButtonPlaceCarpenterEvent);
 
     #endregion
 
