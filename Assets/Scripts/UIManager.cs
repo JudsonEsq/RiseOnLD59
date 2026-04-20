@@ -1,9 +1,33 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Assemblies;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-   public void OnGameExitPress() 
+
+    public static UIManager instance;
+
+    [SerializeField]
+    private UnityEngine.UI.Image curtain;
+
+    [SerializeField]
+    private float FadeSpeed = 50f;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    public void OnGameExitPress() 
    {
       Application.Quit();
    }
@@ -12,6 +36,24 @@ public class UIManager : MonoBehaviour
    {
       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
    }
+
+    IEnumerator FadeInCurtain(string target)
+    {
+        Color newCol = curtain.color;
+        while (curtain.color.a < 100)
+        {
+            newCol.a += FadeSpeed * Time.deltaTime;
+            curtain.color = newCol;
+            yield return null;
+        }
+
+        SceneManager.LoadScene(target);
+    }
+
+   public void LoadScene(string target)
+   {
+        StartCoroutine(FadeInCurtain(target));
+   }    
 
    public void OnPausePress() {
       
