@@ -44,7 +44,6 @@ public class AntController : MonoBehaviour
 
     private Animator anim;
 
-    private MusicManager musicMan;
     /// <summary>
     /// Event Dispatchers
     /// </summary>
@@ -76,7 +75,7 @@ public class AntController : MonoBehaviour
             FoodModel = this.gameObject.transform.Find("Food").gameObject;
         }
 
-        musicMan = MusicManager.instance;
+        MusicManager.OnMusicalBeat += onDownbeat;
     }
 
     void OnEnable()
@@ -314,6 +313,12 @@ public class AntController : MonoBehaviour
         
     }
 
+    float boogieDuration = 0f;
+    void onDownbeat()
+    {
+        boogieDuration = 0.1f;
+    }
+
     // Method to move the ant towards its target position
     private void MoveTowardsTarget()
     {
@@ -322,8 +327,10 @@ public class AntController : MonoBehaviour
             anim.SetBool("isMoving", true);
         }
 
-        if (musicMan.checkIfLastBeat())
+        if(boogieDuration > 0f)
         {
+            boogieDuration -= Time.deltaTime;
+            anim.SetBool("isMoving", false);
             return;
         }
 

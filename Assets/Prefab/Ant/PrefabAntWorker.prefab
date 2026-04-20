@@ -716,6 +716,13 @@ MonoBehaviour:
       Data3: -1028708220
       Data4: -1666907832
     Path: event:/Ant/FoodPickedUp
+  AntStarvationEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &6182372282862662935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,11 +749,13 @@ MonoBehaviour:
   hazardDistance: 2
   searchDuration: 5
   nest: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 5
   isReturningToNest: 0
   waitingForFood: 0
   idleTimer: 0
   idleDuration: 5
+  walkSpeedMultiplier: 1
+  idleSpeedMultiplier: 1
 --- !u!95 &-2062058830563675179
 Animator:
   serializedVersion: 7
