@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8466341663196452032}
   - component: {fileID: 4448002347680874992}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,6 +104,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 235eed9f48608de43a7ba24e08e59440, type: 3}
       propertyPath: m_Name
       value: CampStove
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 235eed9f48608de43a7ba24e08e59440, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -48,9 +48,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 3.978
       objectReference: {fileID: 0}
+    - target: {fileID: -3215555783603854218, guid: ce5910887bda50a4ea9ae2de29ffd14c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2932998491564163895, guid: ce5910887bda50a4ea9ae2de29ffd14c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ce5910887bda50a4ea9ae2de29ffd14c, type: 3}
       propertyPath: m_Name
       value: M&MSmooth (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ce5910887bda50a4ea9ae2de29ffd14c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424396828587804706, guid: ce5910887bda50a4ea9ae2de29ffd14c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914173764048766335, guid: ce5910887bda50a4ea9ae2de29ffd14c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

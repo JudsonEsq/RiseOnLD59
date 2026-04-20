@@ -14,6 +14,6 @@ public class CarpenterAntController : AntController
     // Update is called once per frame
     void Update()
     {
-        
+        Operate();
     }
 }

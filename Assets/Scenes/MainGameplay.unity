@@ -3811,6 +3811,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMovement
   MoveSpeed: 10
+  lowerBound: -12
+  TopPoint: 40
+  WidthBound: 35
   cameraTransform: {fileID: 1157357016}
   maxDistance: {x: 100, y: 100}
 --- !u!1001 &1165360773

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1484254246767631676}
   - component: {fileID: 3621417710928359897}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,6 +106,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4517faf8edabed54cb8e5cd50fc92f24, type: 3}
       propertyPath: m_Name
       value: YellowFlower
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4517faf8edabed54cb8e5cd50fc92f24, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 170513299141702997}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rocks_Apple_Bits
   m_TagString: Untagged
   m_Icon: {fileID: 0}

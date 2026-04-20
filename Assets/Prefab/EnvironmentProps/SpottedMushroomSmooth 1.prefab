@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9089693209191512538}
   - component: {fileID: 9117715168180963648}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,9 +115,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: c650c543f2b9e8f4ebbbc0fbf5d67723, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c650c543f2b9e8f4ebbbc0fbf5d67723, type: 3}
       propertyPath: m_Name
       value: SpottedMushroomSmooth 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c650c543f2b9e8f4ebbbc0fbf5d67723, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513859187771203891, guid: c650c543f2b9e8f4ebbbc0fbf5d67723, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
