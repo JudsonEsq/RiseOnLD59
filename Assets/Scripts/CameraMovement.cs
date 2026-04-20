@@ -21,6 +21,14 @@ public class CameraMovement : MonoBehaviour
     private Transform cameraTransform;
 
     [SerializeField]
+    private Camera mainCam;
+
+    [SerializeField]
+    float fovMin = 40f;
+    [SerializeField]
+    float fovMax = 90f;
+
+    [SerializeField]
     private Vector2 maxDistance = new Vector2(100, 100);
 
     private float slope = 1f;
@@ -31,10 +39,16 @@ public class CameraMovement : MonoBehaviour
         slope = (TopPoint - lowerBound) / WidthBound;
     }
 
+    private void Start()
+    {
+        mainCam = Camera.main;
+    }
+
     void Update()
     {
         Vector2 dir = controls.Player.Move.ReadValue<Vector2>();
         Vector3 newPosition = cameraTransform.position + new Vector3(dir.x, 0, dir.y) * MoveSpeed * Time.deltaTime;
+        Vector2 zoom = controls.UI.ScrollWheel.ReadValue<Vector2>();
 
         float zPos = newPosition.z;
         float xPos = newPosition.x;
@@ -53,6 +67,8 @@ public class CameraMovement : MonoBehaviour
         {
             zMax = slope * (xPos + WidthBound) + lowerBound;
         }
+
+        mainCam.fieldOfView = Mathf.Clamp(mainCam.fieldOfView - zoom.y, fovMin, fovMax);
 
         zPos = Mathf.Clamp(zPos, lowerBound, zMax);
         
