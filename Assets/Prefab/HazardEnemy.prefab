@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 208870488883185400}
   - component: {fileID: 932723038290208998}
   - component: {fileID: 7619017178710925832}
+  - component: {fileID: 4207215761213540803}
   m_Layer: 0
   m_Name: HazardEnemy
   m_TagString: Untagged
@@ -220,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hazard
   type: 2
+  numAntInteractionsToClear: 5
 --- !u!54 &7619017178710925832
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -247,6 +249,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &4207215761213540803
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6489955214528234972}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2c515209d58815c499ed19b89c3309d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1271053234600322587
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -401,6 +425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Antlion Animated
       objectReference: {fileID: 0}
+    - target: {fileID: 6206435311115969889, guid: a6d1503281cdb8a468c18dc5717b94da, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cf6819e8ded2a754d984c2abcc4f39d6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 65702495048144492, guid: a6d1503281cdb8a468c18dc5717b94da, type: 3}
