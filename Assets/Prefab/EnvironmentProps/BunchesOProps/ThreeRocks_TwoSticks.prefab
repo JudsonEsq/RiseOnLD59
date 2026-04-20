@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3606544772580880318}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ThreeRocks_TwoSticks
   m_TagString: Untagged
   m_Icon: {fileID: 0}

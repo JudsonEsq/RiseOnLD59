@@ -8,26 +8,49 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     private float MoveSpeed = 5f;
 
+    [SerializeField, Tooltip("Minimum Z bound of the playspace.")]
+    private float lowerBound = -12f;
+
+    [SerializeField, Tooltip("How far up the point that makes up the tip of the playspace")]
+    private float TopPoint = 60f;
+
+    [SerializeField, Tooltip("How wide the playspace should be - if 65, playspace goes from -65 < x <65")]
+    private float WidthBound = 65f;
+
     [SerializeField]
     private Transform cameraTransform;
 
     [SerializeField]
     private Vector2 maxDistance = new Vector2(100, 100);
 
+    float slope = 1f;
+
     void Awake()
     {
         controls = new InputSystem_Actions();
+        float slope = (TopPoint - lowerBound) / (WidthBound);
     }
 
     void Update()
     {
         Vector2 dir = controls.Player.Move.ReadValue<Vector2>();
         Vector3 newPosition = cameraTransform.position + new Vector3(dir.x, 0, dir.y) * MoveSpeed * Time.deltaTime;
-        if (newPosition.x < maxDistance.x && newPosition.x > -maxDistance.x &&
-            newPosition.z < maxDistance.y && newPosition.z > -maxDistance.y)
-        { 
-            cameraTransform.position = newPosition; 
-        }
+
+        float zPos = newPosition.z;
+        float xPos = newPosition.x;
+
+        float xMin = (1 / slope) * (zPos - lowerBound) - WidthBound;
+        float xMax = -(1 / slope) * (zPos - lowerBound) + WidthBound;
+        xPos = Mathf.Clamp(xPos, xMin, xMax);
+
+        
+        float zMax = -slope * (xPos - WidthBound) + lowerBound;
+        zPos = Mathf.Clamp(zPos, lowerBound, zMax);
+        
+        newPosition.x = xPos;
+        newPosition.z = zPos;
+
+        cameraTransform.position = newPosition;
     }
 
     private void OnEnable()

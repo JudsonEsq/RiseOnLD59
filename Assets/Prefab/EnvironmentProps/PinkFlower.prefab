@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6427555997731961285}
   - component: {fileID: 7522313309103945784}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,6 +106,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 39402072d59381640841d11eaebce997, type: 3}
       propertyPath: m_Name
       value: PinkFlower
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39402072d59381640841d11eaebce997, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

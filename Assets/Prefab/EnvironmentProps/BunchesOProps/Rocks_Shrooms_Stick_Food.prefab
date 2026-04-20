@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9196433177706175448}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rocks_Shrooms_Stick_Food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
