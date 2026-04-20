@@ -6259,6 +6259,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2472759484383096222, guid: a7491b42d53054349971b985b455f283, type: 3}
+      propertyPath: audioHUD
+      value: 
+      objectReference: {fileID: 1666597186}
     - target: {fileID: 6900666020350385396, guid: a7491b42d53054349971b985b455f283, type: 3}
       propertyPath: m_Name
       value: ObjectivePanel
@@ -7872,6 +7876,11 @@ MonoBehaviour:
       Data3: 1803117973
       Data4: -1536751916
     Path: event:/UI/Alerts/Achievement
+  musicChannel: {fileID: 11400000, guid: e8f8ba1835dfb3d428ee33dda9822e8b, type: 2}
+  phase1Cue: {fileID: 11400000, guid: adc68044a779a684c8aa1598f19d85d7, type: 2}
+  phase2Cue: {fileID: 11400000, guid: ccc25571859ae5e4d8138d1d29842d7a, type: 2}
+  phase3Cue: {fileID: 11400000, guid: 177161ad72a1c7a4c8dc0517a9075d53, type: 2}
+  winCue: {fileID: 11400000, guid: 85788bc3f69cc1941b00beab425c0cc5, type: 2}
   AntStarvationEvent:
     Guid:
       Data1: 1195381474

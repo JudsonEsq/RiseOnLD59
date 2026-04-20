@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ObjectiveController : MonoBehaviour
 {
+    public AudioHUD audioHUD;
     private const string OBJECTIVE_DISPLAY_HEADER = "Objective(s):";
 
     [SerializeField]
@@ -90,6 +91,7 @@ public class ObjectiveController : MonoBehaviour
         if(DateTime.Now >= completionTime && !ObjectiveContainer.ObjectiveList[0].Complete && !objectiveCompleted)
         {
             ObjectiveContainer.CompleteObjective(ObjectiveContainer.ObjectiveList[0].Step);
+            audioHUD.PlayAchievementAlert(ObjectiveContainer.ObjectiveList[0].Step);
             objectiveCompleted = true;
         }
     }
