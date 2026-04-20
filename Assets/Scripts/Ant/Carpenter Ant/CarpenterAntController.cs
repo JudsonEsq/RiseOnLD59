@@ -5,6 +5,7 @@ public class CarpenterAntController : AntController
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Init();
         antType = AntType.Carpenter;
         targetPheromones.Add(Pheromone.PheromoneType.Hazard);
         targetPheromones.Add(Pheromone.PheromoneType.Food);
