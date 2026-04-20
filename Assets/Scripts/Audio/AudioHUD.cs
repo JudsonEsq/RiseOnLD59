@@ -8,12 +8,10 @@ public class AudioHUD : MonoBehaviour
     public EventReference ButtonFoodSelect;
     public EventReference ButtonDangerSelect;
     public EventReference ButtonAttackSelect;
-    public EventReference ButtonGiftSelect;
 
     public EventReference ButtonFoodPlace;
     public EventReference ButtonDangerPlace;
     public EventReference ButtonAttackPlace;
-    public EventReference ButtonGiftPlace;
     
     public EventReference ButtonHoverEvent;
     public EventReference PlaceItemEvent;
@@ -22,7 +20,6 @@ public class AudioHUD : MonoBehaviour
     public void PlayButtonFoodSelect() => MusicManager.PlayOneShot(ButtonFoodSelect);
     public void PlayButtonDangerSelect() => MusicManager.PlayOneShot(ButtonDangerSelect);
     public void PlayButtonAttackSelect() => MusicManager.PlayOneShot(ButtonAttackSelect);
-    public void PlayButtonGiftSelect() => MusicManager.PlayOneShot(ButtonGiftSelect);
 
     public void PlayButtonHoverEvent() => MusicManager.PlayOneShot(ButtonHoverEvent);
     public void PlayPlaceItemEvent() => MusicManager.PlayOneShot(PlaceItemEvent);
@@ -32,17 +29,14 @@ public class AudioHUD : MonoBehaviour
     {
         switch(type)
         {
-            case Pheromone.PheromoneType.Food:
+            case Pheromone.PheromoneType.Good:
             MusicManager.PlayOneShot(ButtonFoodPlace);
             break;
             case Pheromone.PheromoneType.Attack:
             MusicManager.PlayOneShot(ButtonAttackPlace);
             break;
-            case Pheromone.PheromoneType.Danger:
+            case Pheromone.PheromoneType.Hazard:
             MusicManager.PlayOneShot(ButtonDangerPlace);
-            break;
-            case Pheromone.PheromoneType.Gift:
-            MusicManager.PlayOneShot(ButtonGiftPlace);
             break;
             default:
             MusicManager.PlayOneShot(PlaceItemEvent);

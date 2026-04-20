@@ -41,10 +41,9 @@ public class PheromoneController : MonoBehaviour
 
     void Start()
     {
-        FoodButton.onClick.AddListener(() => SelectPheromone(Pheromone.PheromoneType.Food));
-        DangerButton.onClick.AddListener(() => SelectPheromone(Pheromone.PheromoneType.Danger));
+        FoodButton.onClick.AddListener(() => SelectPheromone(Pheromone.PheromoneType.Good));
+        DangerButton.onClick.AddListener(() => SelectPheromone(Pheromone.PheromoneType.Hazard));
         AttackButton.onClick.AddListener(() => SelectPheromone(Pheromone.PheromoneType.Attack));
-        GiftButton.onClick.AddListener(() => SelectPheromone(Pheromone.PheromoneType.Gift));
     }
 
     void Update()

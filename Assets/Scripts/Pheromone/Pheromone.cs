@@ -5,9 +5,8 @@ public class Pheromone : MonoBehaviour
     public enum PheromoneType
     {
         Food,
-        Danger,
+        Good,
         Attack,
-        Gift,
         Hazard,
         None
     }
@@ -23,5 +22,23 @@ public class Pheromone : MonoBehaviour
     public bool IsOnCursor()
     {
         return onCursor;
+    }
+
+    void Start()
+    {
+        // Access the renderer and change the material color
+        Renderer rend = GetComponentInChildren<Renderer>();
+        if (pheromoneType == PheromoneType.Good)
+        {
+            rend.material.color = Color.green;
+        }
+        else if (pheromoneType == PheromoneType.Attack)
+        {
+            rend.material.color = Color.red;
+        }
+        else if (pheromoneType == PheromoneType.Hazard)
+        {
+            rend.material.color = Color.orange;
+        }
     }
 }

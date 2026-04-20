@@ -9,7 +9,8 @@ public class CarpenterAntController : AntController
         antType = AntType.Carpenter;
         targetPheromones.Add(Pheromone.PheromoneType.Hazard);
         targetPheromones.Add(Pheromone.PheromoneType.Food);
-        avoidPheromones.Add(Pheromone.PheromoneType.Danger);
+        targetPheromones.Add(Pheromone.PheromoneType.Good);
+        avoidPheromones.Add(Pheromone.PheromoneType.Attack);
     }
 
     // Update is called once per frame

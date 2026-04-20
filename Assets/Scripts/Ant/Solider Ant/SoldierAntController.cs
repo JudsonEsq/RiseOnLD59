@@ -7,8 +7,10 @@ public class SoldierAntController : AntController
     {
         Init();
         antType = AntType.Soldier;
-        targetPheromones.Add(Pheromone.PheromoneType.Danger);
+        targetPheromones.Add(Pheromone.PheromoneType.Attack);
+        targetPheromones.Add(Pheromone.PheromoneType.Good);
         targetPheromones.Add(Pheromone.PheromoneType.Food);
+        avoidPheromones.Add(Pheromone.PheromoneType.Hazard);
     }
 
     // Update is called once per frame
