@@ -113,7 +113,7 @@ MonoBehaviour:
   pheromonesToTrack: []
   pheromonesToAvoid: []
   previousPheromones: []
-  pheromoneRange: 6
+  pheromoneRange: 4
   maxPheromonesCount: 3
   hazardDistance: 2
   searchDuration: 5

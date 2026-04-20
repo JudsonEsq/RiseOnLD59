@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class ObjectiveController : MonoBehaviour
@@ -21,6 +22,9 @@ public class ObjectiveController : MonoBehaviour
 
     [SerializeField]
     int SecsBeforeRemoveCompletedObjective = 5;
+
+    [SerializeField]
+    UIManager manager;
 
     TextMeshProUGUI ObjectiveDisplay;
 
@@ -51,7 +55,7 @@ public class ObjectiveController : MonoBehaviour
 
         foreach (Objective objective in ObjectiveContainer.ObjectiveList)
         {
-            string line = $"\n- {objective.Name}:\n\t";
+            string line = $"\n-{objective.Name}:\n";
 
             if (objective.Complete)
             {
@@ -67,7 +71,7 @@ public class ObjectiveController : MonoBehaviour
             }
             else
             {
-                line += $"- {objective.Description}";
+                line += $" -{objective.Description}";
             }
 
             line = $"<size={ObjectiveTextSize}>{line}</size>";
@@ -114,5 +118,14 @@ public class ObjectiveController : MonoBehaviour
     public void CompleteObjective(int step)
     {
         ObjectiveContainer.CompleteObjective(step, audioHUD);
+        foreach(Objective obj in ObjectiveContainer.ObjectiveList)
+        {
+            if(obj.Complete = false)
+            {
+                return;
+            }
+        }
+
+        manager.FadeIn();
     }
 }
