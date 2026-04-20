@@ -5750,6 +5750,7 @@ MonoBehaviour:
   AntsText: {fileID: 615153071}
   StarveText: {fileID: 869854977}
   StarveTextTimeout: 5
+  audioHUDInstance: {fileID: 0}
 --- !u!114 &1376519845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7868,6 +7869,13 @@ MonoBehaviour:
       Data3: 1803117973
       Data4: -1536751916
     Path: event:/UI/Alerts/Achievement
+  AntStarvationEvent:
+    Guid:
+      Data1: 1195381474
+      Data2: 1294546143
+      Data3: 196674443
+      Data4: -1166932317
+    Path: event:/Ant/VO/VS_Starvation
   ButtonSelectWorkerEvent:
     Guid:
       Data1: 1642374371
@@ -7883,27 +7891,6 @@ MonoBehaviour:
       Data4: -1837590168
     Path: event:/UI/AntTypes/SoldierAntSelect
   ButtonSelectCarpenterEvent:
-    Guid:
-      Data1: -1979488517
-      Data2: 1115624705
-      Data3: 1581426840
-      Data4: 2085611536
-    Path: event:/UI/AntTypes/CarpenterAntSelect
-  ButtonPlaceWorkerEvent:
-    Guid:
-      Data1: -239644914
-      Data2: 1277803127
-      Data3: -1813616722
-      Data4: -111587534
-    Path: event:/UI/AntTypes/WorkerAntPlace
-  ButtonPlaceSoldierEvent:
-    Guid:
-      Data1: 182207971
-      Data2: 1184699605
-      Data3: 727187126
-      Data4: -2102659284
-    Path: event:/UI/AntTypes/SoldierAntPlace
-  ButtonPlaceCarpenterEvent:
     Guid:
       Data1: -1979488517
       Data2: 1115624705
@@ -7931,6 +7918,7 @@ MonoBehaviour:
       Data3: 100366980
       Data4: 847997740
     Path: event:/UI/Alerts/FirstBuildEvent
+  antManagerInstance: {fileID: 1376519844}
 --- !u!1001 &1716336084
 PrefabInstance:
   m_ObjectHideFlags: 0

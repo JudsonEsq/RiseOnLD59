@@ -32,6 +32,8 @@ public class AntManager : MonoBehaviour
     [SerializeField]
     private int StarveTextTimeout = 5;
 
+    public AudioHUD audioHUDInstance;
+
     private void Update()
     {
         // remove any ants that are dead
@@ -112,6 +114,7 @@ public class AntManager : MonoBehaviour
     public void CullAnts(int debitFood)
     {
         int CountDeadAnts = 0;
+        audioHUDInstance.PlayAntStarvatationEvent();
         while (debitFood > 0)
         {
             Debug.Log("Not Enough Food, culling ants: " + debitFood);

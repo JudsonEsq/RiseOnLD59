@@ -62,10 +62,14 @@ public class AudioHUD : MonoBehaviour
     public EventReference LowFoodAlertEvent;
     public EventReference AchievementAlertEvent;
 
+    public EventReference AntStarvationEvent;
+
     public void PlayTutorialDingAlert() => MusicManager.PlayOneShot(TutorialDingEvent);
     public void PlayDangerAlert() => MusicManager.PlayOneShot(DangerAlertEvent);
     public void PlayLowFoodAlert() => MusicManager.PlayOneShot(LowFoodAlertEvent);
     public void PlayAchievementAlert() => MusicManager.PlayOneShot(AchievementAlertEvent);
+    public void PlayAntStarvatationEvent() => MusicManager.PlayOneShot(AntStarvationEvent);
+    
     #endregion
     
     /// <summary>
@@ -123,5 +127,12 @@ public class AudioHUD : MonoBehaviour
         }
     }
     #endregion
+
+
+    //antmananger.callants
+
+    public AntManager antManagerInstance;
+
+    
 
 }

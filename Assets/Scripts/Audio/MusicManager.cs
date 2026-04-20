@@ -99,6 +99,8 @@ public class MusicManager : MonoBehaviour
         while (!RuntimeManager.HaveAllBanksLoaded)
             yield return null;
 
+            yield return null; //wait an extra frame for audio engine to settle
+
         musicInstance = RuntimeManager.CreateInstance(cue.musicEvent);
         musicInstance.start();
         if (!string.IsNullOrEmpty(cue.musicStateParameter?.Name))
