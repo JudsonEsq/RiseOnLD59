@@ -28,33 +28,20 @@ public class ObjectiveController : MonoBehaviour
 
     ImageMouseEventHandler ImageMouseEventHandler;
 
-    DateTime completionTime;
-    bool objectiveCompleted = false;
+    void Awake()
+    {
+        // Create Objectives Here
+        ObjectiveContainer = new ObjectiveContainer();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Create Objectives Here
-        ObjectiveContainer = new ObjectiveContainer();
-
         ObjectiveDisplay = GetComponentInChildren<TextMeshProUGUI>();
         ImageMouseEventHandler = GetComponentInParent<ImageMouseEventHandler>();
-
-        foreach (int i in Enumerable.Range(1,2))
-        {
-            ObjectiveContainer.TryAddObjective(new Objective { Step = i, Name = $"Objective {i}", Description = $"Objective #{i}." });
-
-            Debug.Log($"Added Objective #{i}.");
-        }
-
-        ObjectiveContainer.TryAddObjective(new Objective { Step = 3, Name = "Objective 3", Description = "Objective #3" });
-        ObjectiveContainer.TryAddObjective(new Objective { Step = 4, Name = "Objective 4", Description = "Objective #4" });
-
         ImageMouseEventHandler.SetOpacity(1.0f);
 
         ShowObjective(true);
-
-        completionTime = DateTime.Now + TimeSpan.FromSeconds(10);
     }
 
     // Update is called once per frame
@@ -86,13 +73,6 @@ public class ObjectiveController : MonoBehaviour
             line = $"<size={ObjectiveTextSize}>{line}</size>";
 
             ObjectiveDisplay.text += $"{line}";
-        }
-
-        if(DateTime.Now >= completionTime && !ObjectiveContainer.ObjectiveList[0].Complete && !objectiveCompleted)
-        {
-            ObjectiveContainer.CompleteObjective(ObjectiveContainer.ObjectiveList[0].Step);
-            audioHUD.PlayAchievementAlert(ObjectiveContainer.ObjectiveList[0].Step);
-            objectiveCompleted = true;
         }
     }
 
@@ -133,5 +113,15 @@ public class ObjectiveController : MonoBehaviour
     void ShowObjective(bool show)
     {
         ObjectiveDisplay.gameObject.SetActive(show);
+    }
+
+    public void AddObjective(int step, string name, string Description)
+    {
+        ObjectiveContainer.TryAddObjective(new Objective { Step = step, Name = name, Description = Description });
+    }
+
+    public void CompleteObjective(int step)
+    {
+        ObjectiveContainer.CompleteObjective(step, audioHUD);
     }
 }
