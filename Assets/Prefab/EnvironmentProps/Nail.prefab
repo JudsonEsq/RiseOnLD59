@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4121388778914066800}
   - component: {fileID: 4664248075637574138}
+  - component: {fileID: 7341193774444068908}
   m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
@@ -55,6 +56,33 @@ CapsuleCollider:
   m_Height: 0.0006706711
   m_Direction: 1
   m_Center: {x: -0.00000047079365, y: -0.00009508336, z: -1.3951162e-10}
+--- !u!54 &7341193774444068908
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6324945396170991799}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &1593439831953528026
 PrefabInstance:
   m_ObjectHideFlags: 0

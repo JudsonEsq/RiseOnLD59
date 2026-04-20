@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1484254246767631676}
   - component: {fileID: 3621417710928359897}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4517faf8edabed54cb8e5cd50fc92f24, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -146,8 +146,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0034493785, y: 0.0034584056, z: 0.0005674008}
-  m_Center: {x: -0.0000061288474, y: 0.000023812205, z: -0.00009193646}
+  m_Size: {x: 0.0034493785, y: 0.0034584056, z: 0.0004196833}
+  m_Center: {x: -0.0000061288474, y: 0.000023812203, z: -0.000018084982}
 --- !u!4 &2235590807720654262 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4517faf8edabed54cb8e5cd50fc92f24, type: 3}
