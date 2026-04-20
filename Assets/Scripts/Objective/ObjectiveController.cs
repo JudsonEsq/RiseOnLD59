@@ -16,6 +16,8 @@ public class ObjectiveController : MonoBehaviour
 
     ObjectiveContainer ObjectiveContainer;
 
+    ImageMouseEventHandler ImageMouseEventHandler;
+
     DateTime completionTime;
     bool objectiveCompleted = false;
 
@@ -26,7 +28,8 @@ public class ObjectiveController : MonoBehaviour
         ObjectiveContainer = new ObjectiveContainer();
 
         ObjectiveDisplay = GetComponentInChildren<TextMeshProUGUI>();
-        
+        ImageMouseEventHandler = GetComponentInParent<ImageMouseEventHandler>();
+
         foreach (int i in Enumerable.Range(1,2))
         {
             ObjectiveContainer.TryAddObjective(new Objective { Step = i, Name = $"Objective {i}", Description = $"Objective #{i}." });
@@ -36,6 +39,8 @@ public class ObjectiveController : MonoBehaviour
 
         ObjectiveContainer.TryAddObjective(new Objective { Step = 3, Name = "Objective 3", Description = "Objective #3" });
         ObjectiveContainer.TryAddObjective(new Objective { Step = 4, Name = "Objective 4", Description = "Objective #4" });
+
+        ImageMouseEventHandler.SetOpacity(1.0f);
 
         ShowObjective(true);
 
