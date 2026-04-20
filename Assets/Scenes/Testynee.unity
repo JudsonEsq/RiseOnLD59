@@ -8452,6 +8452,9 @@ MonoBehaviour:
   TopPoint: 45
   WidthBound: 45
   cameraTransform: {fileID: 1157357016}
+  mainCam: {fileID: 0}
+  fovMin: 40
+  fovMax: 90
   maxDistance: {x: 100, y: 100}
 --- !u!1001 &1164207090
 PrefabInstance:
@@ -15527,13 +15530,16 @@ SceneRoots:
   - {fileID: 1157357016}
   - {fileID: 2145208702}
   - {fileID: 1414790758}
+  - {fileID: 1813261567}
+  - {fileID: 717715361}
+  - {fileID: 578566226}
+  - {fileID: 4035472005197039166}
   - {fileID: 7196772901917573101}
   - {fileID: 8746371199182353850}
   - {fileID: 1327425996}
   - {fileID: 8663160726228047453}
   - {fileID: 4574501399059813784}
   - {fileID: 8067973169013640754}
-  - {fileID: 4035472005197039166}
   - {fileID: 6586155620502349887}
   - {fileID: 3011475821901744857}
   - {fileID: 1855501908}
@@ -15607,9 +15613,6 @@ SceneRoots:
   - {fileID: 1291523698}
   - {fileID: 310218359}
   - {fileID: 849609305}
-  - {fileID: 1813261567}
-  - {fileID: 717715361}
-  - {fileID: 578566226}
   - {fileID: 139089515}
   - {fileID: 575093959}
   - {fileID: 735542617}
