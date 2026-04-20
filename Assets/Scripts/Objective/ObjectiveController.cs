@@ -28,33 +28,20 @@ public class ObjectiveController : MonoBehaviour
 
     ImageMouseEventHandler ImageMouseEventHandler;
 
-    DateTime completionTime;
-    bool objectiveCompleted = false;
+    void Awake()
+    {
+        // Create Objectives Here
+        ObjectiveContainer = new ObjectiveContainer();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Create Objectives Here
-        ObjectiveContainer = new ObjectiveContainer();
-
         ObjectiveDisplay = GetComponentInChildren<TextMeshProUGUI>();
         ImageMouseEventHandler = GetComponentInParent<ImageMouseEventHandler>();
-
-        foreach (int i in Enumerable.Range(1,2))
-        {
-            ObjectiveContainer.TryAddObjective(new Objective { Step = i, Name = $"Objective {i}", Description = $"Objective #{i}." });
-
-            Debug.Log($"Added Objective #{i}.");
-        }
-
-        ObjectiveContainer.TryAddObjective(new Objective { Step = 3, Name = "Objective 3", Description = "Objective #3" });
-        ObjectiveContainer.TryAddObjective(new Objective { Step = 4, Name = "Objective 4", Description = "Objective #4" });
-
         ImageMouseEventHandler.SetOpacity(1.0f);
 
         ShowObjective(true);
-
-        completionTime = DateTime.Now + TimeSpan.FromSeconds(10);
     }
 
     // Update is called once per frame
@@ -87,13 +74,6 @@ public class ObjectiveController : MonoBehaviour
 
             ObjectiveDisplay.text += $"{line}";
         }
-
-        if(DateTime.Now >= completionTime && !ObjectiveContainer.ObjectiveList[0].Complete && !objectiveCompleted)
-        {
-            ObjectiveContainer.CompleteObjective(ObjectiveContainer.ObjectiveList[0].Step);
-            audioHUD.PlayAchievementAlert(ObjectiveContainer.ObjectiveList[0].Step);
-            objectiveCompleted = true;
-        }
     }
 
     /// <summary>
@@ -118,20 +98,21 @@ public class ObjectiveController : MonoBehaviour
     }
 
     /// <summary>
-    /// Complete the passed objective if it is in this Controller's Container.
-    /// </summary>
-    /// <param name="objective"></param>
-    void CompleteObjective(Objective objective)
-    {
-        ObjectiveContainer.CompleteObjective(objective);
-    }
-
-    /// <summary>
     /// Toggles the visibility of the objective UI element. This can be called when the player enters or exits an area, or when an objective is completed.
     /// </summary>
     /// <param name="show"></param>
     void ShowObjective(bool show)
     {
         ObjectiveDisplay.gameObject.SetActive(show);
+    }
+
+    public void AddObjective(int step, string name, string Description)
+    {
+        ObjectiveContainer.TryAddObjective(new Objective { Step = step, Name = name, Description = Description });
+    }
+
+    public void CompleteObjective(int step)
+    {
+        ObjectiveContainer.CompleteObjective(step, audioHUD);
     }
 }

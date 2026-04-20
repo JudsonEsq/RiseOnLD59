@@ -36,7 +36,7 @@ namespace Assets.Scripts.Objective
         /// <remarks>If no objective with the specified step exists, this method performs no
         /// action.</remarks>
         /// <param name="step">The step number of the objective to mark as complete.</param>
-        public void CompleteObjective(int step)
+        public void CompleteObjective(int step, AudioHUD audioHUD)
         {
             Objective obj = Objectives.FirstOrDefault(o => o.Step == step);
             if(obj != null)
@@ -46,23 +46,9 @@ namespace Assets.Scripts.Objective
                 obj.Complete = true;
                 obj.TimeCompleted = timeCompleted;
 
-                Debug.Log($"[{nameof(ObjectiveContainer)}] Marked Complete at {timeCompleted}: {obj.Name} (Step {obj.Step}) - {obj.Description}");
-            }
-        }
+                audioHUD.PlayAchievementAlert(obj.Step);
 
-        /// <summary>
-        /// Marks the specified objective as complete.
-        /// </summary>
-        /// <param name="obj">The objective to be marked as complete. Cannot be null.</param>
-        public void CompleteObjective(Objective obj)
-        {
-            if(ContainsObjective(obj))
-            {
-                CompleteObjective(obj.Step);
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException("Objective " + obj.Name + " not in current container.");
+                Debug.Log($"[{nameof(ObjectiveContainer)}] Marked Complete at {timeCompleted}: {obj.Name} (Step {obj.Step}) - {obj.Description}");
             }
         }
 
