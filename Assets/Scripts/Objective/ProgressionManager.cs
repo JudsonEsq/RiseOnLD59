@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class ProgressionManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    // How far are we in the game's progression?
+    private int objectivePhase = 0;
+    // How many total phases does the game have?
+    private int gameLength = 5;
+
+    private void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
