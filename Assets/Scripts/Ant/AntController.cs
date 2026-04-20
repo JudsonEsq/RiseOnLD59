@@ -330,7 +330,7 @@ public class AntController : MonoBehaviour
         if(boogieDuration > 0f)
         {
             boogieDuration -= Time.deltaTime;
-            anim.SetBool("isMoving", false);
+            if(anim!= null) anim.SetBool("isMoving", false);
             return;
         }
 
