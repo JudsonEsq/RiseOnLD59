@@ -7,11 +7,13 @@ using UnityEngine.UI;
 
 public class AudioMainMenu : MonoBehaviour
 {
+    [Header("Events")]
     public EventReference hoverEvent;
     public EventReference clickEvent;
     public EventReference backEvent;
-
     public EventReference sliderTickEvent;
+
+    public EventReference StartGameEvent;
 
     public MusicChannel musicChannel;
     public MusicCue musicMenuCue;
@@ -21,8 +23,9 @@ public class AudioMainMenu : MonoBehaviour
     public void PlayHover() => PlayEvent(hoverEvent);
     public void PlayClick() => PlayEvent(clickEvent);
     public void PlayBack() => PlayEvent(backEvent);
-
     public void PlaySliderTick() => PlayEvent(sliderTickEvent);
+
+    public void PlayStartGameSound() => PlayEvent(StartGameEvent);
 
     private EventInstance misophoniaSnapshot;
 

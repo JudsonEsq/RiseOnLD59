@@ -2309,6 +2309,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: adc68044a779a684c8aa1598f19d85d7, type: 2}
     - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
+      propertyPath: StartGameEvent.Path
+      value: event:/Menu/StartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
       propertyPath: sliderTickEvent.Path
       value: event:/Menu/SliderUpdate
       objectReference: {fileID: 0}
@@ -2331,6 +2335,22 @@ PrefabInstance:
     - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
       propertyPath: vcaSliders.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
+      propertyPath: StartGameEvent.Guid.Data1
+      value: -1195241658
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
+      propertyPath: StartGameEvent.Guid.Data2
+      value: 1262072525
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
+      propertyPath: StartGameEvent.Guid.Data3
+      value: 1325511858
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
+      propertyPath: StartGameEvent.Guid.Data4
+      value: 563931839
       objectReference: {fileID: 0}
     - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
       propertyPath: sliderTickEvent.Guid.Data1
@@ -10940,7 +10960,7 @@ MonoBehaviour:
         m_CallState: 0
       - m_Target: {fileID: 1704191812}
         m_TargetAssemblyTypeName: AudioMainMenu, Assembly-CSharp
-        m_MethodName: PlayClick
+        m_MethodName: PlayStartGameSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
