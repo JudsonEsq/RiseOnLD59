@@ -72,6 +72,7 @@ public class AntController : MonoBehaviour
         }
     }
 
+    void OnEnable()
     public void Operate()
     {
         if (IsDead()) return;
@@ -278,7 +279,6 @@ public class AntController : MonoBehaviour
         targetObject = target;
         targetPosition = new Vector3 (target.transform.position.x, transform.position.y, target.transform.position.z);
 
-        // Animation by default is 24 steps per minute. We want 1 step per 4 beats.
         if (anim != null)
         {
             // Also sets animation speed to match current music BPM
@@ -479,4 +479,12 @@ public class AntController : MonoBehaviour
             ReturnToNest();
         }
     }
+
+    private void SyncAnimationsToMusic()
+    {
+        if(anim == null) return;
+        float clipDuration = anim.GetCurrentAnimatorStateInfo(0).length;
+        // By using the time signature so that we have the full bar duration in combination with the tempo
+        float barDuration = MusicManager.instance.timeSignatureUpper * (60/MusicManager.instance.currentBPM) * (4f / MusicManager.instance.timeSignatureLower);
+        float multiplier  = anim.GetBool("isMoving") ? walkSpeedMultiplier : idleSpeedMultiplier;
 }
