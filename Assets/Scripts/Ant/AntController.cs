@@ -52,6 +52,10 @@ public class AntController : MonoBehaviour
     public event Action OnPickupFood;
     private GameObject FoodModel;
 
+    [Header("Music Timing Settings")]
+    public float walkSpeedMultiplier = 1; 
+    public float idleSpeedMultiplier = 1;
+
     public void Init()
     {
 		anim = TryGetComponent(out Animator animator) ? animator : null;
@@ -73,6 +77,10 @@ public class AntController : MonoBehaviour
     }
 
     void OnEnable()
+    {
+    MusicManager.OnMusicalBeat += SyncAnimationsToMusic;
+    }
+
     public void Operate()
     {
         if (IsDead()) return;
@@ -279,12 +287,6 @@ public class AntController : MonoBehaviour
         targetObject = target;
         targetPosition = new Vector3 (target.transform.position.x, transform.position.y, target.transform.position.z);
 
-        if (anim != null)
-        {
-            // Also sets animation speed to match current music BPM
-            float bpm = MusicManager.instance.currentBPM;
-            anim.speed = (bpm/48);
-        }
     }
 
     // Method to check if the ant has reached its target position
@@ -480,6 +482,7 @@ public class AntController : MonoBehaviour
         }
     }
 
+    //Every beat update from FMOD will upate the ant animation cycle speed so that any animation that is playing will stay in sync with the music, regardless of animation length.
     private void SyncAnimationsToMusic()
     {
         if(anim == null) return;
@@ -487,4 +490,12 @@ public class AntController : MonoBehaviour
         // By using the time signature so that we have the full bar duration in combination with the tempo
         float barDuration = MusicManager.instance.timeSignatureUpper * (60/MusicManager.instance.currentBPM) * (4f / MusicManager.instance.timeSignatureLower);
         float multiplier  = anim.GetBool("isMoving") ? walkSpeedMultiplier : idleSpeedMultiplier;
+        anim.speed = clipDuration/barDuration * multiplier;
+    }
+
+    void OnDisable()
+    {
+        MusicManager.OnMusicalBeat -= SyncAnimationsToMusic;
+    }
+
 }
