@@ -20,6 +20,7 @@ public class Hazard : MonoBehaviour
     {
         if (other.GetComponent<Collider>().tag == "Ant")
         {
+            Debug.Log("Ant On the Hazard");
             AntController ant = other.gameObject.GetComponent<AntController>();
             if (doesKillAnt(ant))
             {
