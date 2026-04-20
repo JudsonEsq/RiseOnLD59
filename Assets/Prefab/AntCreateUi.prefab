@@ -261,6 +261,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6406a034493161408e332cd008d4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioHUD
+  TutorialDingEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   DangerAlertEvent:
     Guid:
       Data1: 0
@@ -276,6 +283,62 @@ MonoBehaviour:
       Data4: 0
     Path: 
   AchievementAlertEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  ButtonHoverEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  ButtonSelectWorkerEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  ButtonSelectSoldierEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  ButtonSelectFireEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  ButtonSelectCarpenterEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  FirstAttackNotify:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  FirstAntSpawnNotify:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  FirstCarpenterAntBuilding:
     Guid:
       Data1: 0
       Data2: 0
@@ -402,7 +465,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1937718686307999676}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8592715056410216834}
+        m_TargetAssemblyTypeName: AudioHUD, Assembly-CSharp
+        m_MethodName: PlayButtonSelectCarpenterEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1410880800305029125
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,13 +873,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1100102419723964300}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 8592715056410216834}
+        m_TargetAssemblyTypeName: AudioHUD, Assembly-CSharp
+        m_MethodName: PlayButtonSelectWorkerEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1752,7 +1827,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5808428944626416355}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8592715056410216834}
+        m_TargetAssemblyTypeName: AudioHUD, Assembly-CSharp
+        m_MethodName: PlayButtonSelectSoldierEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9207875348527082250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,4 +1960,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 238291463486945776}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8592715056410216834}
+        m_TargetAssemblyTypeName: AudioHUD, Assembly-CSharp
+        m_MethodName: PlayButtonSelectFireEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
