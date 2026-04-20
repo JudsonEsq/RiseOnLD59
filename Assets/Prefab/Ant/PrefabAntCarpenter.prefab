@@ -116,6 +116,8 @@ MonoBehaviour:
   waitingForFood: 0
   idleTimer: 0
   idleDuration: 5
+  walkSpeedMultiplier: 1
+  idleSpeedMultiplier: 1
 --- !u!1001 &941050966624985456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -187,7 +189,7 @@ PrefabInstance:
     - target: {fileID: -6383109294599798033, guid: ec4e04b465175024cb8ae55f4afc54ac, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: 2100000, guid: bc943dc76557f6f4b976dbaa1b0940e5, type: 2}
+      objectReference: {fileID: 2379589115519066298, guid: ec4e04b465175024cb8ae55f4afc54ac, type: 3}
     - target: {fileID: 919132149155446097, guid: ec4e04b465175024cb8ae55f4afc54ac, type: 3}
       propertyPath: m_Name
       value: Ant Hat

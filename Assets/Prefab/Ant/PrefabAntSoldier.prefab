@@ -631,6 +631,8 @@ MonoBehaviour:
   waitingForFood: 0
   idleTimer: 0
   idleDuration: 5
+  walkSpeedMultiplier: 1
+  idleSpeedMultiplier: 1
 --- !u!95 &6146625292813439852
 Animator:
   serializedVersion: 7
@@ -1221,7 +1223,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 6087106260320146921, guid: fe89ed5d3fecbc34d9a97d43ea2e5fef, type: 3}
-  - {fileID: 2379589115519066298, guid: fe89ed5d3fecbc34d9a97d43ea2e5fef, type: 3}
+  - {fileID: 2100000, guid: bc943dc76557f6f4b976dbaa1b0940e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
