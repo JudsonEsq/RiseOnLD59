@@ -61,13 +61,45 @@ public class AudioHUD : MonoBehaviour
     public EventReference DangerAlertEvent;
     public EventReference LowFoodAlertEvent;
     public EventReference AchievementAlertEvent;
+    
+    [Space(10)]
+    public MusicChannel musicChannel;
+    public MusicCue phase1Cue;
+    public MusicCue phase2Cue;
+    public MusicCue phase3Cue;
+    public MusicCue winCue;
 
     public EventReference AntStarvationEvent;
 
     public void PlayTutorialDingAlert() => MusicManager.PlayOneShot(TutorialDingEvent);
     public void PlayDangerAlert() => MusicManager.PlayOneShot(DangerAlertEvent);
     public void PlayLowFoodAlert() => MusicManager.PlayOneShot(LowFoodAlertEvent);
-    public void PlayAchievementAlert() => MusicManager.PlayOneShot(AchievementAlertEvent);
+    public void PlayAchievementAlert(int objectiveStep)
+    {
+        switch(objectiveStep)
+        {
+            case 0:
+                musicChannel.Raise(phase1Cue);
+            break;
+            case 1:
+                musicChannel.Raise(phase1Cue);
+            break;
+            case 2:
+                musicChannel.Raise(phase2Cue);
+            break;
+            case 3:
+                musicChannel.Raise(phase3Cue);
+            break;
+            case 4:
+                musicChannel.Raise(winCue);
+            break;
+            default:
+                musicChannel.Raise(phase1Cue);
+            break;
+        }
+        MusicManager.PlayOneShot(AchievementAlertEvent);
+    }
+    
     public void PlayAntStarvatationEvent() => MusicManager.PlayOneShot(AntStarvationEvent);
     
     #endregion
