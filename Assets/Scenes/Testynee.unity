@@ -3415,7 +3415,7 @@ MonoBehaviour:
   MoveSpeed: 20
   lowerBound: -12
   TopPoint: 45
-  WidthBound: 35
+  WidthBound: 45
   cameraTransform: {fileID: 1157357016}
   maxDistance: {x: 100, y: 100}
 --- !u!1001 &1164207090

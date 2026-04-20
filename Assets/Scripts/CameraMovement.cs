@@ -23,12 +23,12 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     private Vector2 maxDistance = new Vector2(100, 100);
 
-    float slope = 1f;
+    private float slope = 1f;
 
     void Awake()
     {
         controls = new InputSystem_Actions();
-        float slope = (TopPoint - lowerBound) / (WidthBound);
+        slope = (TopPoint - lowerBound) / WidthBound;
     }
 
     void Update()
@@ -43,8 +43,19 @@ public class CameraMovement : MonoBehaviour
         float xMax = -(1 / slope) * (zPos - lowerBound) + WidthBound;
         xPos = Mathf.Clamp(xPos, xMin, xMax);
 
-        
-        float zMax = -slope * (xPos - WidthBound) + lowerBound;
+        Debug.Log("xMin: " + xMin + " XMax: " + xMax + " Slope: " + slope);
+
+        float zMax = TopPoint;
+
+        if(xPos > 0)
+        {
+            zMax = -slope * (xPos - WidthBound) + lowerBound;
+        }
+        else
+        {
+            zMax = slope * (xPos + WidthBound) + lowerBound;
+        }
+
         zPos = Mathf.Clamp(zPos, lowerBound, zMax);
         
         newPosition.x = xPos;
