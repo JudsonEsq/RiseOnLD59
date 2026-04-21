@@ -47,6 +47,8 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
 
+        SceneManager.LoadScene(target);
+
     }
 
     IEnumerator FadeInCurtain()
