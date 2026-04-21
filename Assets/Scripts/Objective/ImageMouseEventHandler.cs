@@ -24,7 +24,7 @@ public class ImageMouseEventHandler : MonoBehaviour, IPointerEnterHandler, IPoin
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("Mouse Entered Objective Background.");
+        //Debug.Log("Mouse Entered Objective Background.");
 
         MouseInObjectivePanel = true;
 
@@ -33,7 +33,7 @@ public class ImageMouseEventHandler : MonoBehaviour, IPointerEnterHandler, IPoin
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("Mouse Exited Objective Background.");
+        //Debug.Log("Mouse Exited Objective Background.");
 
         MouseInObjectivePanel = false;
         MouseExitedObjectivePanel = DateTime.Now;
@@ -44,7 +44,7 @@ public class ImageMouseEventHandler : MonoBehaviour, IPointerEnterHandler, IPoin
         ObjectiveDisplay = GetComponentInChildren<TextMeshProUGUI>();
         ObjectiveBackground = GetComponentInChildren<Image>();
 
-        Debug.Log("ObjectiveBackground: " + (ObjectiveBackground == null ? "Null" : "Not Null"));
+        //Debug.Log("ObjectiveBackground: " + (ObjectiveBackground == null ? "Null" : "Not Null"));
 
         SetOpacity(1.0f);
 

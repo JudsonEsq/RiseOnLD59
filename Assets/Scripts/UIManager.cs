@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
 
    public void OnGameRestartPress()
    {
-      SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+      SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
    }
 
     IEnumerator FadeInCurtain(string target)
@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene(target);
+        SceneManager.LoadSceneAsync(target);
 
     }
 

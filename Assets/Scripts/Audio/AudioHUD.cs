@@ -61,7 +61,7 @@ public class AudioHUD : MonoBehaviour
     public MusicCue phase1Cue;
     public MusicCue phase2Cue;
     public MusicCue phase3Cue;
-    public MusicCue winCue;
+  
 
     public EventReference AntStarvationEvent;
 
@@ -72,20 +72,17 @@ public class AudioHUD : MonoBehaviour
     {
         switch(objectiveStep)
         {
-            case 0:
-                musicChannel.Raise(phase1Cue);
-            break;
             case 1:
-                musicChannel.Raise(phase1Cue);
-            break;
-            case 2:
+            //Debug.Log("PlayPhase 2: "+ phase2Cue.musicStateParameter.ID);
                 musicChannel.Raise(phase2Cue);
             break;
-            case 3:
+            case 2:
+                //Debug.Log("PlayPhase 3: "+ phase3Cue.musicStateParameter.ID);
                 musicChannel.Raise(phase3Cue);
             break;
-            case 4:
-                musicChannel.Raise(winCue);
+            case 3:
+                //Debug.Log("PlayPhase Win??: "+ phase3Cue.musicStateParameter.ID);
+                musicChannel.Raise(phase3Cue);
             break;
             default:
                 musicChannel.Raise(phase1Cue);
@@ -93,6 +90,8 @@ public class AudioHUD : MonoBehaviour
         }
         MusicManager.PlayOneShot(AchievementAlertEvent);
     }
+
+
     
     public void PlayAntStarvatationEvent() => MusicManager.PlayOneShot(AntStarvationEvent);
     

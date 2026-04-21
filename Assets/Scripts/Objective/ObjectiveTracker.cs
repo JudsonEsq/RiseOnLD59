@@ -32,7 +32,7 @@ public class ObjectiveTracker : MonoBehaviour
         if (other.GetComponent<Collider>().tag == "Ant")
         {
             NumAntsSoFar++;
-            Debug.Log("Objective has made progress: " + NumAntsSoFar);
+            //Debug.Log("Objective has made progress: " + NumAntsSoFar);
             if (NumAntsSoFar >= NumAntsToComplete && !isComplete)
             {
                 isComplete = true;

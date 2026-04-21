@@ -89,7 +89,6 @@ public class MusicManager : MonoBehaviour
         }
         else if(musicInstance.isValid())
         {
-            Debug.Log("Else HIT");
             if(!string.IsNullOrEmpty(cue.musicStateParameter?.Name))
             {
                 SetGlobalParameter(cue.musicStateParameter.Name, cue.musicStateParameter.Value);

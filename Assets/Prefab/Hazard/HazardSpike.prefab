@@ -190,6 +190,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c87678df6421f48869a2a4864e3e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HazardTrap
+  PlayEnemyDefeated:
+    Guid:
+      Data1: -1425943046
+      Data2: 1335355193
+      Data3: -632657268
+      Data4: -2052933235
+    Path: event:/Enemies/DestroyEnemy
+  PlayTrapDefeated:
+    Guid:
+      Data1: -1173664448
+      Data2: 1281745448
+      Data3: 1987277995
+      Data4: -510958552
+    Path: event:/Enemies/DestroyTrap
   type: 0
   numAntInteractionsToClear: 5
 --- !u!114 &1175897154745779413

@@ -115,9 +115,9 @@ public class AntManager : MonoBehaviour
     {
         int CountDeadAnts = 0;
         audioHUDInstance.PlayAntStarvatationEvent();
-        while (debitFood > 0)
+        while (debitFood > 0 && Ants.Count > 0)
         {
-            Debug.Log("Not Enough Food, culling ants: " + debitFood);
+            //Debug.Log("Not Enough Food, culling ants: " + debitFood);
             int antIdx = UnityEngine.Random.Range(0, Ants.Count);
             AntController ant = Ants[antIdx].GetComponent<AntController>();
             debitFood -= ant.FoodCost();

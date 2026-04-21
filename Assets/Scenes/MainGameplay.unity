@@ -5420,7 +5420,7 @@ Transform:
   m_GameObject: {fileID: 796453254}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10.33}
+  m_LocalPosition: {x: 0, y: 0, z: 12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6198,6 +6198,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3320994424872883982, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6487400134592932426, guid: e844eee4704b86f4b8bff2e0ef0935f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 114.85608
@@ -6253,7 +6257,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 869223112}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14f8d98c67592b04395643329dab130d, type: 3}
   m_Name: 
@@ -8763,7 +8767,7 @@ MonoBehaviour:
   TopPoint: 40
   WidthBound: 35
   cameraTransform: {fileID: 1157357016}
-  mainCam: {fileID: 0}
+  mainCam: {fileID: 1157357015}
   fovMin: 25
   fovMax: 90
   maxDistance: {x: 100, y: 100}
@@ -10658,7 +10662,7 @@ MonoBehaviour:
   - {fileID: 719538021}
   - {fileID: 141038079}
   - {fileID: 334388977}
-  timeBetweenCulls: 10
+  timeBetweenCulls: 20
   SpawnWorkerButton: {fileID: 1981434490}
   SpawnSoldierButton: {fileID: 304784936}
   SpawnFireButton: {fileID: 753622547}
@@ -10685,7 +10689,7 @@ MonoBehaviour:
   AntsText: {fileID: 615153071}
   StarveText: {fileID: 869854977}
   StarveTextTimeout: 5
-  audioHUDInstance: {fileID: 0}
+  audioHUDInstance: {fileID: 1666597186}
 --- !u!114 &1376519845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12329,6 +12333,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2472759484383096222, guid: a7491b42d53054349971b985b455f283, type: 3}
+      propertyPath: winCue
+      value: 
+      objectReference: {fileID: 11400000, guid: 85788bc3f69cc1941b00beab425c0cc5, type: 2}
+    - target: {fileID: 2472759484383096222, guid: a7491b42d53054349971b985b455f283, type: 3}
       propertyPath: manager
       value: 
       objectReference: {fileID: 82446484}
@@ -12336,6 +12344,10 @@ PrefabInstance:
       propertyPath: audioHUD
       value: 
       objectReference: {fileID: 1666597186}
+    - target: {fileID: 2472759484383096222, guid: a7491b42d53054349971b985b455f283, type: 3}
+      propertyPath: musicChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: e8f8ba1835dfb3d428ee33dda9822e8b, type: 2}
     - target: {fileID: 6779754362307303642, guid: a7491b42d53054349971b985b455f283, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -14295,7 +14307,6 @@ MonoBehaviour:
   phase1Cue: {fileID: 11400000, guid: adc68044a779a684c8aa1598f19d85d7, type: 2}
   phase2Cue: {fileID: 11400000, guid: ccc25571859ae5e4d8138d1d29842d7a, type: 2}
   phase3Cue: {fileID: 11400000, guid: 177161ad72a1c7a4c8dc0517a9075d53, type: 2}
-  winCue: {fileID: 11400000, guid: 85788bc3f69cc1941b00beab425c0cc5, type: 2}
   AntStarvationEvent:
     Guid:
       Data1: 1195381474

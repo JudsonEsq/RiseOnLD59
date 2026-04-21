@@ -62,7 +62,7 @@ public class FoodSource : MonoBehaviour
     {
         if (!acceptingHarvest)
         {
-            Debug.Log("Food source is currently unavailable for harvest, waiting...");
+            //Debug.Log("Food source is currently unavailable for harvest, waiting...");
             ant.waitingForFood = true;
             return 0;
         }
@@ -83,7 +83,7 @@ public class FoodSource : MonoBehaviour
         }
         else
         {
-            Debug.Log("Food source is depleted.");
+            //Debug.Log("Food source is depleted.");
             return 0;
         }
     }

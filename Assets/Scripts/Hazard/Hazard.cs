@@ -27,7 +27,7 @@ abstract public class Hazard : MonoBehaviour
     {
         if (other.GetComponent<Collider>().tag == "Ant")
         {
-            Debug.Log("Ant On the Hazard");
+            //Debug.Log("Ant On the Hazard");
             AntController ant = other.gameObject.GetComponent<AntController>();
             if (doesKillAnt(ant))
             {
@@ -39,7 +39,7 @@ abstract public class Hazard : MonoBehaviour
 
             if (numAntInteractions >= numAntInteractionsToClear)
             {
-                Debug.Log("Hazard Cleared!");
+                //Debug.Log("Hazard Cleared!");
                 DisableHazard();
             }
         }
@@ -73,6 +73,7 @@ abstract public class Hazard : MonoBehaviour
     public void DisableHazard()
     {
         this.IsEnabled = false;
+        GetComponent<Collider>().enabled = false;
         DisableHazardSpecific();
         switch(type)
         {

@@ -111,7 +111,7 @@ public class AudioMainMenu : MonoBehaviour
     //Used to play next scene from main menu
     public void PlayTransitionFromMenuToGameplay()
     {
-        Debug.Log("PlayTransition");
+        //Debug.Log("PlayTransition");
         musicChannel.Raise(musicGameplayCue);
     }
 

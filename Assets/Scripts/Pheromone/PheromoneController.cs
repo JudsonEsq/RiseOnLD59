@@ -92,12 +92,12 @@ public class PheromoneController : MonoBehaviour
 
     public void RemovePheromone()
     {
-        Debug.Log("Attempting Pheromone Removal");
+        //Debug.Log("Attempting Pheromone Removal");
         Vector2 screenPoint = new Vector2(Mouse.current.position.x.ReadValue(), Mouse.current.position.y.ReadValue());
 
         if (selectedPheromone != null)
         {
-            Debug.Log("Removing Selected Pheromone");
+            //Debug.Log("Removing Selected Pheromone");
             Destroy(selectedPheromone);
             selectedPheromone = null;
             return;
@@ -105,23 +105,23 @@ public class PheromoneController : MonoBehaviour
 
         if (PointerIsUIHit(screenPoint))
         {
-            Debug.Log("Can't remove in UI");
+            //Debug.Log("Can't remove in UI");
             return;
         }
         Ray ray = cam.ScreenPointToRay(screenPoint);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, PheromoneLayers))
         {
-            Debug.Log("Found Pheromone, Removing");
+            //Debug.Log("Found Pheromone, Removing");
             GameObject pheromone = hit.collider.gameObject;
             if (pheromone.GetComponent<Pheromone>().pheromoneType != Pheromone.PheromoneType.Food)
             {
-                Debug.Log("Non-Food, going to disable");
+                //Debug.Log("Non-Food, going to disable");
                 pheromone.SetActive(false);
             }
         } else
         {
-            Debug.Log("Didn't Find Pheromone");
+            //Debug.Log("Didn't Find Pheromone");
         }
     }
 
@@ -135,7 +135,7 @@ public class PheromoneController : MonoBehaviour
 
             if (PointerIsUIHit(screenPoint))
             {
-                Debug.Log("Destroying previously selected pheromone");
+                //Debug.Log("Destroying previously selected pheromone");
                 Destroy(selectedPheromone);
             }
             selectedPheromone.GetComponent<Pheromone>().onCursor = false;
@@ -158,7 +158,7 @@ public class PheromoneController : MonoBehaviour
             {
                 if (result.distance == 0 && result.isValid)
                 {
-                    Debug.Log("Click is UI Hit");
+                    //Debug.Log("Click is UI Hit");
                     return true;
                 }
             }

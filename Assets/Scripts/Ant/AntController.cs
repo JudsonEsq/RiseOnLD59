@@ -131,7 +131,7 @@ public class AntController : MonoBehaviour
         {
             if (ReachedTarget())
             {
-                Debug.Log("Reached target: " + targetObject.name);
+                //Debug.Log("Reached target: " + targetObject.name);
                 if (CheckForFood(targetObject))
                 {
                     ReturnToNest();
@@ -197,7 +197,7 @@ public class AntController : MonoBehaviour
             {
                 pheromones.RemoveAt(i);
                 i--;
-                Debug.Log("Removed old food source");
+                //Debug.Log("Removed old food source");
                 continue;
             }
 
@@ -253,7 +253,7 @@ public class AntController : MonoBehaviour
     {
         if (ReachedTarget() && targetObject == nest)
         {
-            Debug.Log("Returned to nest");
+            //Debug.Log("Returned to nest");
             targetObject = null;
             isReturningToNest = false;
             nest.GetComponent<FoodManager>().AddFood(heldFood);
@@ -269,13 +269,13 @@ public class AntController : MonoBehaviour
 
         if (previousPheromones.Count() == 0 || previousPheromones == null)
         {
-            Debug.Log("Targeting Nest");
+            //Debug.Log("Targeting Nest");
             SetTarget(nest);
             return;
         }
 
         Collider nextPheromone = previousPheromones[previousPheromones.Count() - 1];
-        Debug.Log("Returning to nest, next pheromone: " + nextPheromone.name);
+        //Debug.Log("Returning to nest, next pheromone: " + nextPheromone.name);
         SetTarget(nextPheromone.gameObject);
         previousPheromones.RemoveAt(previousPheromones.Count() - 1);
     }
@@ -464,7 +464,7 @@ public class AntController : MonoBehaviour
             anim.SetBool("isDead", true);
         }
 		
-        Debug.Log("Killing Ant");
+        //Debug.Log("Killing Ant");
         this.isAlive = false;
         OnDeath?.Invoke();
     }
@@ -491,11 +491,11 @@ public class AntController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collided with: " + collision.gameObject.name);
+        //Debug.Log("Collided with: " + collision.gameObject.name);
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
         {
-            Debug.Log("Collided with obstacle, returning to nest");
+            //Debug.Log("Collided with obstacle, returning to nest");
             ReturnToNest();
         }
     }

@@ -9,6 +9,8 @@ using UnityEngine.UI;
 public class ObjectiveController : MonoBehaviour
 {
     public AudioHUD audioHUD;
+    public MusicCue winCue;
+    public MusicChannel musicChannel;
     private const string OBJECTIVE_DISPLAY_HEADER = "Objective(s):";
 
     [SerializeField]
@@ -120,12 +122,14 @@ public class ObjectiveController : MonoBehaviour
         ObjectiveContainer.CompleteObjective(step, audioHUD);
         foreach(Objective obj in ObjectiveContainer.ObjectiveList)
         {
+            Debug.Log($"Checking obj {obj.Step} complete: {obj.Complete}");
             if(obj.Complete == false)
             {
                 return;
             }
         }
-
+        Debug.Log("All complete - raising win cue");
+        musicChannel.Raise(winCue);
         manager.FadeIn();
     }
 }
