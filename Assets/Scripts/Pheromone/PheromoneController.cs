@@ -113,7 +113,7 @@ public class PheromoneController : MonoBehaviour
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, PheromoneLayers))
         {
             Debug.Log("Found Pheromone, Removing");
-            Destroy(hit.collider.gameObject);
+            hit.collider.gameObject.SetActive(false);
         } else
         {
             Debug.Log("Didn't Find Pheromone");
