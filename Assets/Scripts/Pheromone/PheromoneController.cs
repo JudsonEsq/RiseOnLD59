@@ -14,6 +14,9 @@ public class PheromoneController : MonoBehaviour
     private LayerMask PlacementLayers;
 
     [SerializeField]
+    private LayerMask PheromoneLayers;
+
+    [SerializeField]
     private Camera cam;
 
     [SerializeField]
@@ -36,7 +39,6 @@ public class PheromoneController : MonoBehaviour
     void Awake()
     {
         controls = new InputSystem_Actions();
-        controls.Player.Interact.performed += _ => PlacePheromone();
     }
 
     void Start()
@@ -62,8 +64,12 @@ public class PheromoneController : MonoBehaviour
             {
                 PlacePheromone();
             }
-
         }
+        if (Keyboard.current.spaceKey.IsPressed())
+        {
+            RemovePheromone();
+        }
+
     }
 
     public void SelectPheromone(Pheromone.PheromoneType type)
@@ -81,6 +87,36 @@ public class PheromoneController : MonoBehaviour
             selectedPheromone = Instantiate<GameObject>(basePheromone, hit.point, Quaternion.identity);
             selectedPheromone.GetComponent<Pheromone>().onCursor = true;
             selectedPheromone.GetComponent<Pheromone>().pheromoneType = type;
+        }
+    }
+
+    public void RemovePheromone()
+    {
+        Debug.Log("Attempting Pheromone Removal");
+        Vector2 screenPoint = new Vector2(Mouse.current.position.x.ReadValue(), Mouse.current.position.y.ReadValue());
+
+        if (selectedPheromone != null)
+        {
+            Debug.Log("Removing Selected Pheromone");
+            Destroy(selectedPheromone);
+            selectedPheromone = null;
+            return;
+        }
+
+        if (PointerIsUIHit(screenPoint))
+        {
+            Debug.Log("Can't remove in UI");
+            return;
+        }
+        Ray ray = cam.ScreenPointToRay(screenPoint);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, PheromoneLayers))
+        {
+            Debug.Log("Found Pheromone, Removing");
+            Destroy(hit.collider.gameObject);
+        } else
+        {
+            Debug.Log("Didn't Find Pheromone");
         }
     }
 

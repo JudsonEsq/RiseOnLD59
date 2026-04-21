@@ -48,7 +48,8 @@ GameObject:
   - component: {fileID: 208870488883185400}
   - component: {fileID: 7619017178710925832}
   - component: {fileID: 3951764334555634519}
-  m_Layer: 0
+  - component: {fileID: 1175897154745779413}
+  m_Layer: 8
   m_Name: HazardSpike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,6 +192,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HazardTrap
   type: 0
   numAntInteractionsToClear: 5
+--- !u!114 &1175897154745779413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6489955214528234972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a0362e3014a7b34b9ca4f7553057c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pheromone
+  pheromoneType: 0
+  onCursor: 0
 --- !u!1001 &297140990009180025
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -415,7 +415,7 @@ RectTransform:
   m_GameObject: {fileID: 3555718632294564265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1617877424841248996}
@@ -506,6 +506,9 @@ MonoBehaviour:
   PlacementLayers:
     serializedVersion: 2
     m_Bits: 512
+  PheromoneLayers:
+    serializedVersion: 2
+    m_Bits: 256
   cam: {fileID: 0}
   FoodButton: {fileID: 8174064499940466305}
   DangerButton: {fileID: 1415584296068699112}
