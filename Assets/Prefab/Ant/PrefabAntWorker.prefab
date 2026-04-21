@@ -738,7 +738,7 @@ MonoBehaviour:
   isAlive: 1
   heldFood: 0
   antType: 0
-  foodCost: 1
+  foodCost: 2
   targetPheromones: 
   avoidPheromones: 
   pheromonesToTrack: []
