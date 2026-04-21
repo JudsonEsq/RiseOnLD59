@@ -33,7 +33,7 @@ public class MusicManager : MonoBehaviour
         }
         else if (instance != this)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
     #endregion
@@ -77,14 +77,17 @@ public class MusicManager : MonoBehaviour
     public int timeSignatureLower = 4; // Default time signature lower value, can be updated by beat callback
 
     private EventInstance musicInstance;
+
+    private bool isStartingMusic = false;
     private void HandleMusicRequest(MusicCue cue)
     {
-        Debug.Log("cue is: " + (cue == null ? "NULL" : cue.name));
-        if(!musicInstance.isValid())
+        //Debug.Log("cue is: " + (cue == null ? "NULL" : cue.name));
+        if(!musicInstance.isValid() && !isStartingMusic)
         {
+            isStartingMusic = true;
             StartCoroutine(StartMusicWhenReady(cue));
         }
-        else
+        else if(musicInstance.isValid())
         {
             Debug.Log("Else HIT");
             if(!string.IsNullOrEmpty(cue.musicStateParameter?.Name))
@@ -103,6 +106,7 @@ public class MusicManager : MonoBehaviour
 
         musicInstance = RuntimeManager.CreateInstance(cue.musicEvent);
         musicInstance.start();
+        isStartingMusic = false;
         if (!string.IsNullOrEmpty(cue.musicStateParameter?.Name))
             {
                 SetGlobalParameter(cue.musicStateParameter.Name, cue.musicStateParameter.Value);
@@ -166,8 +170,13 @@ public class MusicManager : MonoBehaviour
         public static void PlayOneShot(EventReference eventRef)
         {
             if (eventRef.IsNull) return;
-
             RuntimeManager.PlayOneShot(eventRef);
+        }
+
+        public static void PlayOneShot(EventReference eventRef, Vector3 position)
+        {
+            if (eventRef.IsNull) return;
+            RuntimeManager.PlayOneShot(eventRef, position);
         }
 
         public static void SetGlobalParameter(string ParameterName, float value)

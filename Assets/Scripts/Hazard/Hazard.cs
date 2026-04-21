@@ -77,16 +77,16 @@ abstract public class Hazard : MonoBehaviour
         switch(type)
         {
             case HazardType.Enemy:
-            MusicManager.PlayOneShot(PlayEnemyDefeated);
+            MusicManager.PlayOneShot(PlayEnemyDefeated, transform.position);
             break;
             case HazardType.Spike:
-            MusicManager.PlayOneShot(PlayTrapDefeated);
+            MusicManager.PlayOneShot(PlayTrapDefeated, transform.position);
             break;
             case HazardType.Fire:
-            MusicManager.PlayOneShot(PlayTrapDefeated);
+            MusicManager.PlayOneShot(PlayTrapDefeated, transform.position);
             break;
             default:
-            MusicManager.PlayOneShot(PlayTrapDefeated);
+            MusicManager.PlayOneShot(PlayTrapDefeated, transform.position);
             break;
         }
     }

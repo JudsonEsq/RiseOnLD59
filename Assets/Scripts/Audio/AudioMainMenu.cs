@@ -117,6 +117,7 @@ public class AudioMainMenu : MonoBehaviour
 
     void OnDestroy()
     {
+        misophoniaSnapshot.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         misophoniaSnapshot.release();
     }
 }
