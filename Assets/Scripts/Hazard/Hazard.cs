@@ -1,9 +1,12 @@
 using UnityEngine;
+using FMODUnity;
 
 abstract public class Hazard : MonoBehaviour
 {
     public abstract void DisableHazardSpecific();
 
+    public EventReference PlayEnemyDefeated;
+    public EventReference PlayTrapDefeated;
     public enum HazardType
     {
         Spike,
@@ -71,5 +74,20 @@ abstract public class Hazard : MonoBehaviour
     {
         this.IsEnabled = false;
         DisableHazardSpecific();
+        switch(type)
+        {
+            case HazardType.Enemy:
+            MusicManager.PlayOneShot(PlayEnemyDefeated);
+            break;
+            case HazardType.Spike:
+            MusicManager.PlayOneShot(PlayTrapDefeated);
+            break;
+            case HazardType.Fire:
+            MusicManager.PlayOneShot(PlayTrapDefeated);
+            break;
+            default:
+            MusicManager.PlayOneShot(PlayTrapDefeated);
+            break;
+        }
     }
 }
