@@ -120,7 +120,7 @@ public class ObjectiveController : MonoBehaviour
         ObjectiveContainer.CompleteObjective(step, audioHUD);
         foreach(Objective obj in ObjectiveContainer.ObjectiveList)
         {
-            if(obj.Complete = false)
+            if(obj.Complete == false)
             {
                 return;
             }
