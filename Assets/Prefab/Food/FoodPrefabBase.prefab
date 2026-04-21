@@ -140,7 +140,7 @@ MonoBehaviour:
   foodValue: 5
   foodCapacity: 100
   currentFood: 0
-  isDepletable: 1
+  isDepletable: 0
   isDepleted: 0
   harvestCounter: 0
   allowableHarvests: 5

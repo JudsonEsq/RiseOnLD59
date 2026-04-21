@@ -6,7 +6,7 @@ public class FoodSource : MonoBehaviour
     [SerializeField] private int foodValue = 5; // Amount of food available per harvest
     [SerializeField] private int foodCapacity = 100; // Maximum amount of food this source can hold
     [SerializeField] private int currentFood; // Current amount of food available
-    [SerializeField] private bool isDepletable = true; // Flag to indicate if the food source can be depleted
+    [SerializeField] private bool isDepletable = false; // Flag to indicate if the food source can be depleted
     public bool isDepleted = false; // Flag to indicate if the food source is depleted
 
     [Header("Harvest Settings")]
