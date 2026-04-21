@@ -256,6 +256,7 @@ public class AntController : MonoBehaviour
             Debug.Log("Returned to nest");
             targetObject = null;
             isReturningToNest = false;
+            nest.GetComponent<FoodManager>().AddFood(heldFood);
             heldFood = 0;
             if (FoodModel != null)
             {
