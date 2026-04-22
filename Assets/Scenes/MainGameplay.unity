@@ -14285,7 +14285,6 @@ MonoBehaviour:
       Data3: 100366980
       Data4: 847997740
     Path: event:/UI/Alerts/FirstBuildEvent
-  antManagerInstance: {fileID: 1376519844}
 --- !u!114 &1666597187
 MonoBehaviour:
   m_ObjectHideFlags: 0

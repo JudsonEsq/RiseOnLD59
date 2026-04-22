@@ -108,7 +108,6 @@ public class AudioHUD : MonoBehaviour
     #endregion
 
 
-
     #region Special 1 Time Stingers
     public EventReference FirstAttackNotify;
     private bool bDidFirstAttackNotifyPlay = false;

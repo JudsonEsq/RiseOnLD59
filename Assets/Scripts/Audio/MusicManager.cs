@@ -74,7 +74,6 @@ public class MusicManager : MonoBehaviour
     private bool isStartingMusic = false; //used to help prevent any doubling or race conditions if we get a raopid request to start music
     private void HandleMusicRequest(MusicCue cue)
     {
-        //Debug.Log("cue is: " + (cue == null ? "NULL" : cue.name));
         if(!musicInstance.isValid() && !isStartingMusic)
         {
             isStartingMusic = true;
@@ -93,8 +92,6 @@ public class MusicManager : MonoBehaviour
     {
         while (!RuntimeManager.HasBankLoaded("Music"))
             yield return null;
-
-            //yield return null; //wait an extra frame for audio engine to settle
 
         musicInstance = RuntimeManager.CreateInstance(cue.musicEvent);
         musicInstance.start();
@@ -126,7 +123,7 @@ public class MusicManager : MonoBehaviour
     }
 
     //AOT ahead of time compilation
-    //witbhout this there is a chance compiler will strip or mangle the callback method as it looks "unused" from C# perspective
+    //without this there is a chance compiler will strip or mangle the callback method as it looks "unused" from C# perspective
     [AOT.MonoPInvokeCallback(typeof(FMOD.Studio.EVENT_CALLBACK))]
     private static FMOD.RESULT BeatCallback(FMOD.Studio.EVENT_CALLBACK_TYPE type, System.IntPtr instancePtr, System.IntPtr parameters)
     {
@@ -134,8 +131,7 @@ public class MusicManager : MonoBehaviour
         {
             instance.beatPending = true;
             var beatProperties = (FMOD.Studio.TIMELINE_BEAT_PROPERTIES)Marshal.PtrToStructure(parameters, typeof(FMOD.Studio.TIMELINE_BEAT_PROPERTIES));
-            //Debug.Log($"Beat! BPM: {beatProperties.bpm}, Position: {beatProperties.position}, Bar: {beatProperties.bar}, Beat: {beatProperties.beat}, Tick: {beatProperties.tick}");
-       
+            
             MusicManager.instance.currentBPM = beatProperties.tempo;
             MusicManager.instance.timeSignatureUpper = beatProperties.timesignatureupper;
             MusicManager.instance.timeSignatureLower = beatProperties.timesignaturelower;

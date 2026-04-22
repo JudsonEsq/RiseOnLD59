@@ -46,8 +46,7 @@ public class WindGust : MonoBehaviour
 
         //used to attach audio to the spawned invisible game object and update it's position
         RuntimeManager.AttachInstanceToGameObject(windInstance,gameObject);
-
-
+        
         Destroy(gameObject, duration);
     }
 
