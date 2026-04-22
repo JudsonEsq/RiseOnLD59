@@ -3,19 +3,18 @@ using FMODUnity;
 
 public class AudioAnt : MonoBehaviour
 {
-    public EventReference AntDeathEvent; //Ant death sound FMOD asset
-    public EventReference AntPickedUpFood; //Ant pickup food FMOD asset
+    public EventReference AntDeathEvent;
+    public EventReference AntPickedUpFood;
 
     private AntController antController;
 
     void Awake()
     {
-        antController = GetComponent<AntController>(); // get a ref to the owning ant controller
+        antController = GetComponent<AntController>();
 
         antController.OnDeath += HandleDeath;
         antController.OnPickupFood += HandlePickupFood;
     }
-
 
     void HandleDeath()
     {

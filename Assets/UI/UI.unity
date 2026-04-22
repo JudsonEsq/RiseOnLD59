@@ -6838,8 +6838,10 @@ MonoBehaviour:
   Banks:
   - UI
   - Music
+  - Master
+  - Master.strings
   CollisionTag: 
-  PreloadSamples: 0
+  PreloadSamples: 1
 --- !u!1 &1710170529
 GameObject:
   m_ObjectHideFlags: 0

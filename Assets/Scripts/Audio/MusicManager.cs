@@ -98,7 +98,7 @@ public class MusicManager : MonoBehaviour
 
     private System.Collections.IEnumerator StartMusicWhenReady(MusicCue cue)
     {
-        while (!RuntimeManager.HaveAllBanksLoaded)
+        while (!RuntimeManager.HasBankLoaded("Music"))
             yield return null;
 
             //yield return null; //wait an extra frame for audio engine to settle
