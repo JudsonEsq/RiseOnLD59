@@ -12,19 +12,17 @@ public class AudioMainMenu : MonoBehaviour
     public EventReference clickEvent;
     public EventReference backEvent;
     public EventReference sliderTickEvent;
-
     public EventReference StartGameEvent;
 
+    [Header("Music System")]
     public MusicChannel musicChannel;
     public MusicCue musicMenuCue;
-
     public MusicCue musicGameplayCue;
 
     public void PlayHover() => PlayEvent(hoverEvent);
     public void PlayClick() => PlayEvent(clickEvent);
     public void PlayBack() => PlayEvent(backEvent);
     public void PlaySliderTick() => PlayEvent(sliderTickEvent);
-
     public void PlayStartGameSound() => PlayEvent(StartGameEvent);
 
     private EventInstance misophoniaSnapshot;
@@ -53,7 +51,7 @@ public class AudioMainMenu : MonoBehaviour
         RuntimeManager.PauseAllEvents(!runInBackground);
     }
 
-    // SLIDERS //////////
+    // SLIDERS //
     void InitVCASliders()
     {
         foreach(var vcaSlider in vcaSliders)
@@ -121,6 +119,3 @@ public class AudioMainMenu : MonoBehaviour
         misophoniaSnapshot.release();
     }
 }
-
-
-

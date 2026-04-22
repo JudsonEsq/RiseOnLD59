@@ -5,7 +5,6 @@ public class AudioAnt : MonoBehaviour
 {
     public EventReference AntDeathEvent;
     public EventReference AntPickedUpFood;
-
     private AntController antController;
 
     void Awake()

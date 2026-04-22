@@ -33,9 +33,7 @@ public class WindGustSpawner : MonoBehaviour
         bgAmbienceInstance = RuntimeManager.CreateInstance(bgAmbienceLp);
         RuntimeManager.AttachInstanceToGameObject(bgAmbienceInstance, gameObject);
         bgAmbienceInstance.start();
-
     }
-    
     
     void Update()
     {

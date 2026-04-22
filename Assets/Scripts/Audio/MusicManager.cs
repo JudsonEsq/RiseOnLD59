@@ -19,9 +19,6 @@ using System.Runtime.InteropServices;
 
 public class MusicManager : MonoBehaviour
 {
-    /// <summary>
-    /// Keep the audio manager alive on first create in main menu
-    /// </summary>
     #region Singleton
     public static MusicManager instance;
     void Awake()
@@ -38,10 +35,6 @@ public class MusicManager : MonoBehaviour
     }
     #endregion
 
-
-    /// <summary>
-    /// Used for sending the signal to update music to the audio manager
-    /// </summary>
     #region Channel
     public MusicChannel musicChannel;
 
@@ -56,9 +49,6 @@ public class MusicManager : MonoBehaviour
         }
     #endregion
 
-    /// <summary>
-    /// Music Play back specific Information
-    /// </summary>
     #region Music Playback
     
     [Tooltip("Set this value and then right-click Music Manager COMPONENT to trigger")]
@@ -70,15 +60,18 @@ public class MusicManager : MonoBehaviour
 
     public static event System.Action OnMusicalBeat;
 
-    private volatile bool beatPending = false;
+    //volitile as multiple threads may use this varaible so don't cache it, use actual memory for latest value. 
+    //This matters becaudse FMOD's beat callback fires on  separate audio thread, webGL will ignore this,
+    //kept in due to builds on other platforms
+    private volatile bool beatPending = false; 
 
-    public float currentBPM = 120f; // Default BPM, can be updated by beat callback
-    public int timeSignatureUpper = 4; // Default time signature upper value, can be updated by beat callback
-    public int timeSignatureLower = 4; // Default time signature lower value, can be updated by beat callback
+    public float currentBPM = 120f; 
+    public int timeSignatureUpper = 4;
+    public int timeSignatureLower = 4;
 
     private EventInstance musicInstance;
 
-    private bool isStartingMusic = false;
+    private bool isStartingMusic = false; //used to help prevent any doubling or race conditions if we get a raopid request to start music
     private void HandleMusicRequest(MusicCue cue)
     {
         //Debug.Log("cue is: " + (cue == null ? "NULL" : cue.name));
@@ -132,7 +125,8 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-
+    //AOT ahead of time compilation
+    //witbhout this there is a chance compiler will strip or mangle the callback method as it looks "unused" from C# perspective
     [AOT.MonoPInvokeCallback(typeof(FMOD.Studio.EVENT_CALLBACK))]
     private static FMOD.RESULT BeatCallback(FMOD.Studio.EVENT_CALLBACK_TYPE type, System.IntPtr instancePtr, System.IntPtr parameters)
     {

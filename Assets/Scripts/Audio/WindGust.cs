@@ -32,8 +32,6 @@ public class WindGust : MonoBehaviour
     public EventReference windSound;
     private EventInstance windInstance;
 
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         duration = Random.Range(durationRange.min, durationRange.max);
@@ -46,13 +44,13 @@ public class WindGust : MonoBehaviour
         windInstance = RuntimeManager.CreateInstance(windSound);
         windInstance.start();
 
+        //used to attach audio to the spawned invisible game object and update it's position
         RuntimeManager.AttachInstanceToGameObject(windInstance,gameObject);
 
 
         Destroy(gameObject, duration);
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(randomDirection * windSpeed * Time.deltaTime, Space.World);

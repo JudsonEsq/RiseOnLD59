@@ -46,9 +46,6 @@ public class AudioHUD : MonoBehaviour
     #endregion
     
     
-    /// <summary>
-    /// Sounds for different HUD alerts
-    /// </summary>
     #region Alert Events
     [Header("Alert Events")]
     public EventReference TutorialDingEvent;
@@ -73,15 +70,12 @@ public class AudioHUD : MonoBehaviour
         switch(objectiveStep)
         {
             case 1:
-            //Debug.Log("PlayPhase 2: "+ phase2Cue.musicStateParameter.ID);
                 musicChannel.Raise(phase2Cue);
             break;
             case 2:
-                //Debug.Log("PlayPhase 3: "+ phase3Cue.musicStateParameter.ID);
                 musicChannel.Raise(phase3Cue);
             break;
             case 3:
-                //Debug.Log("PlayPhase Win??: "+ phase3Cue.musicStateParameter.ID);
                 musicChannel.Raise(phase3Cue);
             break;
             default:
@@ -97,9 +91,7 @@ public class AudioHUD : MonoBehaviour
     
     #endregion
     
-    /// <summary>
-    /// Sounds for player interacting with spawnign different ant types
-    /// </summary>
+
     #region Player Ant Spawning Events
     [Header("Player Spawning Ants Events")]
 
@@ -152,12 +144,6 @@ public class AudioHUD : MonoBehaviour
         }
     }
     #endregion
-
-
-    //antmananger.callants
-
-    public AntManager antManagerInstance;
-
-    
+ 
 
 }
